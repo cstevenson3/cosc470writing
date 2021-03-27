@@ -1,0 +1,63 @@
+\documentclass{IEEEtran}
+
+\title{Handling Structural Inconsistencies in CT Image Reconstructions}
+\author{Cameron Stevenson\\[1cm]{\small Supervisor: Ramakrishnan Mukundan}}
+
+\begin{document}
+\maketitle
+
+\section{Problem}
+
+HRCT and MRI scans produce stacks of images depicting regions of different tissue. These stacks can be used to generate 3D reconstructions of internal body structures. The models produced are useful in applications such as diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction}. The process of producing models can be improved by reducing manual user input, increasing accuracy of the output models (closeness to the original structure), or improving runtime performance. 
+
+This project intends to improve the accuracy of models produced by surface reconstructions from image contours.
+
+\section{Background}
+
+3D rendering in medical imaging can broadly be classified into two types, direct volume rendering and surface rendering. Direct volume rendering takes scan slices and uses volumetric rendering to directly render a structure without an intermediate representation of it. For example various methods with ray casting are used \cite{meyer2009voreen}. Surface rendering renders a mesh representing the boundaries in the scan slices, across all slices. The process of generating this mesh is called surface reconstruction. 
+
+Surface reconstructions require that each image slice is segmented (based on tissue differences), giving contours as boundaries to these segments. Two steps are then required for the 3D reconstruction. Contour correspondence matches contours between slices that appear to outline the boundary of the same structure. Triangulation creates a mesh which connects matched contours and uses their shape to influence its shape. Point cloud surface reconstructions are common, where contours are treated as sets of points and meshes are generated and influenced by these points \cite{berger2017survey}. The original points may not be included in the created mesh. Another method of surface reconstruction is Marching Cubes which uses a voxel based system to generate an isosurface separating the inside and outside of a structure \cite{newman2006survey}.
+
+Point correspondence is an optional intermediate step between contour correspondence and triangulation. Contours are treated as ordered sets of points, starting from the leftmost point. Between matched contours, points on these contours are matched to each other in a way which will enable triangulation of a mesh with good properties: no self intersections or holes, and inclusion of input points in the output mesh. Mackay proposes Dynamic Time Warping (DTW) as a method of point correspondence \cite{mackay2019robust}. DTW is intended to find similarity in the same object in different points in time. This suits the application of medical imaging where adjacent parallel slices give contours of the same object but slightly altered. Because of this additional point correspondence step, I consider the described technique to have more of an awareness of the original structure than point cloud reconstructions, and to give a more “direct” result.
+
+A problem addressed by Mackay and others is the reconstruction of branching structures, which show up as one contour in one slice and two contours in the next slice \cite{mackay2019robust, akkouche2004implicit}. A good contour correspondence should match the single contour to the two contours if they belong to the same branching structure. Also mesh triangulation should behave well at the branch. Mackay uses test models to demonstrate the technique’s ability to handle branching structures. For a simple branch, the reconstructions from the proposed technique are visually accurate. For a more complicated branching structure, the technique appears to handle contour correspondence well, but point correspondence and triangulation seem to work less well, producing twisted meshes. This flaw in simple DTW is also noted in Li and Wang \cite{li2021method}.
+
+\section{Method}
+
+This project aims to extend Mackay’s work, focussing on lung surface reconstructions from contours. Lungs serve both as a good testing ground for reconstruction algorithms, and as a good use case \cite{pluta2012new}. Specifically we intend to improve the accuracy of reconstructions of HRCT and MRI data, particularly by developing methods to handle the branching problem, and possibly other structures. New ideas will be tried in contour correspondence, point correspondence, and triangulation, with the aim of finding at least one which succeeds in improving the accuracy of reconstructions. 
+
+Ideas will be tested by integrating them with the existing technique proposed by Mackay. The new overall technique will be tested against Mackay’s unaltered technique, by comparing the accuracy of our reconstructions on the test models he has produced, and larger lung models. For ground truth testing, comprehensive descriptions of generating synthetic lung models exist \cite{pluta2012new}. For visual inspection we have real lung scan data \cite{mukundan2016reconstruction}. Methods for visualising the generated structures will be developed in OpenGL, and the mesh data will be stored in a common format (OBJ, PLY etc.). 
+
+Some ideas which will be tried (this will be refined after a thorough literature survey):
+
+Contour correspondence:
+\begin{itemize}
+\item Most existing methods appear to work from top to bottom when doing contour correspondence. In the case of the lungs, all the bronchi and bronchioles are connected from the trachea, so a contour correspondence tracing paths starting from the trachea and moving outwards could work, and be more aware of when branching occurs sideways.
+\item Use multiple slices to inform likelihood of a contour being included in a structure.
+\end{itemize}
+
+Point correspondence:
+\begin{itemize}
+\item Contour interpolation is an optional step applied which produces estimated contours between slices. Mackay’s method does not apply contour interpolation, but it could be investigated as a method of reducing the differences between contours for point correspondence to behave better.
+\item Dynamic Time Warping has some optional constraints which can be added. Mackay did not use these but suggested them as a possible improvement. Alterations can also be made to the objective function used by DTW.
+\item Alternatives to Dynamic Time Warping may be considered.
+\end{itemize}
+
+Triangulation:
+\begin{itemize}
+\item In branching cases, each contour could be triangulated to each other as though they were one-to-one, then the meshes can be merged.
+\end{itemize}
+
+To manage scope, runtime performance will not be a priority. A technique which improves the accuracy of reconstructions, even if slower, can still be useful as a benchmark for future techniques, given the difficulty of obtaining real ground truth models of biological structures. Also as in Mackay it is assumed ordered contours will be provided, i.e. the step of finding contours in slices has already been done \cite{mukundan2016reconstruction}.
+
+\section{Risks}
+The simple test models and real lung data are already available, so there is no risk of not having access to data. Should COVID alert levels increase, I have a sufficient computer at home to test the reconstruction techniques on.
+
+\section{Ethics}
+The data provided has been cleared for research by the Health and Disability Ethics Committee, Ministry of Health (No. URB/10/EXP/002) \cite{health2010annual}. It has been used in work by Chen, Mukundan and Butler \cite{chen2011automatic}.
+
+\pagebreak
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
