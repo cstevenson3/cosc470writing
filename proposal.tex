@@ -1,6 +1,7 @@
-\documentclass{IEEEtran}
+\documentclass[12pt]{article}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
 
-\title{Handling Structural Inconsistencies in CT Image Reconstructions}
+\title{Research Proposal: Handling Structural Inconsistencies in CT Image Reconstructions}
 \author{Cameron Stevenson\\[1cm]{\small Supervisor: Ramakrishnan Mukundan}}
 
 \begin{document}
@@ -29,23 +30,24 @@ This project aims to extend Mackay’s work, focussing on lung surface reconstru
 Ideas will be tested by integrating them with the existing technique proposed by Mackay. The new overall technique will be tested against Mackay’s unaltered technique, by comparing the accuracy of our reconstructions on the test models he has produced, and larger lung models. For ground truth testing, comprehensive descriptions of generating synthetic lung models exist \cite{pluta2012new}. For visual inspection we have real lung scan data \cite{mukundan2016reconstruction}. Methods for visualising the generated structures will be developed in OpenGL, and the mesh data will be stored in a common format (OBJ, PLY etc.). 
 
 Some ideas which will be tried (this will be refined after a thorough literature survey):
-
-Contour correspondence:
+\begin{itemize}
+\item Contour correspondence:
 \begin{itemize}
 \item Most existing methods appear to work from top to bottom when doing contour correspondence. In the case of the lungs, all the bronchi and bronchioles are connected from the trachea, so a contour correspondence tracing paths starting from the trachea and moving outwards could work, and be more aware of when branching occurs sideways.
 \item Use multiple slices to inform likelihood of a contour being included in a structure.
 \end{itemize}
 
-Point correspondence:
+\item Point correspondence:
 \begin{itemize}
 \item Contour interpolation is an optional step applied which produces estimated contours between slices. Mackay’s method does not apply contour interpolation, but it could be investigated as a method of reducing the differences between contours for point correspondence to behave better.
 \item Dynamic Time Warping has some optional constraints which can be added. Mackay did not use these but suggested them as a possible improvement. Alterations can also be made to the objective function used by DTW.
 \item Alternatives to Dynamic Time Warping may be considered.
 \end{itemize}
 
-Triangulation:
+\item Triangulation:
 \begin{itemize}
 \item In branching cases, each contour could be triangulated to each other as though they were one-to-one, then the meshes can be merged.
+\end{itemize}
 \end{itemize}
 
 To manage scope, runtime performance will not be a priority. A technique which improves the accuracy of reconstructions, even if slower, can still be useful as a benchmark for future techniques, given the difficulty of obtaining real ground truth models of biological structures. Also as in Mackay it is assumed ordered contours will be provided, i.e. the step of finding contours in slices has already been done \cite{mukundan2016reconstruction}.
