@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, portrait, margin=1in]{geometry}
+\setlength{\parskip}{1em}
 
 \title{Research Proposal: Handling Structural Inconsistencies in CT Image Reconstructions}
 \author{Cameron Stevenson\\[1cm]{\small Supervisor: Ramakrishnan Mukundan}}
@@ -40,7 +41,7 @@ Some ideas which will be tried (this will be refined after a thorough literature
 \item Point correspondence:
 \begin{itemize}
 \item Contour interpolation is an optional step applied which produces estimated contours between slices. Mackay’s method does not apply contour interpolation, but it could be investigated as a method of reducing the differences between contours for point correspondence to behave better.
-\item Dynamic Time Warping has some optional constraints which can be added. Mackay did not use these but suggested them as a possible improvement. Alterations can also be made to the objective function used by DTW.
+\item Dynamic Time Warping has some optional constraints which can be added. Mackay did not use these but suggested them as a possible improvement \cite{mackay2019robust}. Alterations can also be made to the objective function used by DTW.
 \item Alternatives to Dynamic Time Warping may be considered.
 \end{itemize}
 
@@ -56,7 +57,7 @@ To manage scope, runtime performance will not be a priority. A technique which i
 The simple test models and real lung data are already available, so there is no risk of not having access to data. Should COVID alert levels increase, I have a sufficient computer at home to test the reconstruction techniques on.
 
 \section{Ethics}
-The data provided has been cleared for research by the Health and Disability Ethics Committee, Ministry of Health (No. URB/10/EXP/002) \cite{health2010annual}. It has been used in work by Chen, Mukundan and Butler \cite{chen2011automatic}.
+The image data provided has been cleared for research by the Health and Disability Ethics Committee, Ministry of Health (No. URB/10/EXP/002) \cite{health2010annual}. It has been used in work by Chen, Mukundan and Butler \cite{chen2011automatic}.
 
 \pagebreak
 \bibliographystyle{IEEEtran}
