@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage[a4paper, portrait, margin=0.9in]{geometry}
 \setlength{\parskip}{1em}
 
 \title{Research Proposal: Handling Structural Inconsistencies in CT Image Reconstructions}
@@ -24,9 +24,11 @@ Point correspondence is an optional intermediate step between contour correspond
 
 A problem addressed by Mackay and others is the reconstruction of branching structures, which show up as one contour in one slice and two contours in the next slice \cite{mackay2019robust, akkouche2004implicit}. A good contour correspondence should match the single contour to the two contours if they belong to the same branching structure. Also mesh triangulation should behave well at the branch. Mackay uses test models to demonstrate the technique’s ability to handle branching structures. For a simple branch, the reconstructions from the proposed technique are visually accurate. For a more complicated branching structure, the technique appears to handle contour correspondence well, but point correspondence and triangulation seem to work less well, producing twisted meshes. This flaw in simple DTW is also noted in Li and Wang \cite{li2021method}.
 
-\section{Method}
+\section{Aim}
 
 This project aims to extend Mackay’s work, focussing on lung surface reconstructions from contours. Lungs serve both as a good testing ground for reconstruction algorithms, and as a good use case \cite{pluta2012new}. Specifically we intend to improve the accuracy of reconstructions of HRCT and MRI data, particularly by developing methods to handle the branching problem, and possibly other structures. New ideas will be tried in contour correspondence, point correspondence, and triangulation, with the aim of finding at least one which succeeds in improving the accuracy of reconstructions. 
+
+\section{Method}
 
 Ideas will be tested by integrating them with the existing technique proposed by Mackay. The new overall technique will be tested against Mackay’s unaltered technique, by comparing the accuracy of our reconstructions on the test models he has produced, and larger lung models. For ground truth testing, comprehensive descriptions of generating synthetic lung models exist \cite{pluta2012new}. For visual inspection we have real lung scan data \cite{mukundan2016reconstruction}. Methods for visualising the generated structures will be developed in OpenGL, and the mesh data will be stored in a common format (OBJ, PLY etc.). 
 
