@@ -40,7 +40,9 @@ contour finding...
 contour correspondence...
 
 \subsection{Point Correspondence}
-point correspondence...
+Point correspondence is an optional step in surface reconstructions, where points on matched contours are matched to each other as a precursor to triangulation.
+
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. 
 
 \subsection{Mesh Triangulation}
 mesh triangulation...
@@ -48,7 +50,7 @@ mesh triangulation...
 \subsection{Mesh Rendering}
 mesh rendering...
 
-abc \cite{mackay2019robust}
+
 
 \section{Conclusion}
 
