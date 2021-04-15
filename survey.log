@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  15 APR 2021 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  15 APR 2021 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -941,12 +941,15 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (./survey.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 8.0pt on input line 4.
-) [1.1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
+ [1.1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 58.
+ [2.2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (./survey.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 
 
 Package rerunfilecheck Warning: File `survey.out' has changed.
@@ -954,22 +957,22 @@ Package rerunfilecheck Warning: File `survey.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `survey.out':
-(rerunfilecheck)             Before: DEC0EA3D39461235840E05E96CEBD9EB;390
-(rerunfilecheck)             After:  115957B073FFCE03DCF747850FF7945B;753.
+(rerunfilecheck)             Before: EE2390E86AAED3F2A675D5C9540CB406;1267
+(rerunfilecheck)             After:  6536A8136C553768719F21A741D05A51;1973.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 18288 strings out of 480608
- 273908 string characters out of 5903630
- 560647 words of memory out of 5000000
- 33574 multiletter control sequences out of 15000+600000
- 634088 words of font info for 139 fonts, out of 8000000 for 9000
+ 18314 strings out of 480608
+ 274382 string characters out of 5903630
+ 561658 words of memory out of 5000000
+ 33582 multiletter control sequences out of 15000+600000
+ 639913 words of font info for 145 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,11n,100p,797b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc
-}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}
+ 63i,11n,100p,797b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc
+}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{
 /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/
 usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</u
@@ -978,10 +981,10 @@ sr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb>
 pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLiberti
 neT.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLib
 ertineTB.pfb>
-Output written on survey.pdf (1 page, 273769 bytes).
+Output written on survey.pdf (2 pages, 279212 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 34861 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 39005 words of extra memory for PDF output out of 42996 (max. 10000000)
 
