@@ -5,4 +5,9 @@
 \newblock Robust contour based surface reconstruction algorithms for
   applications in medical imaging.
 
+\bibitem{pluta2012new}
+{\sc Pluta, K., Janaszewski, M., and Postolski, M.}
+\newblock New algorithm for modeling of bronchial trees.
+\newblock {\em Image Processing \& Communications 17}, 4 (2012), 179--190.
+
 \end{thebibliography}
