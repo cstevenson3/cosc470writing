@@ -28,14 +28,21 @@ Overview a b c
 \section{Image Processing}
 
 \subsection{Thresholding}
-thresholding...
+Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". Simple thresholding can be used to pick out regions. 
 
 \subsection{Contour Finding}
-contour finding...
+
+Mukundan \cite{mukundan2016reconstruction} starts with a binary image after thresholding. Eroding the image with a 3x3 element then subtracting this from the thresholded image gives one pixel wide edges. Sequential edge following is used to extract contours. Discarding small contours reduces the number of contours significantly.
+
+Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Marching.
 
 \section{Volumetric Rendering}
 
 \section{Surface Reconstructions}
+
+\subsection{Point Cloud Methods}
+
+
 \subsection{Contour Correspondence}
 contour correspondence...
 

@@ -5,6 +5,13 @@
 \newblock Robust contour based surface reconstruction algorithms for
   applications in medical imaging.
 
+\bibitem{mukundan2016reconstruction}
+{\sc Mukundan, R.}
+\newblock Reconstruction of high resolution 3d meshes of lung geometry from
+  hrct contours.
+\newblock In {\em 2016 IEEE International Symposium on Multimedia (ISM)\/}
+  (2016), IEEE, pp.~247--252.
+
 \bibitem{pluta2012new}
 {\sc Pluta, K., Janaszewski, M., and Postolski, M.}
 \newblock New algorithm for modeling of bronchial trees.
