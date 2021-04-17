@@ -27,7 +27,12 @@ Overview a b c
 
 \section{Image Processing}
 
-\subsection{Thresholding}
+\subsection{Segmentation}
+
+Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation "a rather complex, specialized procedure often requiring considerable manual interaction". Particular organs are focussed on when developing segmentation methods.
+
+Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
+
 Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". Simple thresholding can be used to pick out regions. 
 
 \subsection{Contour Finding}
