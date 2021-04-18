@@ -12,6 +12,11 @@
 \newblock In {\em Proceedings of the 21st annual conference on Computer
   graphics and interactive techniques\/} (1994), pp.~451--458.
 
+\bibitem{lorensen1987marching}
+{\sc Lorensen, W.~E., and Cline, H.~E.}
+\newblock Marching cubes: A high resolution 3d surface construction algorithm.
+\newblock {\em ACM siggraph computer graphics 21}, 4 (1987), 163--169.
+
 \bibitem{mackay2019robust}
 {\sc Mackay, D.}
 \newblock Robust contour based surface reconstruction algorithms for

@@ -52,6 +52,10 @@ Intersecting arbitrary rays with voxels can be computationally expensive. Shear-
 
 \section{Surface Reconstructions}
 
+\subsection{Marching Cubes}
+
+Marching cubes \cite{lorensen1987marching} works on voxel data. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels (inside voxels bordering outside voxels) are found. Each voxel is assigned a primitive based on which of their neighbours are inside or outside the structure, using a lookup table. The primitives are joined in neighbouring surface voxels to form the overall mesh.
+
 \subsection{Point Cloud Methods}
 
 
