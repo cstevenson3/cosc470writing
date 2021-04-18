@@ -43,6 +43,13 @@ Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Mar
 
 \section{Volumetric Rendering}
 
+Maximum intensity projection (MIP) is a raycasting method where rays project the most intense voxel they pass through \cite{birkfellner2016applied}. The images produced have high contrast detail and are easy to understand.
+
+Summed voxel rendering is another raycasting method where rays sum up intensities from every voxel they pass through, giving a blurred image \cite{birkfellner2016applied}.
+
+Intersecting arbitrary rays with voxels can be computationally expensive. Shear-warp rendering solves this by using projections which make rays orthogonal to the voxel axes \cite{lacroute1994fast}. 
+
+
 \section{Surface Reconstructions}
 
 \subsection{Point Cloud Methods}
