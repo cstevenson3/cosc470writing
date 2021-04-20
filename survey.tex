@@ -39,6 +39,8 @@ Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tis
 
 Mukundan \cite{mukundan2016reconstruction} starts with a binary image after thresholding. Eroding the image with a 3x3 element then subtracting this from the thresholded image gives one pixel wide edges. Sequential edge following is used to extract contours. Discarding small contours reduces the number of contours significantly.
 
+Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an adaptive step size to find the outer contours of the lungs. The metric for adjusting the step size for a border segment is based on how far (at most) the segment lies from the true border. This method has the advantage of including juxtapleural pulmonary modules in the segmentation despite their imaged intensity being dissimilar to the rest of the lung.
+
 Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Marching.
 
 \section{Volumetric Rendering}
@@ -54,7 +56,7 @@ Intersecting arbitrary rays with voxels can be computationally expensive. Shear-
 
 \subsection{Marching Cubes}
 
-Marching cubes \cite{lorensen1987marching} works on voxel data. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels (inside voxels bordering outside voxels) are found. Each voxel is assigned a primitive based on which of their neighbours are inside or outside the structure, using a lookup table. The primitives are joined in neighbouring surface voxels to form the overall mesh.
+Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels ("inside" voxels bordering "outside" voxels) are found. Each voxel is assigned primitives based on which of their neighbours are inside or outside the structure, using a lookup table. The primitives are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged and smoothing is usually applied either to the mesh or during rendering for a more visually appealing output.
 
 \subsection{Point Cloud Methods}
 

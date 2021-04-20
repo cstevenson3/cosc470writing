@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  18 APR 2021 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  20 APR 2021 19:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -939,7 +939,7 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 20.
  [1.1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 91.
+(Font)              scaled to size 8.0pt on input line 87.
  [2.2]
 (./survey.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
@@ -954,20 +954,20 @@ Class acmart Warning: ACM keywords are mandatory for papers over two pages.
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 [3.3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
  (./survey.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `survey.out' has not changed.
 (rerunfilecheck)             Checksum: C26412CCF7B1A9A8BB10DAA065AF9030;2946.
  ) 
 Here is how much of TeX's memory you used:
- 18407 strings out of 480608
- 276614 string characters out of 5903630
- 561739 words of memory out of 5000000
- 33609 multiletter control sequences out of 15000+600000
- 650423 words of font info for 183 fonts, out of 8000000 for 9000
+ 18417 strings out of 480608
+ 276858 string characters out of 5903630
+ 561754 words of memory out of 5000000
+ 33612 multiletter control sequences out of 15000+600000
+ 650950 words of font info for 187 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  63i,12n,100p,797b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
@@ -982,10 +982,10 @@ fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLibertin
 eT.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLibe
 rtineTB.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/Li
 nLibertineTI.pfb>
-Output written on survey.pdf (3 pages, 346784 bytes).
+Output written on survey.pdf (3 pages, 350039 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  43181 words of extra memory for PDF output out of 51595 (max. 10000000)
 

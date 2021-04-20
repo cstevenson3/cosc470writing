@@ -34,4 +34,11 @@
 \newblock New algorithm for modeling of bronchial trees.
 \newblock {\em Image Processing \& Communications 17}, 4 (2012), 179--190.
 
+\bibitem{pu2008adaptive}
+{\sc Pu, J., Roos, J., Chin, A.~Y., Napel, S., Rubin, G.~D., and Paik, D.~S.}
+\newblock Adaptive border marching algorithm: automatic lung segmentation on
+  chest ct images.
+\newblock {\em Computerized Medical Imaging and Graphics 32}, 6 (2008),
+  452--462.
+
 \end{thebibliography}
