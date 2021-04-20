@@ -43,6 +43,10 @@ Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an ad
 
 Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Marching.
 
+\subsection{Contour Interpolation}
+
+Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found.
+
 \section{Volumetric Rendering}
 
 Maximum intensity projection (MIP) is a raycasting method where rays project the most intense voxel they pass through \cite{birkfellner2016applied}. The images produced have high contrast detail and are easy to understand.
@@ -80,13 +84,20 @@ Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspond
 mesh rendering...
 
 \section{Testing}
+
+\subsection{Measuring Similarity in Segmentation}
+
+Pixel-wise XOR operations are common.
+
+Pu et al. \cite{pu2008adaptive} use a reference segmentation (defined by experts) and evaluate their result by the distribution along the contour of distance error from this reference.
+
 \subsection{Generating Models}
 
 Mackay \cite{mackay2019robust} uses Blender3D to create test models, by creating surface of revolutions about bezier curves. 
 
 Pluta et al. \cite{pluta2012new} propose a rule-based method of generating models, including deformations and noise.
 
-\subsection{Measuring Similarity}
+\subsection{Measuring Similarity in 3D Models}
 
 Mackay \cite{mackay2019robust} uses Hausdorff distance (essentially a maximum deviation between point sets) to measure mesh similarity. Points are sampled from a ground truth model and the nearest distance is found to the reconstructed model.
 

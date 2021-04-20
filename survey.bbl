@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{barrett1994image}
+{\sc Barrett, W., Mortensen, E., and Taylor, D.}
+\newblock An image space algorithm for morphological contour interpolation.
+\newblock In {\em Graphics Interface\/} (1994), CANADIAN INFORMATION PROCESSING
+  SOCIETY, pp.~16--16.
+
 \bibitem{birkfellner2016applied}
 {\sc Birkfellner, W.}
 \newblock {\em Applied medical image processing: a basic course}.
