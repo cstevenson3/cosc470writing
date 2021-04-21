@@ -1,4 +1,4 @@
-\documentclass[acmsmall]{acmart}
+\documentclass[acmsmall, 12pt]{acmart}
 
 \begin{document}
 
@@ -45,9 +45,17 @@ Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Mar
 
 \subsection{Contour Interpolation}
 
-Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found.
+Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
 
 \section{Volumetric Rendering}
+
+\section{Rasterization}
+
+Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards.
+
+Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with mappings from their coordinates to the 3D space of the volume, to get texture values. 
+
+\subsection{Raycasting}
 
 Maximum intensity projection (MIP) is a raycasting method where rays project the most intense voxel they pass through \cite{birkfellner2016applied}. The images produced have high contrast detail and are easy to understand.
 
@@ -64,6 +72,9 @@ Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each v
 
 \subsection{Point Cloud Methods}
 
+\subsection{Finding Normals}
+
+Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plane to a neighbourhood of points for each point in the cloud. There is a sweet spot for the radius of the neighbourhood used. Small radius makes noisy points have more impact on the plane found, and large radius allows for surface curvature to introduce error. 
 
 \subsection{Contour Correspondence}
 contour correspondence...

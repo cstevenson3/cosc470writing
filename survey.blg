@@ -4,45 +4,45 @@ The top-level auxiliary file: survey.aux
 The style file: acm.bst
 Database file #1: references.bib
 Warning--empty journal in mackay2019robust
-You've used 8 entries,
+You've used 10 entries,
             2253 wiz_defined-function locations,
-            579 strings with 5374 characters,
-and the built_in function-call counts, 2851 in all, are:
-= -- 282
-> -- 111
+            590 strings with 5717 characters,
+and the built_in function-call counts, 3454 in all, are:
+= -- 342
+> -- 124
 < -- 0
-+ -- 47
-- -- 38
-* -- 208
-:= -- 443
-add.period$ -- 23
-call.type$ -- 8
-change.case$ -- 42
++ -- 53
+- -- 42
+* -- 239
+:= -- 520
+add.period$ -- 28
+call.type$ -- 10
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 118
-empty$ -- 241
-format.name$ -- 38
-if$ -- 608
+cite$ -- 11
+duplicate$ -- 149
+empty$ -- 306
+format.name$ -- 42
+if$ -- 751
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 9
-newline$ -- 42
-num.names$ -- 16
-pop$ -- 51
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 51
+num.names$ -- 18
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 42
 quote$ -- 0
-skip$ -- 80
+skip$ -- 105
 stack$ -- 0
-substring$ -- 204
-swap$ -- 37
+substring$ -- 246
+swap$ -- 48
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
+type$ -- 38
 warning$ -- 1
-while$ -- 31
-width$ -- 9
-write$ -- 81
+while$ -- 36
+width$ -- 12
+write$ -- 98
 (There was 1 warning)
