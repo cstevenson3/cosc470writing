@@ -3,46 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: survey.aux
 The style file: acm.bst
 Database file #1: references.bib
+Warning--empty publisher in guennebaud2007algebraic
 Warning--empty journal in mackay2019robust
-You've used 10 entries,
+Warning--can't use both volume and number fields in oztireli2009feature
+You've used 13 entries,
             2253 wiz_defined-function locations,
-            590 strings with 5717 characters,
-and the built_in function-call counts, 3454 in all, are:
-= -- 342
-> -- 124
+            612 strings with 6348 characters,
+and the built_in function-call counts, 4819 in all, are:
+= -- 480
+> -- 185
 < -- 0
-+ -- 53
-- -- 42
-* -- 239
-:= -- 520
-add.period$ -- 28
-call.type$ -- 10
-change.case$ -- 51
++ -- 78
+- -- 64
+* -- 347
+:= -- 724
+add.period$ -- 38
+call.type$ -- 13
+change.case$ -- 71
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 149
-empty$ -- 306
-format.name$ -- 42
-if$ -- 751
+cite$ -- 16
+duplicate$ -- 203
+empty$ -- 414
+format.name$ -- 64
+if$ -- 1047
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 10
-newline$ -- 51
-num.names$ -- 18
-pop$ -- 70
+int.to.str$ -- 13
+missing$ -- 13
+newline$ -- 66
+num.names$ -- 24
+pop$ -- 93
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 59
 quote$ -- 0
-skip$ -- 105
+skip$ -- 146
 stack$ -- 0
-substring$ -- 246
-swap$ -- 48
+substring$ -- 342
+swap$ -- 69
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
-warning$ -- 1
-while$ -- 36
-width$ -- 12
-write$ -- 98
-(There was 1 warning)
+type$ -- 50
+warning$ -- 3
+while$ -- 50
+width$ -- 15
+write$ -- 131
+(There were 3 warnings)

@@ -49,6 +49,7 @@ Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm
 
 \section{Volumetric Rendering}
 
+
 \section{Rasterization}
 
 Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards.
@@ -64,6 +65,8 @@ Summed voxel rendering is another raycasting method where rays sum up intensitie
 Intersecting arbitrary rays with voxels can be computationally expensive. Shear-warp rendering solves this by using projections which make rays orthogonal to the voxel axes \cite{lacroute1994fast}. 
 
 
+Fishman et al. \cite{fishman2006volume} make comparisons between maximum intensity projection and other volume rendering. MIP tends to not contrast the background well with the structure of interest. Other volume rendering methods can weight voxels differently and give different tissue types different colours. 
+
 \section{Surface Reconstructions}
 
 \subsection{Marching Cubes}
@@ -72,7 +75,14 @@ Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each v
 
 \subsection{Point Cloud Methods}
 
-\subsection{Finding Normals}
+Approximate - don't have to go through points
+Inteporlate - have to go through points
+
+Guennebaud et al. \cite{guennebaud2007algebraic} fit algebraic spheres to point sets to construct surfaces. Their method (APSS) performs better than prior methods on sharp features and sparse data.
+
+Oztireli et al. \cite{oztireli2009feature} combine Moving Least Squares (MLS) with local kernel regression to obtain Robust Implicit Moving Least Squares (RIMLS). This method reconstructs sharp (non-smooth) corners more accurately than APSS.
+
+\subsection{Estimating Normals}
 
 Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plane to a neighbourhood of points for each point in the cloud. There is a sweet spot for the radius of the neighbourhood used. Small radius makes noisy points have more impact on the plane found, and large radius allows for surface curvature to introduce error. 
 

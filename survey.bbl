@@ -11,6 +11,18 @@
 \newblock {\em Applied medical image processing: a basic course}.
 \newblock CRC Press, 2016.
 
+\bibitem{fishman2006volume}
+{\sc Fishman, E.~K., Ney, D.~R., Heath, D.~G., Corl, F.~M., Horton, K.~M., and
+  Johnson, P.~T.}
+\newblock Volume rendering versus maximum intensity projection in ct
+  angiography: what works best, when, and why.
+\newblock {\em Radiographics 26}, 3 (2006), 905--922.
+
+\bibitem{guennebaud2007algebraic}
+{\sc Guennebaud, G., and Gross, M.}
+\newblock Algebraic point set surfaces.
+\newblock In {\em ACM SIGGRAPH 2007 papers}. 2007, pp.~23--es.
+
 \bibitem{lacroute1994fast}
 {\sc Lacroute, P., and Levoy, M.}
 \newblock Fast volume rendering using a shear-warp factorization of the viewing
@@ -45,6 +57,13 @@
 Texture-based volume rendering.
 \newblock Accessed from
   https://web.cse.ohio-state.edu/~crawfis.3/cis694L/Slides/TextureSlicing.pdf.
+
+\bibitem{oztireli2009feature}
+{\sc {\"O}ztireli, A.~C., Guennebaud, G., and Gross, M.}
+\newblock Feature preserving point set surfaces based on non-linear kernel
+  regression.
+\newblock In {\em Computer Graphics Forum\/} (2009), vol.~28, Wiley Online
+  Library, pp.~493--501.
 
 \bibitem{pluta2012new}
 {\sc Pluta, K., Janaszewski, M., and Postolski, M.}
