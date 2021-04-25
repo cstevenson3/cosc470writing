@@ -19,38 +19,49 @@ Abstract a b c
 
 \section{Introduction}
 
-Intro a b c
+Medical imaging modalities such as HRCT and MRI produce image stacks depicting regions of different tissue. These stacks can be used to produce 3D reconstructions and renders of internal body structures. These models and renders are used in applications such as diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}. The process of creating 3D reconstructions or renders can be improved by automation (reducing user input), making output models/renders more accurate, or improving runtime performance.
 
 \section{Overview}
 
-Overview a b c
+Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. All applications tend to use either volumetric rendering or surface rendering.
+
+
 
 slices = sections
 
+\section{Applications}
+
+Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. 
+
 \section{Image Processing}
 
-\subsection{Segmentation}
+As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However techniques considering the image data from all slices have been considered.
 
 Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation "a rather complex, specialized procedure often requiring considerable manual interaction". Particular organs are focussed on when developing segmentation methods.
 
+\subsection{Segmentation}
+
+Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering.
+
 Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
 
-Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". Simple thresholding can be used to pick out regions. 
+Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". In this case simple thresholding can be used to pick out regions. 
 
 \subsection{Contour Finding}
 
+Rather than use pixels/voxels, some reconstruction techniques use contours defining the boundaries of the region objects occupy in an image. 
+
 Mukundan \cite{mukundan2016reconstruction} starts with a binary image after thresholding. Eroding the image with a 3x3 element then subtracting this from the thresholded image gives one pixel wide edges. Sequential edge following is used to extract contours. Discarding small contours reduces the number of contours significantly.
 
-Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an adaptive step size to find the outer contours of the lungs. The metric for adjusting the step size for a border segment is based on how far (at most) the segment lies from the true border. This method has the advantage of including juxtapleural pulmonary modules in the segmentation despite their imaged intensity being dissimilar to the rest of the lung.
-
-Mackay \cite{mackay2019robust} uses contours generated from Adaptive Contour Marching.
+Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an adaptive step size to find the outer contours of the lungs. The metric for adjusting the step size for a border segment is based on how far (at most) the segment lies from the true border. This method has the advantage of including small juxtapleural pulmonary modules in the segmentation despite their imaged intensity being dissimilar to the rest of the lung. Mackay \cite{mackay2019robust} uses this method.
 
 \subsection{Contour Interpolation}
+
+Between two slices filled with contours, new slices can be added with contours interpolated from those in the slices above and below them. Some methods are able to do this without a contour correspondence.
 
 Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
 
 \section{Volumetric Rendering}
-
 
 \section{Rasterization}
 
@@ -120,8 +131,8 @@ Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method o
 Mackay \cite{mackay2019robust} begins with two ordered sets of points X and Y, from the two contours matched, with some edges provided by point correspondence. As a result of the constraints on DTW, there are three cases for each point $x_{m}$ on the first contour:
 \begin{itemize}
 \item $x_{m}$ has an edge with $y_{n}$ and $x_{m+1}$ has an edge with $y_{n+1}$. These points are direct neighbours on their respective contours, and form a quad which is trivial to triangulate.
-\item $x_{m}$ has edges with a sequence of points $\{y_{n}, y_{n+1}, ..., y{n+i}\}$. $x_{m}$ has a one-to-many point correspondence with these points. This can be triangulated with a triangle fan centreing about $x_{m}$.
-\item Each point in the sequence $\{x_{m}, x_{m+1}, ..., x{m+i}\}$ has edges with a point $y_{n}$. This is the opposite of the previous case and can likewise be triangulated with a triangle fan centreing about $y_{n}$.
+\item $x_{m}$ has edges with a sequence of points $\{y_{n}, y_{n+1}, ..., y_{n+i}\}$. $x_{m}$ has a one-to-many point correspondence with these points. This can be triangulated with a triangle fan centering about $x_{m}$.
+\item Each point in the sequence $\{x_{m}, x_{m+1}, ..., x_{m+i}\}$ has edges with a point $y_{n}$. This is the opposite of the previous case and can likewise be triangulated with a triangle fan centering about $y_{n}$.
 
 \end{itemize}
 

@@ -76,6 +76,13 @@ Texture-based volume rendering.
 \newblock In {\em Computer Graphics Forum\/} (2009), vol.~28, Wiley Online
   Library, pp.~493--501.
 
+\bibitem{pan2017comparison}
+{\sc Pan, Z., Tian, S., Guo, M., Zhang, J., Yu, N., and Xin, Y.}
+\newblock Comparison of medical image 3d reconstruction rendering methods for
+  robot-assisted surgery.
+\newblock In {\em 2017 2nd International Conference on Advanced Robotics and
+  Mechatronics (ICARM)\/} (2017), IEEE, pp.~94--99.
+
 \bibitem{pluta2012new}
 {\sc Pluta, K., Janaszewski, M., and Postolski, M.}
 \newblock New algorithm for modeling of bronchial trees.
