@@ -12,7 +12,7 @@
  \country{New Zealand}}
  
 \begin{abstract}
-Abstract a b c
+To understand the approaches and progress of creating reconstructions/renders from medical imaging, I surveyed papers involving applications, image processing, reconstructions, rendering, and testing. It was found that many approaches and specific techniques are available, and tweaking, modifying, or combining these existing methods could be a starting step for research into reconstructions/renders of particular body structures.
 \end{abstract}
 
 \maketitle
@@ -23,11 +23,13 @@ Medical imaging modalities such as HRCT and MRI produce image stacks depicting r
 
 \section{Overview}
 
+Images from scans (also referred to as sections or slices) can be segmented into pixel regions to define structure boundaries. This can be processed further by finding contours to represent these boundaries.
+
 Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. All applications tend to use either volumetric rendering or surface rendering.
 
+Volumetric rendering treats pixels in images as voxels, and a variety of rasterization and raycasting techniques are available for rendering these.
 
-
-slices = sections
+Surface rendering requires a surface be defined, either implicitly or as a mesh. Point cloud methods generate implicit surfaces, whilst meshes can be generated through contour correspondence followed by mesh triangulation (with point correspondence as an optional middle step). 
 
 \section{Applications}
 
@@ -105,10 +107,13 @@ Taubin et al. \cite{taubin2012smooth} demonstrate colour maps extrapolated from 
 
 \subsection{Estimating Normals}
 
+Some of the methods above require normals for each point. Estimating normals from the points sampled requires some understanding of the structure itself.
+
 Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plane to a neighbourhood of points for each point in the cloud. There is a sweet spot for the radius of the neighbourhood used. Small radius makes noisy points have more impact on the plane found, and large radius allows for surface curvature to introduce error. 
 
 \subsection{Contour Correspondence}
-contour correspondence...
+
+Rather than lose the relationship between points, the original contours can be used in creating a surface reconstruction. Working out which contours on which slices represent a connected tissue in the original structure is called contour correspondence, and the resulting correspondences are used in later steps of reconstruction.
 
 Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into four types.
 \begin{itemize}
@@ -117,7 +122,6 @@ Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into
 \item Global algorithms look for contour pairings across all sections.
 \item Growing algorithms create a hierarchy of components, attempting to join unmatched contours onto existing components if suitable.
 \end{itemize}
-
 
 Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep is the contour nested in larger contours).
 
@@ -130,6 +134,8 @@ Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method o
 
 \subsection{Mesh Triangulation}
 
+A surface can be represented as a set of primitive elements, with triangles being the simplest. They are defined by three points in 3D space. The final step of mesh reconstruction is taking the relationships inferred by contour and point correspondence, and generating triangles to connect points whilst taking these relationships into account.
+
 Mackay \cite{mackay2019robust} begins with two ordered sets of points X and Y, from the two contours matched, with some edges provided by point correspondence. As a result of the constraints on DTW, there are three cases for each point $x_{m}$ on the first contour:
 \begin{itemize}
 \item $x_{m}$ has an edge with $y_{n}$ and $x_{m+1}$ has an edge with $y_{n+1}$. These points are direct neighbours on their respective contours, and form a quad which is trivial to triangulate.
@@ -140,6 +146,8 @@ Mackay \cite{mackay2019robust} begins with two ordered sets of points X and Y, f
 
 \subsection{The Branching Problem}
 
+A simple structure is easy to infer. We see one contour on each slice the structure is present in, and in adjacent structures the contours are similarly positioned and shaped. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
+
 Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal.
 
 \subsection{Mesh Rendering}
@@ -148,23 +156,29 @@ Mackay \cite{mackay2019robust} states that surface rendering is not as widely im
 
 \section{Testing}
 
+The end aim of these reconstructions and renders is to give humans a better visualisation of internal structures. However to compare methods objective testing is required. Requiring human experts to come to a consensus on desired outputs is resource consuming for stages such as image segmentation, and infeasible for complex structures such as meshes. Therefore metrics and repeatable methods have been devised to test algorithms.
+
 \subsection{Measuring Similarity in Segmentation}
 
-Pixel-wise XOR operations are common.
+Pixel-wise XOR operations are common, simply working out where an ideal segmentation and an output segmentation differ.
 
-Pu et al. \cite{pu2008adaptive} use a reference segmentation (defined by experts) and evaluate their result by the distribution along the contour of distance error from this reference.
+Pu et al. \cite{pu2008adaptive} use a reference segmentation (defined by experts) and evaluate their result by the distribution along the contour of distance error from this reference. 
 
 \subsection{Generating Models}
 
+It is difficult to obtain real models of internal structures. Techniques to generate synthetic models suitable for testing have been developed.
+
 Mackay \cite{mackay2019robust} uses Blender3D to create test models, by creating surface of revolutions about bezier curves. 
 
-Pluta et al. \cite{pluta2012new} propose a rule-based method of generating models, including deformations and noise.
+Pluta et al. \cite{pluta2012new} propose a rule-based method of generating lung models, including deformations and noise.
 
 \subsection{Measuring Similarity in 3D Models}
 
 Mackay \cite{mackay2019robust} uses Hausdorff distance (essentially a maximum deviation between point sets) to measure mesh similarity. Points are sampled from a ground truth model and the nearest distance is found to the reconstructed model.
 
 \section{Conclusion}
+
+A variety of general approaches to reconstructing and rendering internal body structures are available, with many specific techniques investigated within each of them. Continued research and ironing out the flaws in these approaches will encourage their adoption in applications, enabling users to make more informed decisions in the field.
 
 \bibliographystyle{acm}
 \bibliography{references}
