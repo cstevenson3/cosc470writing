@@ -25,6 +25,8 @@ Intro a b c
 
 Overview a b c
 
+slices = sections
+
 \section{Image Processing}
 
 \subsection{Segmentation}
@@ -103,7 +105,10 @@ Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into
 \item Growing algorithms create a hierarchy of components, attempting to join unmatched contours onto existing components if suitable.
 \end{itemize}
 
-Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. 
+
+Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep is the contour nested in larger contours).
+
+Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
 
 \subsection{Point Correspondence}
 Point correspondence is an optional step in surface reconstructions, where points on matched contours are matched to each other as a precursor to triangulation.
@@ -111,11 +116,18 @@ Point correspondence is an optional step in surface reconstructions, where point
 Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. 
 
 \subsection{Mesh Triangulation}
-mesh triangulation...
+
+Mackay \cite{mackay2019robust} begins with two ordered sets of points X and Y, from the two contours matched, with some edges provided by point correspondence. As a result of the constraints on DTW, there are three cases for each point $x_{m}$ on the first contour:
+\begin{itemize}
+\item $x_{m}$ has an edge with $y_{n}$ and $x_{m+1}$ has an edge with $y_{n+1}$. These points are direct neighbours on their respective contours, and form a quad which is trivial to triangulate.
+\item $x_{m}$ has edges with a sequence of points $\{y_{n}, y_{n+1}, ..., y{n+i}\}$. $x_{m}$ has a one-to-many point correspondence with these points. This can be triangulated with a triangle fan centreing about $x_{m}$.
+\item Each point in the sequence $\{x_{m}, x_{m+1}, ..., x{m+i}\}$ has edges with a point $y_{n}$. This is the opposite of the previous case and can likewise be triangulated with a triangle fan centreing about $y_{n}$.
+
+\end{itemize}
 
 \subsection{The Branching Problem}
 
-Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a slice with one contour and a slice with two contours, the two contours are merged at their nearest point to give one larger contour. Point correspondence between the matched contours can then proceed as normal.
+Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a slice with one contour and a slice with two contours, the two contours are merged at their nearest point to give one larger contour. Point correspondence between the matched contours can then proceed as normal. 
 
 \subsection{Mesh Rendering}
 mesh rendering...
