@@ -11,6 +11,11 @@
 \newblock {\em Applied medical image processing: a basic course}.
 \newblock CRC Press, 2016.
 
+\bibitem{braude2007contour}
+{\sc Braude, I., Marker, J., Museth, K., Nissanov, J., and Breen, D.}
+\newblock Contour-based surface reconstruction using mpu implicit models.
+\newblock {\em Graphical models 69}, 2 (2007), 139--157.
+
 \bibitem{fishman2006volume}
 {\sc Fishman, E.~K., Ney, D.~R., Heath, D.~G., Corl, F.~M., Horton, K.~M., and
   Johnson, P.~T.}
@@ -22,6 +27,12 @@
 {\sc Guennebaud, G., and Gross, M.}
 \newblock Algebraic point set surfaces.
 \newblock In {\em ACM SIGGRAPH 2007 papers}. 2007, pp.~23--es.
+
+\bibitem{herbert2001contour}
+{\sc Herbert, M.~J., and Jones, C.~B.}
+\newblock Contour correspondence for serial section reconstruction: complex
+  scenarios in palaeontology.
+\newblock {\em Computers \& geosciences 27}, 4 (2001), 427--440.
 
 \bibitem{lacroute1994fast}
 {\sc Lacroute, P., and Levoy, M.}
@@ -76,5 +87,11 @@ Texture-based volume rendering.
   chest ct images.
 \newblock {\em Computerized Medical Imaging and Graphics 32}, 6 (2008),
   452--462.
+
+\bibitem{taubin2012smooth}
+{\sc Taubin, G.}
+\newblock Smooth signed distance surface reconstruction and applications.
+\newblock In {\em Iberoamerican Congress on Pattern Recognition\/} (2012),
+  Springer, pp.~38--45.
 
 \end{thebibliography}

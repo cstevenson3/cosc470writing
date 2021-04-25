@@ -78,9 +78,15 @@ Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each v
 Approximate - don't have to go through points
 Inteporlate - have to go through points
 
+It is common to define a function from 3D space to a value so that the surface is found where the function output is zero, then an isosurface is generated.
+
+Braude et al. \cite{braude2007contour} employ Multi-level Partition of Unity (MPU) implicit models to generate isosurfaces from. MPU closely approximates Euclidean distance near points. This method requires surface normals. 
+
 Guennebaud et al. \cite{guennebaud2007algebraic} fit algebraic spheres to point sets to construct surfaces. Their method (APSS) performs better than prior methods on sharp features and sparse data.
 
 Oztireli et al. \cite{oztireli2009feature} combine Moving Least Squares (MLS) with local kernel regression to obtain Robust Implicit Moving Least Squares (RIMLS). This method reconstructs sharp (non-smooth) corners more accurately than APSS.
+
+Taubin et al. \cite{taubin2012smooth} demonstrate colour maps extrapolated from source points onto a reconstructed surface.
 
 \subsection{Estimating Normals}
 
@@ -88,6 +94,16 @@ Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plan
 
 \subsection{Contour Correspondence}
 contour correspondence...
+
+Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into four types.
+\begin{itemize}
+\item Manual methods use user input to connect contours. This is time consuming for large datasets.
+\item Local algorithms takes pairs of slices at a time and considers contour matchings between these.
+\item Global algorithms look for contour pairings across all sections.
+\item Growing algorithms create a hierarchy of components, attempting to join unmatched contours onto existing components if suitable.
+\end{itemize}
+
+Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. 
 
 \subsection{Point Correspondence}
 Point correspondence is an optional step in surface reconstructions, where points on matched contours are matched to each other as a precursor to triangulation.
