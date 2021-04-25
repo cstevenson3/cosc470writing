@@ -63,24 +63,29 @@ Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm
 
 \section{Volumetric Rendering}
 
+Each image in the image stack is treated as a slice with thickness. Thus the pixels in the image are voxels, and various volume rendering techniques can be used to directly render the data without an intermediate structural representation such as a mesh. Since every voxel may be involved in the final render, naive implementations can be expensive. Techniques to improve the render quality and performance have been investigated.
+
 \section{Rasterization}
+
+In rasterization, the forward direction of an object's effect on an image is considered. Each voxel may directly affect the final render, or first be projected onto a intermediate object which is then itself drawn.
 
 Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards.
 
-Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with mappings from their coordinates to the 3D space of the volume, to get texture values. 
+Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with texture mappings from their coordinates to the 3D space of the volume, to pull texture values from the voxels. The planes must not be parallel to the viewing direction.
 
 \subsection{Raycasting}
 
-Maximum intensity projection (MIP) is a raycasting method where rays project the most intense voxel they pass through \cite{birkfellner2016applied}. The images produced have high contrast detail and are easy to understand.
+In raycasting, we take each pixel of the render and work backwards to find which object's affect it. Each pixel emits a ray which intersects with many voxels. The weighting of voxels is dependent on the technique.
 
-Summed voxel rendering is another raycasting method where rays sum up intensities from every voxel they pass through, giving a blurred image \cite{birkfellner2016applied}.
+Maximum intensity projection (MIP) is a raycasting method where rays project the most intense voxel they pass through \cite{birkfellner2016applied}. The images produced have high contrast detail and are easy to understand. Summed voxel rendering is another raycasting method where rays sum up intensities from every voxel they pass through, giving a blurred image \cite{birkfellner2016applied}.
 
 Intersecting arbitrary rays with voxels can be computationally expensive. Shear-warp rendering solves this by using projections which make rays orthogonal to the voxel axes \cite{lacroute1994fast}. 
-
 
 Fishman et al. \cite{fishman2006volume} make comparisons between maximum intensity projection and other volume rendering. MIP tends to not contrast the background well with the structure of interest. Other volume rendering methods can weight voxels differently and give different tissue types different colours. 
 
 \section{Surface Reconstructions}
+
+In each image of the image stack, we can see where the boundaries of tissue are. We can therefore describe the geometry of a structure as it intersects the image plane. By combining all images in the stack, a surface reconstruction of the entire object can be found, provided the relationships between slices are inferred accurately.
 
 \subsection{Marching Cubes}
 
@@ -88,10 +93,7 @@ Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each v
 
 \subsection{Point Cloud Methods}
 
-Approximate - don't have to go through points
-Inteporlate - have to go through points
-
-It is common to define a function from 3D space to a value so that the surface is found where the function output is zero, then an isosurface is generated.
+One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Methods which approximate produce surfaces leaning more heavily on the assumptions made with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface is generated.
 
 Braude et al. \cite{braude2007contour} employ Multi-level Partition of Unity (MPU) implicit models to generate isosurfaces from. MPU closely approximates Euclidean distance near points. This method requires surface normals. 
 

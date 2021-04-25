@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  26 APR 2021 04:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  26 APR 2021 05:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -950,46 +950,46 @@ This may cause the page layout to be inconsistent, however.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 58.
 
-[2.2] [3.3]
+[2.2] [3.3] [4.4]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 113.
+(Font)              scaled to size 12.0pt on input line 115.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 113.
+(Font)              scaled to size 8.8pt on input line 115.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 113.
- [4.4]
-Underfull \vbox (badness 7326) has occurred while \output is active []
-
+(Font)              scaled to size 6.6pt on input line 115.
  [5.5]
+Underfull \vbox (badness 3118) has occurred while \output is active []
+
+ [6.6]
 (./survey.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 6.
- [6.6])
+ [7.7])
 
 Class acmart Warning: ACM keywords are mandatory for papers over two pages.
 
 
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
-[7.7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 170.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
+[8.8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 172.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 172.
  (./survey.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 172.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 172.
 Package rerunfilecheck Info: File `survey.out' has not changed.
 (rerunfilecheck)             Checksum: 95F6A956CFD321E4A9685668A3F558E1;4023.
  ) 
 Here is how much of TeX's memory you used:
- 18655 strings out of 480608
- 282108 string characters out of 5903630
- 561996 words of memory out of 5000000
+ 18659 strings out of 480608
+ 282183 string characters out of 5903630
+ 563996 words of memory out of 5000000
  33719 multiletter control sequences out of 15000+600000
- 682721 words of font info for 299 fonts, out of 8000000 for 9000
+ 682994 words of font info for 301 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,11n,100p,797b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,100p,987b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{
@@ -1005,10 +1005,10 @@ neT.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLib
 ertineTB.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/L
 inLibertineTI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/
 txsys.pfb>
-Output written on survey.pdf (7 pages, 379833 bytes).
+Output written on survey.pdf (8 pages, 382160 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
  46301 words of extra memory for PDF output out of 51595 (max. 10000000)
 
