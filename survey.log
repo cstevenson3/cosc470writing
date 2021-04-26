@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  27 APR 2021 03:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  27 APR 2021 04:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,48 +951,73 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 50.
 
 [2.2] [3.3] [4.4]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 98.
+
+
+Package natbib Warning: Citation `newman2006survey' on page 5 undefined on inpu
+t line 98.
+
+
+Package natbib Warning: Citation `nielson2003marching' on page 5 undefined on i
+nput line 98.
+
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 106.
+[5.5]
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 126.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.8pt on input line 126.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.6pt on input line 126.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5.5]
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 124.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 124.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 124.
+ [6.6]
+Underfull \vbox (badness 2591) has occurred while \output is active []
 
-[6.6] [7.7] (./survey.bbl
+ [7.7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8.8]
+(./survey.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 6.
- [8.8])
+ [9.9])
+
+Package natbib Warning: There were undefined citations.
+
 
 Class acmart Warning: ACM keywords are mandatory for papers over two pages.
 
 
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
-[9.9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
- (./survey.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
+[10.10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
+ (./survey.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
 Package rerunfilecheck Info: File `survey.out' has not changed.
 (rerunfilecheck)             Checksum: 5FF974CB31FE6E6855EAE56FBD272FF3;3873.
  ) 
 Here is how much of TeX's memory you used:
- 18720 strings out of 480608
- 283643 string characters out of 5903630
- 564049 words of memory out of 5000000
- 33730 multiletter control sequences out of 15000+600000
- 692689 words of font info for 330 fonts, out of 8000000 for 9000
+ 18748 strings out of 480608
+ 284357 string characters out of 5903630
+ 564052 words of memory out of 5000000
+ 33738 multiletter control sequences out of 15000+600000
+ 699467 words of font info for 342 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,12n,100p,987b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,100p,987b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{
@@ -1009,10 +1034,10 @@ ertineT.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/Li
 nLibertineTB.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/liberti
 ne/LinLibertineTI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ne
 wtx/txsys.pfb>
-Output written on survey.pdf (9 pages, 422448 bytes).
+Output written on survey.pdf (10 pages, 424172 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 50389 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 50901 words of extra memory for PDF output out of 51595 (max. 10000000)
 

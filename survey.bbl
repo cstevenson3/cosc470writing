@@ -76,6 +76,17 @@
 \newblock In {\em 2016 IEEE International Symposium on Multimedia (ISM)\/}
   (2016), IEEE, pp.~247--252.
 
+\bibitem{newman2006survey}
+{\sc Newman, T.~S., and Yi, H.}
+\newblock A survey of the marching cubes algorithm.
+\newblock {\em Computers \& Graphics 30}, 5 (2006), 854--879.
+
+\bibitem{nielson2003marching}
+{\sc Nielson, G.~M.}
+\newblock On marching cubes.
+\newblock {\em IEEE Transactions on visualization and computer graphics 9}, 3
+  (2003), 283--297.
+
 \bibitem{ohiotexture}
 Texture-based volume rendering.
 \newblock Accessed from
