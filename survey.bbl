@@ -16,6 +16,10 @@
 \newblock Contour-based surface reconstruction using mpu implicit models.
 \newblock {\em Graphical models 69}, 2 (2007), 139--157.
 
+\bibitem{carr1996surface}
+{\sc Carr, J.}
+\newblock Surface reconstruction in 3d medical imaging.
+
 \bibitem{fishman2006volume}
 {\sc Fishman, E.~K., Ney, D.~R., Heath, D.~G., Corl, F.~M., Horton, K.~M., and
   Johnson, P.~T.}
