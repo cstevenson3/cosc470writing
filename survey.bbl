@@ -124,6 +124,13 @@ Texture-based volume rendering.
 \newblock {\em Computerized Medical Imaging and Graphics 32}, 6 (2008),
   452--462.
 
+\bibitem{saxena2013image}
+{\sc Saxena, S., Sharma, N., and Sharma, S.}
+\newblock Image processing tasks using parallel computing in multi core
+  architecture and its applications in medical imaging.
+\newblock {\em International Journal of Advanced Research in Computer and
+  Communication Engineering 2}, 4 (2013), 1896--1900.
+
 \bibitem{taubin2012smooth}
 {\sc Taubin, G.}
 \newblock Smooth signed distance surface reconstruction and applications.

@@ -7,45 +7,45 @@ Warning--empty journal in carr1996surface
 Warning--empty publisher in guennebaud2007algebraic
 Warning--empty journal in mackay2019robust
 Warning--can't use both volume and number fields in oztireli2009feature
-You've used 23 entries,
+You've used 24 entries,
             2253 wiz_defined-function locations,
-            675 strings with 8201 characters,
-and the built_in function-call counts, 8346 in all, are:
-= -- 829
-> -- 350
+            681 strings with 8479 characters,
+and the built_in function-call counts, 8719 in all, are:
+= -- 867
+> -- 367
 < -- 0
-+ -- 147
-- -- 122
-* -- 645
-:= -- 1291
-add.period$ -- 67
-call.type$ -- 23
-change.case$ -- 130
++ -- 154
+- -- 128
+* -- 680
+:= -- 1351
+add.period$ -- 70
+call.type$ -- 24
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 318
-empty$ -- 690
-format.name$ -- 122
-if$ -- 1771
+cite$ -- 28
+duplicate$ -- 327
+empty$ -- 719
+format.name$ -- 128
+if$ -- 1846
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 23
-newline$ -- 115
-num.names$ -- 44
-pop$ -- 144
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 120
+num.names$ -- 46
+pop$ -- 148
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 113
 quote$ -- 0
-skip$ -- 218
+skip$ -- 223
 stack$ -- 0
-substring$ -- 600
-swap$ -- 100
+substring$ -- 636
+swap$ -- 102
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
+type$ -- 94
 warning$ -- 4
-while$ -- 89
-width$ -- 25
-write$ -- 230
+while$ -- 93
+width$ -- 26
+write$ -- 240
 (There were 4 warnings)
