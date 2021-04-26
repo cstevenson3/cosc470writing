@@ -147,14 +147,14 @@ Mackay \cite{mackay2019robust} begins with two ordered sets of points X and Y, f
 \item $x_{m}$ has an edge with $y_{n}$ and $x_{m+1}$ has an edge with $y_{n+1}$. These points are direct neighbours on their respective contours, and form a quad which is trivial to triangulate.
 \item $x_{m}$ has edges with a sequence of points $\{y_{n}, y_{n+1}, ..., y_{n+i}\}$. $x_{m}$ has a one-to-many point correspondence with these points. This can be triangulated with a triangle fan centering about $x_{m}$.
 \item Each point in the sequence $\{x_{m}, x_{m+1}, ..., x_{m+i}\}$ has edges with a point $y_{n}$. This is the opposite of the previous case and can likewise be triangulated with a triangle fan centering about $y_{n}$.
-
 \end{itemize}
+Li et al. \cite{li2021method} observe that when m and n differ greatly, one-to-many point correspondences are common, and the triangulation becomes rough.
 
 \subsection{The Branching Problem}
 
 A simple structure is easy to infer. We see one contour on each slice the structure is present in, and in adjacent structures the contours are similarly positioned and shaped. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
 
-Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal.
+Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
 
 \subsection{Mesh Rendering}
 
