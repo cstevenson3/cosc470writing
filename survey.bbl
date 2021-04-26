@@ -113,4 +113,10 @@ Texture-based volume rendering.
 \newblock In {\em Iberoamerican Congress on Pattern Recognition\/} (2012),
   Springer, pp.~38--45.
 
+\bibitem{zwicker2002ewa}
+{\sc Zwicker, M., Pfister, H., Van~Baar, J., and Gross, M.}
+\newblock Ewa splatting.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphics 8}, 3
+  (2002), 223--238.
+
 \end{thebibliography}

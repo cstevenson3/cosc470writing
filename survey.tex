@@ -73,7 +73,7 @@ Each image in the image stack is treated as a slice with thickness. Thus the pix
 
 In rasterization, the forward direction of an object's effect on an image is considered. Each voxel may directly affect the final render, or first be projected onto a intermediate object which is then itself drawn.
 
-Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards.
+Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splay.
 
 Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with texture mappings from their coordinates to the 3D space of the volume, to pull texture values from the voxels. The planes must not be parallel to the viewing direction.
 
