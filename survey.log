@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  27 APR 2021 01:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  27 APR 2021 02:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,34 +947,29 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [1.1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 52.
- [2.2]
-[3.3]
+
+[2.2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4.4]
+ [3.3]
+[4.4] [5.5]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 120.
+(Font)              scaled to size 12.0pt on input line 122.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 120.
+(Font)              scaled to size 8.8pt on input line 122.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 120.
-
-[5.5]
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
+(Font)              scaled to size 6.6pt on input line 122.
  [6.6]
-[7.7] (./survey.bbl
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [7.7]
+(./survey.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 6.
-
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
  [8.8])
 
 Class acmart Warning: ACM keywords are mandatory for papers over two pages.
@@ -983,22 +978,22 @@ Class acmart Warning: ACM keywords are mandatory for papers over two pages.
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 [9.9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (./survey.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
 Package rerunfilecheck Info: File `survey.out' has not changed.
 (rerunfilecheck)             Checksum: 95F6A956CFD321E4A9685668A3F558E1;4023.
  ) 
 Here is how much of TeX's memory you used:
- 18679 strings out of 480608
- 282656 string characters out of 5903630
- 562996 words of memory out of 5000000
- 33719 multiletter control sequences out of 15000+600000
+ 18683 strings out of 480608
+ 282725 string characters out of 5903630
+ 563012 words of memory out of 5000000
+ 33722 multiletter control sequences out of 15000+600000
  684747 words of font info for 314 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,12n,100p,987b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,100p,987b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{
@@ -1014,10 +1009,10 @@ neT.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/LinLib
 ertineTB.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/libertine/L
 inLibertineTI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/
 txsys.pfb>
-Output written on survey.pdf (9 pages, 386559 bytes).
+Output written on survey.pdf (9 pages, 387175 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 239 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 242 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  46301 words of extra memory for PDF output out of 51595 (max. 10000000)
 
