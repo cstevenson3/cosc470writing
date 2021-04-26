@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{alsmirat2017accelerating}
+{\sc Alsmirat, M.~A., Jararweh, Y., Al-Ayyoub, M., Shehab, M.~A., and Gupta,
+  B.~B.}
+\newblock Accelerating compute intensive medical imaging segmentation
+  algorithms using hybrid cpu-gpu implementations.
+\newblock {\em Multimedia Tools and Applications 76}, 3 (2017), 3537--3555.
+
 \bibitem{barrett1994image}
 {\sc Barrett, W., Mortensen, E., and Taylor, D.}
 \newblock An image space algorithm for morphological contour interpolation.

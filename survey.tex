@@ -184,12 +184,13 @@ Pluta et al. \cite{pluta2012new} propose a rule-based method of generating lung 
 
 Mackay \cite{mackay2019robust} uses Hausdorff distance (essentially a maximum deviation between point sets) to measure mesh similarity. Points are sampled from a ground truth model and the nearest distance is found to the reconstructed model.
 
-\section{Parallelization}
+\section{Performance}
 
-Recent papers in medical imaging reconstructions tend to have an emphasis on improving performance through parallel processing. This is intended to take advantage of modern machines with more focus on core count rather than per core performance.
+Recent papers in medical imaging reconstructions tend to have an emphasis on taking advantage of modern hardware. This can be achieved through parallelization or GPU implementations.
 
 Saxena et al. \cite{saxena2013image} describe parallel techniques for various image processing tasks such as segmentation and noise reduction. The main idea is to tile an image and let different processors work on different tiles, then deal with the borders when recombining the tiles. They found their parallel implementation to be 2.5 times faster than a sequential implementation.
 
+Alsmirat et al. \cite{alsmirat2017accelerating} investigate pure GPU and hybrid CPU-GPU implementations of segmentation of medical images. They found that both outperform a CPU only implementation, and the hybrid method performs the best.
 
 \section{Conclusion}
 
