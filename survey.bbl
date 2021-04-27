@@ -145,6 +145,12 @@ Texture-based volume rendering.
 \newblock {\em International Journal of Advanced Research in Computer and
   Communication Engineering 2}, 4 (2013), 1896--1900.
 
+\bibitem{shum19963d}
+{\sc Shum, H.-Y., Hebert, M., and Ikeuchi, K.}
+\newblock On 3d shape similarity.
+\newblock In {\em Proceedings CVPR IEEE Computer Society Conference on Computer
+  Vision and Pattern Recognition\/} (1996), IEEE, pp.~526--531.
+
 \bibitem{taubin2012smooth}
 {\sc Taubin, G.}
 \newblock Smooth signed distance surface reconstruction and applications.

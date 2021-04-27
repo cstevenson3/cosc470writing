@@ -190,6 +190,10 @@ Pluta et al. \cite{pluta2012new} propose a rule-based method of generating lung 
 
 Mackay \cite{mackay2019robust} uses Hausdorff distance (essentially a maximum deviation between point sets) to measure mesh similarity. Points are sampled from a ground truth model and the nearest distance is found to the reconstructed model.
 
+Meshes can be sliced at the same heights and compared slicewise to reduce similarity to a 2D problem.
+
+Shum et al. \cite{shum19963d} compare simple 3D objects by comparing the curvature of points based on spherical coordinates. This could be applied locally on more complex medical reconstructions.
+
 \section{Performance}
 
 Recent papers in medical imaging reconstructions tend to have an emphasis on taking advantage of modern hardware. This can be achieved through parallelization or GPU implementations.
@@ -206,7 +210,7 @@ Further research could include:
 \begin{itemize}
 \item Growth contour correspondence algorithms which begin with a local algorithm pass to make the most obvious connections, followed by component connection.
 \item Considering three slices at a time when making contour correspondences.
-\item Adding in contour interpolation before DTW point correspondence to reduce the differences between the contours it considers.
+\item Adding in contour interpolation before DTW point correspondence to reduce the differences between the contours it considers. Chai et al. \cite{chai1998contour} may be useful here.
 \item Evaluating some optional constraints on DTW to fix artefacts.
 \item Triangulating branching cases as though it was multiple one-to-one contour pairings, then merging the local meshes.
 \item Handling branching cases of more than one to two.
