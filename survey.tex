@@ -67,6 +67,8 @@ Between two slices filled with contours, new slices can be added with contours i
 
 Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
 
+Chai et al. \cite{chai1998contour} use partial differential equations to interpolate between contours on a terrain map. Their method produces smooth interpolations, and can handle complex shapes such as 2 and 3 branches.
+
 \section{Volumetric Rendering}
 
 Each image in the image stack is treated as a slice with thickness. Thus the pixels in the image are voxels, and various volume rendering techniques can be used to directly render the data without an intermediate structural representation such as a mesh. Since every voxel may be involved in the final render, naive implementations can be expensive. Techniques to improve the render quality and performance have been investigated.

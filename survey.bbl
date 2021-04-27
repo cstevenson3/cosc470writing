@@ -27,6 +27,13 @@
 {\sc Carr, J.}
 \newblock Surface reconstruction in 3d medical imaging.
 
+\bibitem{chai1998contour}
+{\sc Chai, J., Miyoshi, T., and Nakamae, E.}
+\newblock Contour interpolation and surface reconstruction of smooth terrain
+  models.
+\newblock In {\em Proceedings Visualization'98 (Cat. No. 98CB36276)\/} (1998),
+  IEEE, pp.~27--33.
+
 \bibitem{fishman2006volume}
 {\sc Fishman, E.~K., Ney, D.~R., Heath, D.~G., Corl, F.~M., Horton, K.~M., and
   Johnson, P.~T.}
