@@ -133,6 +133,8 @@ Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into
 \item Growing algorithms create a hierarchy of components, attempting to join unmatched contours onto existing components if suitable.
 \end{itemize}
 
+Contour centroid position comparison is common in local algorithms.
+
 Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep is the contour nested in larger contours).
 
 Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
