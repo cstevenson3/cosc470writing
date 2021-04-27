@@ -25,7 +25,7 @@ Medical imaging modalities such as HRCT and MRI produce image stacks depicting r
 
 Images from scans (also referred to as sections or slices) can be segmented based on intensity into pixel regions to define structure boundaries. These can be processed further by finding contours to represent these boundaries.
 
-Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. All applications tend to use either volumetric rendering or surface rendering.
+Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. Most applications tend to use either volumetric rendering or surface rendering.
 
 Volumetric rendering treats pixels in images as voxels, and a variety of rasterization and raycasting techniques are available for rendering these.
 
@@ -33,11 +33,11 @@ Surface rendering requires a surface be defined, either implicitly or as a mesh.
 
 \section{Applications}
 
-Xuyi et al. \cite{xuyi2016application} use hip 3D reconstructions from CT scans to make patient-specific surgery plans. From the model they measure the direction and degree of the acetabular fragment, and use this to guide their surgery.
+Xuyi et al. \cite{xuyi2016application} use 3D reconstructions from hip CT scans to make patient-specific surgery plans. From the model they measure the direction and degree of the acetabular fragment, and use this to guide their surgery.
 
 Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. With real time rendering being a priority, surface reconstructions are preferred over volume rendering. Of the four methods analysed, marching cubes was found to be the most suitable due to its speed and render quality.
 
-Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models resulted in a statistically significant improvement in test scores of medical students.
+Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models in education resulted in a statistically significant improvement in test scores of medical students.
 
 \section{Image Processing}
 
@@ -67,7 +67,7 @@ Between two slices filled with contours, new slices can be added with contours i
 
 Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
 
-Chai et al. \cite{chai1998contour} use partial differential equations to interpolate between contours on a terrain map. Their method produces smooth interpolations, and can handle complex shapes such as 2 and 3 branches.
+Chai et al. \cite{chai1998contour} use partial differential equations to interpolate between contours on a terrain map. Their method produces smooth interpolations, and can handle complex shapes such as two or three branches.
 
 \section{Volumetric Rendering}
 
@@ -77,7 +77,7 @@ Each image in the image stack is treated as a slice with thickness. Thus the pix
 
 In rasterization, the forward direction of an object's effect on an image is considered. Each voxel may directly affect the final render, or first be projected onto a intermediate object which is then itself drawn.
 
-Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splay.
+Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splat.
 
 Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with texture mappings from their coordinates to the 3D space of the volume, to pull texture values from the voxels. The planes must not be parallel to the viewing direction.
 
@@ -93,17 +93,17 @@ Intersecting arbitrary rays with voxels can be computationally expensive. Shear-
 
 \section{Surface Reconstructions}
 
-In each image of the image stack, we can see where the boundaries of tissue are. We can therefore describe the geometry of a structure as it intersects the image plane. By combining all images in the stack, a surface reconstruction of the entire object can be found, provided the relationships between slices are inferred accurately.
+In each image of the image stack, we can see where the boundaries of tissue are. We can therefore describe the geometry of a structure as it intersects the image plane. By combining all images in the stack, a surface reconstruction of the entire object can be found, provided the relationships between slices are inferred accurately. Surfaces have the advantage of having commonplace rendering techniques, and support on 3D printers.
 
 \subsection{Marching Cubes}
 
-Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels ("inside" voxels bordering "outside" voxels) are found. Each voxel is assigned a set of triangles based on which of their neighbours are inside or outside the structure, using a lookup table. The triangles are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged and smoothing is usually applied either to the mesh or during rendering for a more visually appealing output.
+Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels ("inside" voxels bordering "outside" voxels, on some isosurface) are found. Each voxel has its corners defined as inside or outside based on its neighbours, and is then assigned a set of triangles based on those corners, using a lookup table. The triangles are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged, and smoothing is usually applied either to the mesh or during rendering for a more visually accurate output.
 
-Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of marching cubes. One problem marching cubes has is ambiguity which induces defects. The survey recommends avoiding lookup tables with reflective symmetry, where "outside" and "inside" corners of a voxel are swapped, giving the same triangle set but with opposite normals. Instead only rotational symmetry (rotating corners around the voxel) is allowed. Such a lookup table was identified by Nielson et al. \cite{nielson2003marching}.
+Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of marching cubes. One problem marching cubes has is ambiguity which induces defects. The survey recommends avoiding lookup tables with reflective symmetry, where "outside" and "inside" corners of a voxel are swapped to give the same triangle set but with opposite normals. Instead only rotational symmetry (rotating corners around the voxel) is allowed. Such a lookup table was identified by Nielson et al. \cite{nielson2003marching}.
 
 \subsection{Point Cloud Methods}
 
-One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Methods which approximate produce surfaces leaning more heavily on the assumptions made with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface is generated.
+One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Approximating methods produce surfaces which lean more heavily on the assumptions made, with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface at zero is generated.
 
 \subsubsection{Models}
 
@@ -124,9 +124,9 @@ Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plan
 \subsection{Contour Correspondence}
 
 Rather than lose the relationship between points, the original contours can be used in creating a surface reconstruction. Working out which contours on which slices represent a connected tissue in the original structure is called contour correspondence, and the resulting correspondences are used in later steps of reconstruction.
-
-Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into four types.
-\begin{itemize}
+\newline
+\linebreak
+Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into four types. \begin{itemize}
 \item Manual methods use user input to connect contours. This is time consuming for large datasets.
 \item Local algorithms takes pairs of slices at a time and considers contour matchings between these.
 \item Global algorithms look for contour pairings across all sections.
@@ -139,12 +139,14 @@ Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at 
 
 Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
 
-Mukundan \cite{mukundan2016reconstruction} begins point correspondence without an explicit contour correspondence already found. If two point correspondences are found belonging to the same pair of contours, the search for further point correspondences is narrowed to these two contours. This effectively gives a temporary contour correspondence.
+Mukundan \cite{mukundan2016reconstruction} begins point correspondence without an explicit contour correspondence already found. If two point correspondences are found as neighbours belonging to the same pair of contours, the search for further point correspondences is narrowed to these two contours. This effectively gives a temporary contour correspondence.
 
 \subsection{Point Correspondence}
 Point correspondence is an optional step in surface reconstructions, where points on matched contours are matched to each other as a precursor to triangulation.
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement.
+Mukundan \cite{mukundan2016reconstruction} uses distance in the XZ plane as a metric for matching points. Other optional constraints include matching the next point close to the previous point.
+
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement.
 
 \subsection{Mesh Triangulation}
 
@@ -160,7 +162,9 @@ Li et al. \cite{li2021method} observe that when m and n differ greatly, one-to-m
 
 \subsection{The Branching Problem}
 
-A simple structure is easy to infer. We see one contour on each slice the structure is present in, and in adjacent structures the contours are similarly positioned and shaped. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
+A simple structure is easy to infer from its images. On each slice the structure is present in, we see one contour, and these contours are similarly positioned and shaped in adjacent slices. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
+
+Mackay \cite{mackay2019robust} looks for lung branches as one contour approximately splitting in half into two contours, for contour correspondence.
 
 Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
 
@@ -184,9 +188,9 @@ It is difficult to obtain real models of internal structures. Techniques to gene
 
 Mackay \cite{mackay2019robust} uses Blender3D to create test models, by creating surface of revolutions about bezier curves. Multiple surfaces are merged for more complex structures such as branches. The main intent here was to create simple models of problem structures. Contours can be sampled from these models by plane intersections.
 
-Mackay \cite{mackay2019robust} also proposes an alternative method of generating test data, where an image of a branching structure is drawn in black. An inter-slice distance is defined to separate rows. Each row is scanned for black pixels. When a black pixel is encountered, a contour is generated by revolving points about this pixel location. Noise can be added in. Where contours intersect, they are merged. This allows for branching structures to be generated by this method.
+Mackay \cite{mackay2019robust} also proposes an alternative method of generating test data, where a side view of a branching structure is drawn in black. An inter-slice distance is defined to separate rows. Each row is scanned for black pixels. When a black pixel is encountered, a contour is generated by revolving points about this pixel location. Noise can be added in. Where contours intersect, they are merged. This allows for branching structures to be generated by this method.
 
-Pluta et al. \cite{pluta2012new} propose a rule-based method of generating lung models, including deformations and noise.
+Pluta et al. \cite{pluta2012new} propose a rule-based method of generating lung models, including deformations and noise. Their rules are based on airflow and measured constants, and the distribution of final bronchioles in a lung. Their results are suitably accurate for testing all parts of lung reconstruction methods.
 
 \subsection{Measuring Similarity in 3D Models}
 
