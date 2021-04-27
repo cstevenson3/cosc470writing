@@ -1,4 +1,4 @@
-\documentclass[acmsmall, 12pt]{acmart}
+\documentclass[acmsmall, 11pt]{acmart}
 
 \begin{document}
 
@@ -12,7 +12,7 @@
  \country{New Zealand}}
  
 \begin{abstract}
-To understand the approaches and progress of creating reconstructions/renders from medical imaging, I surveyed papers involving applications, image processing, reconstructions, rendering, and testing. It was found that many approaches and specific techniques are available, and tweaking, modifying, or combining these existing methods could be a starting step for research into reconstructions/renders of particular body structures.
+To understand the approaches and progress of creating reconstructions/renders from medical imaging, I surveyed papers involving applications, image processing, reconstructions, rendering, testing, and performance. It was found that many approaches and specific techniques are available, and tweaking, modifying, or combining these existing methods could be a starting step for research into reconstructions/renders of particular body structures.
 \end{abstract}
 
 \maketitle
@@ -33,7 +33,9 @@ Surface rendering requires a surface be defined, either implicitly or as a mesh.
 
 \section{Applications}
 
-Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. With real time rendering being a priority, surface reconstructions are preferred over volume rendering. Of the four methods analysed, marching cubes was found to be the most suitable.
+Xuyi et al. \cite{xuyi2016application} use hip 3D reconstructions from CT scans to make patient-specific surgery plans. From the model they measure the direction and degree of the acetabular fragment, and use this to guide their surgery.
+
+Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. With real time rendering being a priority, surface reconstructions are preferred over volume rendering. Of the four methods analysed, marching cubes was found to be the most suitable due to its speed and render quality.
 
 Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models resulted in a statistically significant improvement in test scores of medical students.
 
@@ -133,10 +135,12 @@ Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at 
 
 Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
 
+Mukundan \cite{mukundan2016reconstruction} begins point correspondence without an explicit contour correspondence already found. If two point correspondences are found belonging to the same pair of contours, the search for further point correspondences is narrowed to these two contours. This effectively gives a temporary contour correspondence.
+
 \subsection{Point Correspondence}
 Point correspondence is an optional step in surface reconstructions, where points on matched contours are matched to each other as a precursor to triangulation.
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. 
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement.
 
 \subsection{Mesh Triangulation}
 
@@ -192,9 +196,19 @@ Saxena et al. \cite{saxena2013image} describe parallel techniques for various im
 
 Alsmirat et al. \cite{alsmirat2017accelerating} investigate pure GPU and hybrid CPU-GPU implementations of segmentation of medical images. They found that both outperform a CPU only implementation, and the hybrid method performs the best.
 
-\section{Conclusion}
+\section{Conclusion and Future Research}
 
 A variety of general approaches to reconstructing and rendering internal body structures are available, with many specific techniques investigated within each of them. Continued research and ironing out the flaws in these approaches will encourage their adoption in applications, enabling users to make more informed decisions in the field.
+
+Further research could include:
+\begin{itemize}
+\item Growth contour correspondence algorithms which begin with a local algorithm pass to make the most obvious connections, followed by component connection.
+\item Considering three slices at a time when making contour correspondences.
+\item Adding in contour interpolation before DTW point correspondence to reduce the differences between the contours it considers.
+\item Evaluating some optional constraints on DTW to fix artefacts.
+\item Triangulating branching cases as though it was multiple one-to-one contour pairings, then merging the local meshes.
+\item Handling branching cases of more than one to two.
+\end{itemize} 
 
 \bibliographystyle{acm}
 \bibliography{references}
