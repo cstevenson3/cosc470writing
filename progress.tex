@@ -117,6 +117,39 @@ Mackay provides the synthetic models used for testing his method, with contours 
         \label{fig:plane10}
 \end{figure}
 
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.215\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{dtw50}
+         \caption{DTW \linebreak}
+         \label{fig:dtw50}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa50ang00}
+         \caption{Point angle, 0\% angle weight}
+         \label{fig:pa50ang00}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.205\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa50ang50}
+         \caption{Point angle, 50\% angle weight}
+         \label{fig:pa50ang50}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa50ang90}
+         \caption{Point angle, 90\% angle weight}
+         \label{fig:pa50ang90}
+     \end{subfigure}
+        \caption{Reconstructions with 50 plane samples}
+        \label{fig:plane50}
+\end{figure}
+
 Observations:
 \begin{itemize}
 \item At lower plane sampling rates, my point angle method gives better results than DTW in the simpler tube sections and in the branching sections. The lower tube now originates from a region rather than a single point, and the middle branch now has no twisting. However the middle branch left side still originates from a point, so point angle has not improved on DTW in this regard.
