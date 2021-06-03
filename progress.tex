@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, portrait, margin=0.9in]{geometry}
+\usepackage{hyperref}
 \setlength{\parskip}{1em}
 
 \title{Progress Report: Handling Structural Inconsistencies in CT Image Reconstructions}
@@ -20,6 +21,8 @@ Branching structures can be problematic to reconstruct and are a common issue in
 
 \section{Background}
 
+Most of my effort so far has gone towards the literature survey for this topic, and so I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If further details are necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
+
 \subsection{Generic Methods}
 
 The simplest form of rendering in medical imaging is direct volume rendering. The pixels in the image stacks are treated as voxels, forming a 3D grid of intensity data. Rasterisation or raycasting methods can be applied to these voxels to give a render. These renders are easy to understand and detailed, however they are computationally expensive.
@@ -28,10 +31,24 @@ Mesh rendering is preferred for real-time applications, but this requires a mesh
 
 Point cloud methods for mesh reconstruction are adopted from applications like laser scanning, where a lot of points are dumped in as input and the algorithm has to infer which are connected. The contour points from segmentation can be used as input in a point cloud method to produce a reconstruction. Point cloud methods typically interpolate from points and don't use them directly in the output mesh.
 
-Marching cubes is another method for mesh reconstruction. Boundary voxels are found, and their neighbouring voxels are considered in a lookup table to decide what local triangulation should be made for that voxel. All the triangles are then connected for the whole mesh.
+Marching cubes is another method for mesh reconstruction. Boundary voxels are found, and their neighbouring voxels are considered in a lookup table to decide what local triangulation should be made for that voxel. All the triangles are then connected for the whole mesh. Marching cubes produces jagged results and ambiguity can lead to defects.
 
-\subsection{Correspondence Reconstructions}
+\subsection{Correspondence Methods}
 
+A more direct approach to mesh reconstruction is to decide which contours should be connected, then triangulate between them, with an optional point correspondence step in the middle. Such an approach produces output meshes which contain the original points. The result is a method which gives computationally faster renders than direct volume rendering, potentially more accurate meshes than point cloud methods, and a smoother mesh than marching cubes. Mackay \cite{mackay2019robust} presents one such paper to use this approach, and my project focusses on extending his method.
+
+\subsubsection{Contour Correspondence}
+
+Contour correspondence takes as input all the contours in a segmentation of an image stack, and produces as output matchings of contours which should be connected. In a simple case a matching would be one contour in one slice and a similarly positioned contour in an adjacent slice. In more complicated cases such as branching there may be one-to-two matchings. Metrics for matching include centroid position closeness, size and shape similarity etc.
+
+Correspondence algorithms can operate on different levels:
+\begin{itemize}
+\item local: looking only at adjacent slices each iteration
+\item global: looking for the best matching across all slices each iteration
+\item growing: keeping a hierarchy of connected components, and adding unmatched contours onto these components each iteration
+\end{itemize}
+
+\subsubsection{Point Correspondence and Triangulation}
 
 
 
