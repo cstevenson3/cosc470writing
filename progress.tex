@@ -1,7 +1,15 @@
 \documentclass[11pt]{article}
+
 \usepackage[a4paper, portrait, margin=0.9in]{geometry}
-\usepackage{hyperref}
 \setlength{\parskip}{1em}
+
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{justification=centering}
 
 \title{Progress Report: Handling Structural Inconsistencies in CT Image Reconstructions}
 \author{Cameron Stevenson\\[0.5cm]{\small Supervisor: Ramakrishnan Mukundan}}
@@ -76,6 +84,39 @@ For the above two reasons my first trialled idea was to calculate the centroids 
 
 Mackay provides the synthetic models used for testing his method, with contours sampled on planes cut through the model. I used the "multi-branch" model sampled with 10 and 50 planes, focussing on the middle branch and the lower branch. I ran the reconstruction with DTW and with my point angle method at various weightings for the angle of points vs. the progression of points. Although quantitative accuracy testing is possible (and will be done in future), with the limited time I had I elected to begin with a visual comparison to screen my method for viability. 
 
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.22\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{dtw10}
+         \caption{DTW \linebreak}
+         \label{fig:dtw10}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa10ang00}
+         \caption{Point angle, 0\% angle weight}
+         \label{fig:pa10ang00}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.195\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa10ang50}
+         \caption{Point angle, 50\% angle weight}
+         \label{fig:pa10ang50}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{pa10ang100}
+         \caption{Point angle, 100\% angle weight}
+         \label{fig:pa10ang100}
+     \end{subfigure}
+        \caption{Reconstructions with 10 plane samples}
+        \label{fig:plane10}
+\end{figure}
+
 Observations:
 \begin{itemize}
 \item At lower plane sampling rates, my point angle method gives better results than DTW in the simpler tube sections and in the branching sections. The lower tube now originates from a region rather than a single point, and the middle branch now has no twisting. However the middle branch left side still originates from a point, so point angle has not improved on DTW in this regard.
@@ -93,9 +134,17 @@ Thoughts:
 
 \subsection{Schedule}
 
-I have a 3 week mid year break in which to trial further improvements, and this momentum should continue into term 3. As I go along I will familiarise myself with the quantitative testing used by Mackay. My aim is to have found a significant improvement by mid August, giving me something valid to present at the CSSE Postgraduate Conference in early September. After the conference I will have 7 weeks to test my proposed solution, tune it if needed, and write up my final report. With the literature survey already complete, and Mackay's mesh testing methods to refer to when needed, there should be no major setbacks. Overall I am confident I am on schedule to find an improvement and meet the Honours course deadlines.
+I have a 3 week mid year break in which to trial further improvements, and this momentum should continue into term 3. As I go along I will familiarise myself with the quantitative testing used by Mackay. My aim is to have found a significant improvement by mid August, giving me something valid to present at the CSSE Postgraduate Conference in early September. After the conference I will have 7 weeks to test my proposed solution against Mackay's and write up my final report. With the literature survey already complete, and Mackay's mesh testing methods to refer to when needed, there should be no major setbacks in producing this report. Overall I am confident I am on schedule to find an improvement and meet the Honours course deadlines.
 
 \subsection{Potential Improvements}
+
+\subsubsection{Contour Correspondence}
+
+\subsubsection{Point Correspondence}
+
+Before the point angle method I translate contours so their centroids align. I want to try also rotating contours so that their major axes align. I will do this because I noticed that branch reconstructions under DTW tend to be lower quality when the branch is oriented in the z-direction. Aligning contours by rotation will help with selecting good starting points, and ensure that real twisting of structures is inferred in the reconstructions.
+
+Mackay merged contours in branching cases on the two-contour side. I want to try splitting the contour on the one-contour side instead. I believe this will make for cleaner branch triangulations.
 
 \pagebreak
 \bibliographystyle{IEEEtran}
