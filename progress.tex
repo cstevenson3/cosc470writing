@@ -79,18 +79,23 @@ Mackay provides the synthetic models used for testing his method, with contours 
 Observations:
 \begin{itemize}
 \item At lower plane sampling rates, my point angle method gives better results than DTW in the simpler tube sections and in the branching sections. The lower tube now originates from a region rather than a single point, and the middle branch now has no twisting. However the middle branch left side still originates from a point, so point angle has not improved on DTW in this regard.
-\item Angle weighting has a surprisingly low impact on correspondence in branching structures. Higher angle weightings produce smoother triangulations in the simpler tube sections, most noticeable in the low plane sampling rate. At higher plane sampling rates DTW has this "wavy" effect as twisting direction jumps back and forth, presumably because of the choices of starting points in contour pairs. In point angle there is no noticeable twisting, which is an improvement on DTW.
+\item Angle weighting has a low impact on correspondence in branching structures. Higher angle weightings produce smoother triangulations in the simpler tube sections, most noticeable in the low plane sampling rate. At higher plane sampling rates DTW has this "wavy" effect as twisting direction jumps back and forth, presumably because of the choices of starting points in contour pairs. In point angle there is no noticeable twisting, which is an improvement on DTW.
 \item At higher plane sample rates, DTW has a cleaner overall structure. Point angle has some extraneous triangulation near bends.
 \end{itemize}
 
 Thoughts:
 \begin{itemize}
 \item DTW and point angle each have strengths and weaknesses depending on plane sampling rate, and what type of contour correspondence is being acted on. The program is aware of these factors, and so could switch between the two methods for each contour match depending on the circumstance. For example at high plane sampling rates DTW could be used to get cleaner branches, whilst point angle is used for the simpler tube sections to give smoother results.
+\item Point angle method is limited by the fact that merged contours in branching structures do not have one point per angle.
 \end{itemize}
 
 \section{Future}
 
-Future...
+\subsection{Schedule}
+
+I have a 3 week mid year break in which to trial further improvements, and this momentum should continue into term 3. As I go along I will familiarise myself with the quantitative testing used by Mackay. My aim is to have found a significant improvement by mid August, giving me something valid to present at the CSSE Postgraduate Conference in early September. After the conference I will have 7 weeks to test my proposed solution, tune it if needed, and write up my final report. With the literature survey already complete, and Mackay's mesh testing methods to refer to when needed, there should be no major setbacks. Overall I am confident I am on schedule to find an improvement and meet the Honours course deadlines.
+
+\subsection{Potential Improvements}
 
 \pagebreak
 \bibliographystyle{IEEEtran}
