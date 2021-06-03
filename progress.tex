@@ -21,7 +21,7 @@ Branching structures can be problematic to reconstruct and are a common issue in
 
 \section{Background}
 
-Most of my effort so far has gone towards the literature survey for this topic, and so I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If further details are necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
+Most of my time in this project so far has gone towards a literature survey, and so I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If further details are necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
 
 \subsection{Generic Methods}
 
@@ -50,7 +50,11 @@ Correspondence algorithms can operate on different levels:
 
 \subsubsection{Point Correspondence and Triangulation}
 
+With contour correspondences established, points in matched contours must themselves be matched to create a triangulation for a mesh. Points can be matched by Euclidean distance, and by their index within a contour. 
 
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW matches features on the same structure which has been slightly warped, making it suitable for contours on adjacent slices which should differ only slightly. DTW generates a warping path going around both contours, producing point matches as it goes. Euclidean distance is used as the cost function, and some constraints are put on the warping path to keep it progressing on both contours in case Euclidean distance is not suitable for a section.
+
+Triangulation is relatively simple, taking point correspondences as edges and filling gaps where necessary. Ideally the two contours have similar sizes otherwise many triangle fans will be created, which gives a rougher mesh.
 
 \section{Progress}
 
