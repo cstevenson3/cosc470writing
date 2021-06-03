@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  3 JUN 2021 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  3 JUN 2021 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -111,26 +111,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
+
+LaTeX Warning: Citation `mackay2019robust' on page 1 undefined on input line 17
+.
+
+
+LaTeX Warning: Citation `mukundan2016reconstruction' on page 1 undefined on inp
+ut line 17.
+
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
 No file progress.bbl.
-(./progress.aux) ) 
+(./progress.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 914 strings out of 480608
- 14201 string characters out of 5903630
- 255510 words of memory out of 5000000
- 16868 multiletter control sequences out of 15000+600000
- 534754 words of font info for 32 fonts, out of 8000000 for 9000
+ 915 strings out of 480608
+ 14216 string characters out of 5903630
+ 256510 words of memory out of 5000000
+ 16869 multiletter control sequences out of 15000+600000
+ 535061 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,7n,34p,473b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr17.pfb>
-Output written on progress.pdf (2 pages, 52619 bytes).
+ 30i,7n,34p,594b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on progress.pdf (2 pages, 55186 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
