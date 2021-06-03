@@ -17,7 +17,7 @@ This is a progress report for a Computer Science Honours project related to mesh
 
 Medical imaging modalities such as CT scans and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
 
-Branching structures can be problematic to reconstruct and are a common issue in prior methods. My project aims to improve the accuracy of reconstructions involving branches and other problematic structures.
+Branching structures can be problematic to reconstruct and are a common issue in prior methods. My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular the lungs are used as an organ of focus.
 
 \section{Background}
 
@@ -55,6 +55,12 @@ With contour correspondences established, points in matched contours must themse
 Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW matches features on the same structure which has been slightly warped, making it suitable for contours on adjacent slices which should differ only slightly. DTW generates a warping path going around both contours, producing point matches as it goes. Euclidean distance is used as the cost function, and some constraints are put on the warping path to keep it progressing on both contours in case Euclidean distance is not suitable for a section.
 
 Triangulation is relatively simple, taking point correspondences as edges and filling gaps where necessary. Ideally the two contours have similar sizes otherwise many triangle fans will be created, which gives a rougher mesh.
+
+\subsubsection{Branching Problem}
+
+Branching structures are problematic to reconstruct. When scanned they show up as one contour in one slice and two contours in the next slice. There is ambiguity in contour correspondence, as this could represent many possible structures (a branch, a bend, the end of one tube near another tube). Mackay \cite{robust2019construction} looks for lung branches as one contour approximately splitting in half into two nearby contours.
+
+When it comes to point correspondence, branches affect the position of points drastically and so correspondence metrics are skewed. In Mackay's \cite{mackay2019robust} method DTW requires two ordered contours as input, so the two-contour side of the branch must be merged into a single contour first. DTW does not handle all branching cases well, with some twisting and too many points matched to a single point. Fixing this is left as further research.
 
 \section{Progress}
 
