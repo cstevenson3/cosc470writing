@@ -88,11 +88,11 @@ Triangulation is relatively simple, taking point correspondences as edges and fi
 
 Branching structures are problematic to reconstruct. When scanned they show up as one contour in one slice and two contours in the next slice. There is ambiguity in contour correspondence, as this could represent many possible structures (a branch, a bend, the end of one tube near another tube). Mackay \cite{mackay2019robust} looks for lung branches as one contour approximately splitting in half into two nearby contours.
 
-When it comes to point correspondence, branches affect the position of points drastically and so correspondence metrics are skewed. In Mackay's \cite{mackay2019robust} method DTW requires two ordered contours as input, so the two-contour side of the branch must be merged into a single contour first. DTW does not handle all branching cases well, with some twisting and too many points matched to a single point. He left fixing this is left as further research.
+When it comes to point correspondence, branches affect the position of points drastically and so correspondence metrics are skewed. In Mackay's \cite{mackay2019robust} method DTW requires two ordered contours as input, so the two-contour side of the branch must be merged into a single contour first. DTW does not handle all branching cases well, with some twisting and too many points matched to a single point. He left fixing this as further research.
 
 \section{Progress}
 
-Following the literature survey, I found a week to begin trialling new techniques to improve correspondence methods, with the intent of handling branching structures better. I am using Mackay's method and C++ code as a base to work from, adding modifications as I go. Fortunately Mackay's code is well structured, and it was easy to drop in modifications to test. I took one day to set up my environment and run the original code successfully. I then took four days to try my first idea in python, port it over to C++, and substitute it into Mackay's code.
+Following the literature survey, I found a week to begin trialling new techniques to improve correspondence methods, with the intent of handling branching structures better. I am using Mackay's method and C++ code as a base to work from, adding modifications as I go. Fortunately Mackay's code is well structured, and it was easy to drop in modifications to test. I took one day to set up my environment and run the original code successfully. I then took four days to try my first idea in Python, port it over to C++, and substitute it into Mackay's code.
 
 \subsection{Point Angle Rationale}
 
@@ -110,7 +110,7 @@ My idea was to use the angle of points from the now shared centroid to match poi
 
 \subsection{Point Angle Testing}
 
-Mackay \cite{mackay2019robust} provides the synthetic models he used for testing, with contours sampled on planes cut through the model. I used the "multi-branch" model sampled with 10 and 50 planes, focussing on the middle branch and the lower branch (See Figure \ref{fig:model}). I ran the reconstruction with DTW, and with my point angle method at various weightings for the angle of points vs. the progression of points. Although quantitative accuracy testing is possible (and will be done in future), with the limited time I had I elected to begin with a visual comparison to screen my method for viability (See Figures \ref{fig:plane10} and \ref{fig:plane50}). 
+Mackay \cite{mackay2019robust} provides the synthetic models he used for testing, with contours sampled on planes cut through the model. I used the "multi-branch" model sampled with 10 and 50 planes, focussing on the middle branch and the lower branch (See Appendix, Figure \ref{fig:model}). I ran the reconstruction with DTW, and with my point angle method at various weightings for the angle of points vs. the progression of points. Although quantitative accuracy testing is possible (and will be done in future), with the limited time I had I elected to begin with a visual comparison to screen my method for viability (See Figures \ref{fig:plane10} and \ref{fig:plane50}). 
 
 \begin{figure}[h]
      \centering
