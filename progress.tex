@@ -30,7 +30,7 @@ Branching structures can be problematic to reconstruct and are a common issue in
 
 \section{Background}
 
-Most of my time in this project so far has gone towards a literature survey. I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If more detail is necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
+Most of my time in this project so far has gone towards a literature survey. I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If more detail is necessary refer to the full survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
 
 \subsection{Generic Methods}
 
@@ -63,6 +63,25 @@ With contour correspondences established, points in matched contours must themse
 
 Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW matches features on the same structure which has been slightly warped, making it suitable for contours on adjacent slices which should differ only slightly. DTW generates a warping path going around both contours, producing point matches as it goes. Euclidean distance is used as the cost function, and some constraints are put on the warping path to keep it progressing on both contours in case Euclidean distance is not suitable for a section.
 
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{dtw1}
+         \caption{DTW path through cost matrix}
+         \label{fig:dtw1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.6\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{dtw2}
+         \caption{DTW point correspondence}
+         \label{fig:dtw2}
+     \end{subfigure}
+        \caption{Two examples of DTW paths}
+        \label{fig:dtw}
+\end{figure}
+
 Triangulation is relatively simple, taking point correspondences as edges and filling gaps where necessary. Ideally the two contours have similar sizes otherwise many triangle fans will be created, which gives a rougher mesh.
 
 \subsubsection{Branching Problem}
@@ -77,13 +96,13 @@ Following the literature survey, I found a week to begin trialling new technique
 
 \subsection{Point Angle Rationale}
 
-The first idea I tried began with me observing twisting produced by DTW in branching cases. I hypothesised two reasons for this. Firstly the choice of starting point in each contour was the leftmost point (lowest x value). For similarly shaped contours this should give roughly the same positioned point in each contour. However in branching cases where the two-contour merged contour is oriented mostly in the z-direction, the leftmost point could be either on the top or bottom contour, whereas on the single contour it would be towards the middle. A great difference in starting point location would cause triangle fanning at the start and end of DTW. Secondly, a tube progressing at an angle through the scan planes would be observed as contours slightly shifted away from each other. Since DTW relies on Euclidean distance as a cost function, I hypothesise this shift would bias which points are matched, in a way which ignores the underlying structure.
-
 \begin{wrapfigure}{r}{0.25\textwidth}
 \centering
 \includegraphics[width=0.2\textwidth]{pa}
 \caption{Points matched by angle from shared centroid\label{fig:pa}}
 \end{wrapfigure}
+
+The first idea I tried began with me observing twisting produced by DTW in branching cases. I hypothesised two reasons for this. Firstly the choice of starting point in each contour was the leftmost point (lowest x value). For similarly shaped contours this should give roughly the same positioned point in each contour. However in branching cases where the two-contour merged contour is oriented mostly in the z-direction, the leftmost point could be either on the top or bottom contour, whereas on the single contour it would be towards the middle. A great difference in starting point location would cause triangle fanning at the start and end of DTW. Secondly, a tube progressing at an angle through the scan planes would be observed as contours slightly shifted away from each other. Since DTW relies on Euclidean distance as a cost function, I hypothesise this shift would bias which points are matched, in a way which ignores the underlying structure.
 
 For the above two reasons my first trialled idea was to calculate the centroids of matched contours, and translate them to the origin for point correspondence. This allows for choosing of a starting point near the x-axis (I chose the rightmost point), and so starting points are better aligned between contours. With this translation made, it opened up the opportunity to try an alternative pathing algorithm. My idea was to use the angle of points from the now shared centroid to match points across contours (See Figure \ref{fig:pa}). In ideal conditions each contour would have one point per angle, but this is not the case, particularly in merged contours. For the pathing algorithm I required monotonicity, so for each point if a prior point on the ordered contour had a greater angle, I used this as the angle for the current point. This produces segments of points with the same angle, and so I added in a second metric to keep the path moving. This metric was progression along the contour, measured simply as how many points had been passed out of the total number of points. Both metrics are measured from the starting point, increasing counter-clockwise. A weighted sum of the angle and progression metrics is used in the pathing algorithm. In pathing a current pair of points is kept, and points on each contour are leapfrogged between such that whichever point has the lower metric is advanced to the next point. All pairs are recorded to give the point correspondence. I refer to this method as point angle.
 
