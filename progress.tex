@@ -48,7 +48,7 @@ A more direct approach to mesh reconstruction is to decide which contours should
 
 \subsubsection{Contour Correspondence}
 
-Contour correspondence takes as input all the contours in a segmentation of an image stack, and produces as output matchings of contours which should be connected \cite{herbert2001contour}. In a simple case a matching would be one contour in one slice and a similarly positioned contour in an adjacent slice. In more complicated cases such as branching there may be one-to-two matchings. Metrics for matching include centroid position closeness, size and shape similarity etc.
+Contour correspondence takes as input all the contours in a segmentation of an image stack, and produces as output matchings of contours which should be connected \cite{herbert2001contour}. In a simple case a matching would be a contour in one slice, and a similarly positioned contour in an adjacent slice. In more complicated cases such as branching there may be one-to-two matchings. Metrics for matching include centroid position closeness, size and shape similarity etc.
 
 Correspondence algorithms can operate on different levels:
 \begin{itemize}
@@ -59,9 +59,9 @@ Correspondence algorithms can operate on different levels:
 
 \subsubsection{Point Correspondence and Triangulation}
 
-With contour correspondences established, points in matched contours must themselves be matched to create a triangulation for a mesh. Points can be matched by Euclidean distance, and by their index within a contour. 
+With contour correspondences established, points in matched contours can themselves be matched to create a triangulation for a mesh. Points can be matched by Euclidean distance, and by their index within a contour. 
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW matches features on the same structure which has been slightly warped, making it suitable for contours on adjacent slices which should differ only slightly. DTW generates a warping path going around both contours, producing point matches as it goes. Euclidean distance is used as the cost function, and some constraints are put on the warping path to keep it progressing on both contours in case Euclidean distance is not suitable for a section.
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW matches features across similar structures which have been slightly warped, making it suitable for contours on adjacent slices which should differ only slightly. DTW generates a warping path going around both contours, producing point matches as it goes. Euclidean distance is used as the cost function, and some constraints are put on the warping path to keep it progressing on both contours in case Euclidean distance is not suitable for a section.
 
 \begin{figure}[h]
      \centering
@@ -78,7 +78,7 @@ Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method o
          \caption{DTW point correspondence}
          \label{fig:dtw2}
      \end{subfigure}
-        \caption{Two examples of DTW paths}
+        \caption{Two examples of DTW paths on contours X and Y}
         \label{fig:dtw}
 \end{figure}
 
@@ -102,11 +102,11 @@ Following the literature survey, I found a week to begin trialling new technique
 \caption{Points matched by angle from shared centroid\label{fig:pa}}
 \end{wrapfigure}
 
-The first idea I tried began with me observing twisting produced by DTW in branching cases. I hypothesised two reasons for this. Firstly the choice of starting point in each contour was the leftmost point (lowest x value). For similarly shaped contours this should give roughly the same positioned point in each contour. However in branching cases where the two-contour merged contour is oriented mostly in the z-direction, the leftmost point could be either on the top or bottom contour, whereas on the single contour it would be towards the middle. A great difference in starting point location would cause triangle fanning at the start and end of DTW. Secondly, a tube progressing at an angle through the scan planes would be observed as contours slightly shifted away from each other. Since DTW relies on Euclidean distance as a cost function, I hypothesise this shift would bias which points are matched, in a way which ignores the underlying structure.
+The first idea I tried began with me observing twisting produced by DTW in branching cases. I hypothesised two reasons for this. Firstly the choice of starting point in each contour was the leftmost point (lowest x value). For similarly shaped contours this should give roughly the same positioned point in each contour. However in branching cases where the two-contour merged contour is oriented mostly in the z-direction, the leftmost point could be either on the top or bottom contour, whereas on the single contour it would be towards the middle. A large difference in starting point location would cause triangle fanning at the start and end of DTW. Secondly, a tube progressing at an angle through the scan planes would be observed as contours slightly shifted away from each other. Since DTW relies on Euclidean distance as a cost function, I hypothesise this shift would bias which points are matched, in a way which ignores the underlying structure.
 
-For the above two reasons my first trialled idea was to calculate the centroids of matched contours, and translate them to the origin for point correspondence. This allows for choosing of a starting point near the x-axis (I chose the rightmost point), and so starting points are better aligned between contours. With this translation made, it opened up the opportunity to try an alternative pathing algorithm. 
+For the above two reasons my first trialled idea was to calculate the centroids of matched contours, and translate them to the origin for point correspondence. This allows for choosing of a starting point near the x-axis (I chose the rightmost point), and so starting points are better aligned between contours. With this translation made, it opened up the opportunity to try an alternative pathing algorithm, and so I tried that first. 
 
-My idea was to use the angle of points from the now shared centroid to match points across contours (See Figure \ref{fig:pa}). In ideal conditions each contour would have one point per angle, but this is not the case, particularly in merged contours. For the pathing algorithm I required monotonicity, so for each point if a prior point on the ordered contour had a greater angle, I used this as the angle for the current point. This produces segments of points with the same angle, and so I added in a second metric to keep the path moving. This metric was progression along the contour, measured simply as how many points had been passed out of the total number of points. Both metrics are measured from the starting point, increasing counter-clockwise. A weighted sum of the angle and progression metrics is used in the pathing algorithm. In pathing a current pair of points is kept, and points on each contour are leapfrogged between such that whichever point has the lower metric is advanced to the next point. All pairs are recorded to give the point correspondence. I refer to this method as point angle.
+My idea was to use the angle of points from the now shared centroid to match points across contours (See Figure \ref{fig:pa}). In ideal conditions each contour would have one point per angle, but this is not the case, particularly in merged contours. For the pathing algorithm I required monotonicity, so for each point if a prior point on the ordered contour had a greater angle, I used this as the angle for the current point. This produces segments of points with the same angle, and so I added in a second metric to keep the path moving. This metric was progression along the contour, measured simply as how many points had been passed out of the total number of points. Both metrics are measured from the starting point, increasing counter-clockwise as the contour is traversed. A weighted sum of the angle and progression metrics is used in the pathing algorithm. In pathing a current pair of points is kept. Points on each contour are leapfrogged between such that whichever point in the current pair has the lower metric is advanced to the next point. All pairs are recorded to give the point correspondence. I refer to this method as point angle.
 
 \subsection{Point Angle Testing}
 
@@ -181,13 +181,13 @@ Mackay \cite{mackay2019robust} provides the synthetic models he used for testing
 Observations:
 \begin{itemize}
 \item At lower plane sampling rates, my point angle method gives better results than DTW in the simpler tube sections and in the branching sections. The lower tube now originates from a region rather than a single point, and the middle branch now has no twisting. However the middle branch left side still originates from a point, so point angle has not improved on DTW in this regard.
-\item Angle weighting has a low impact on correspondence in branching structures. Higher angle weightings produce smoother triangulations in the simpler tube sections, most noticeable in the low plane sampling rate. At higher plane sampling rates DTW has this "wavy" effect as twisting direction jumps back and forth, presumably because of the choices of starting points in contour pairs. In point angle there is no noticeable twisting, which is an improvement on DTW.
-\item At higher plane sample rates, DTW has a cleaner general structure. Point angle has some extraneous triangulation near bends.
+\item Angle weighting has a low impact on correspondence in branching structures. Higher angle weightings produce smoother triangulations in the simpler tube sections, most noticeable in the low plane sampling rate. At higher plane sampling rates DTW has a "wavy" effect as twisting direction jumps back and forth, presumably because of the choices of starting points in contour pairs. In point angle there is no noticeable twisting, which is an improvement on DTW.
+\item At higher plane sample rates, DTW has a cleaner general structure near branches. Point angle has some extraneous triangulation near branches and bends.
 \end{itemize}
 
 Thoughts:
 \begin{itemize}
-\item DTW and point angle each have strengths and weaknesses depending on plane sampling rate, and what type of contour correspondence is being acted on. The reconstruction program is aware of these factors, and so could switch between the two methods for each contour match depending on the circumstance. For example at high plane sampling rates DTW could be used to get cleaner branches, whilst point angle is used for the simpler tube sections to give smoother results.
+\item DTW and point angle each have strengths and weaknesses depending on plane sampling rate, and what type of contour structure is being acted on. The reconstruction program is aware of these factors, and so could switch between the two methods for each contour match depending on the circumstance. For example at high plane sampling rates DTW could be used to get cleaner branches, whilst point angle is used for the simpler tube sections to give smoother results.
 \item Point angle method is limited by the fact that merged contours in branching structures do not have one point per angle. The progression metric intended to overcome this does not have much impact.
 \end{itemize}
 

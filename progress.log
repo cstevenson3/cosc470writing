@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  4 JUN 2021 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  4 JUN 2021 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -427,11 +427,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 212.
 Here is how much of TeX's memory you used:
  7015 strings out of 480608
  111893 string characters out of 5903630
- 381396 words of memory out of 5000000
+ 381416 words of memory out of 5000000
  22776 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,42p,1145b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,42p,1189b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -444,7 +444,7 @@ exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on progress.pdf (6 pages, 476753 bytes).
+Output written on progress.pdf (6 pages, 476817 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  157 compressed objects within 2 object streams
