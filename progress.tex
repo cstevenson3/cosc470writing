@@ -106,12 +106,6 @@ The first idea I tried began with me observing twisting produced by DTW in branc
 
 For the above two reasons my first trialled idea was to calculate the centroids of matched contours, and translate them to the origin for point correspondence. This allows for choosing of a starting point near the x-axis (I chose the rightmost point), and so starting points are better aligned between contours. With this translation made, it opened up the opportunity to try an alternative pathing algorithm. 
 
-\begin{wrapfigure}{r}{0.12\textwidth}
-\centering
-\includegraphics[width=0.12\textwidth]{mb}
-\caption{Original multi branch model\label{fig:model}}
-\end{wrapfigure}
-
 My idea was to use the angle of points from the now shared centroid to match points across contours (See Figure \ref{fig:pa}). In ideal conditions each contour would have one point per angle, but this is not the case, particularly in merged contours. For the pathing algorithm I required monotonicity, so for each point if a prior point on the ordered contour had a greater angle, I used this as the angle for the current point. This produces segments of points with the same angle, and so I added in a second metric to keep the path moving. This metric was progression along the contour, measured simply as how many points had been passed out of the total number of points. Both metrics are measured from the starting point, increasing counter-clockwise. A weighted sum of the angle and progression metrics is used in the pathing algorithm. In pathing a current pair of points is kept, and points on each contour are leapfrogged between such that whichever point has the lower metric is advanced to the next point. All pairs are recorded to give the point correspondence. I refer to this method as point angle.
 
 \subsection{Point Angle Testing}
@@ -206,5 +200,13 @@ I have a 3 week mid year break in which to trial further improvements, and this 
 \pagebreak
 \bibliographystyle{IEEEtran}
 \bibliography{references}
+
+\section{Appendix}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.29\textwidth]{mb}
+\caption{Original multi branch model\label{fig:model}}
+\end{figure}
 
 \end{document}
