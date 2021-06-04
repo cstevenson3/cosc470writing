@@ -43,11 +43,11 @@ Marching cubes is another method for mesh reconstruction \cite{lorensen1987march
 
 \subsection{Correspondence Methods}
 
-A more direct approach to mesh reconstruction is to decide which contours should be connected, then triangulate between them, with an optional point correspondence step in the middle. Such an approach produces output meshes which contain the original points. The result is a method which gives computationally faster renders than direct volume rendering, potentially more accurate meshes than point cloud methods, and a smoother mesh than marching cubes. Mackay \cite{mackay2019robust} presents one such paper to use this approach, and my project focusses on extending his method.
+A more direct approach to mesh reconstruction is to decide which contours should be connected, then triangulate between them, with an optional point correspondence step in the middle \cite{mukundan2016reconstruction}. Such an approach produces output meshes which contain the original points. The result is a method which gives computationally faster renders than direct volume rendering, potentially more accurate meshes than point cloud methods, and a smoother mesh than marching cubes. Mackay \cite{mackay2019robust} presents one such paper to use this approach, and my project focusses on extending his method.
 
 \subsubsection{Contour Correspondence}
 
-Contour correspondence takes as input all the contours in a segmentation of an image stack, and produces as output matchings of contours which should be connected. In a simple case a matching would be one contour in one slice and a similarly positioned contour in an adjacent slice. In more complicated cases such as branching there may be one-to-two matchings. Metrics for matching include centroid position closeness, size and shape similarity etc.
+Contour correspondence takes as input all the contours in a segmentation of an image stack, and produces as output matchings of contours which should be connected \cite{herbert2001contour}. In a simple case a matching would be one contour in one slice and a similarly positioned contour in an adjacent slice. In more complicated cases such as branching there may be one-to-two matchings. Metrics for matching include centroid position closeness, size and shape similarity etc.
 
 Correspondence algorithms can operate on different levels:
 \begin{itemize}
@@ -66,9 +66,9 @@ Triangulation is relatively simple, taking point correspondences as edges and fi
 
 \subsubsection{Branching Problem}
 
-Branching structures are problematic to reconstruct. When scanned they show up as one contour in one slice and two contours in the next slice. There is ambiguity in contour correspondence, as this could represent many possible structures (a branch, a bend, the end of one tube near another tube). Mackay \cite{robust2019construction} looks for lung branches as one contour approximately splitting in half into two nearby contours.
+Branching structures are problematic to reconstruct. When scanned they show up as one contour in one slice and two contours in the next slice. There is ambiguity in contour correspondence, as this could represent many possible structures (a branch, a bend, the end of one tube near another tube). Mackay \cite{mackay2019robust} looks for lung branches as one contour approximately splitting in half into two nearby contours.
 
-When it comes to point correspondence, branches affect the position of points drastically and so correspondence metrics are skewed. In Mackay's \cite{mackay2019robust} method DTW requires two ordered contours as input, so the two-contour side of the branch must be merged into a single contour first. DTW does not handle all branching cases well, with some twisting and too many points matched to a single point. Fixing this is left as further research.
+When it comes to point correspondence, branches affect the position of points drastically and so correspondence metrics are skewed. In Mackay's \cite{mackay2019robust} method DTW requires two ordered contours as input, so the two-contour side of the branch must be merged into a single contour first. DTW does not handle all branching cases well, with some twisting and too many points matched to a single point. He left fixing this is left as further research.
 
 \section{Progress}
 

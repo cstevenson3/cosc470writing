@@ -58,4 +58,9 @@ W.~E. Lorensen and H.~E. Cline, ``Marching cubes: A high resolution 3d surface
   construction algorithm,'' \emph{ACM siggraph computer graphics}, vol.~21,
   no.~4, pp. 163--169, 1987.
 
+\bibitem{herbert2001contour}
+M.~J. Herbert and C.~B. Jones, ``Contour correspondence for serial section
+  reconstruction: complex scenarios in palaeontology,'' \emph{Computers \&
+  geosciences}, vol.~27, no.~4, pp. 427--440, 2001.
+
 \end{thebibliography}
