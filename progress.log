@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  4 JUN 2021 13:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  4 JUN 2021 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -341,12 +341,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<./images/dtw1.png, id=91, 421.575pt x 433.62pt>
+<./images/dtw1.png, id=87, 421.575pt x 433.62pt>
 File: ./images/dtw1.png Graphic file (type png)
 <use ./images/dtw1.png>
 Package pdftex.def Info: ./images/dtw1.png  used on input line 70.
 (pdftex.def)             Requested size: 93.48312pt x 96.15097pt.
-<./images/dtw2.png, id=93, 670.505pt x 263.98625pt>
+<./images/dtw2.png, id=89, 670.505pt x 263.98625pt>
 File: ./images/dtw2.png Graphic file (type png)
 <use ./images/dtw2.png>
 Package pdftex.def Info: ./images/dtw2.png  used on input line 77.
@@ -356,103 +356,112 @@ Package pdftex.def Info: ./images/dtw2.png  used on input line 77.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2]
-<./images/pa.png, id=106, 256.96pt x 256.96pt>
+<./images/pa.png, id=102, 256.96pt x 256.96pt>
 File: ./images/pa.png Graphic file (type png)
 <use ./images/pa.png>
 Package pdftex.def Info: ./images/pa.png  used on input line 101.
 (pdftex.def)             Requested size: 93.48312pt x 93.48183pt.
  [3 <./images/dtw1.png> <./images/dtw2.png> <./images/pa.png>]
-<./images/dtw10.png, id=120, 133.49875pt x 276.03125pt>
+<./images/mb.png, id=112, 121.45375pt x 282.05376pt>
+File: ./images/mb.png Graphic file (type png)
+<use ./images/mb.png>
+Package pdftex.def Info: ./images/mb.png  used on input line 111.
+(pdftex.def)             Requested size: 56.08844pt x 130.25414pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]\OT1/cmr/m/n/10 Figure 3:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+|\OT1/cmr/m/n/10 Orig-i-nal
+ []
+
+<./images/dtw10.png, id=118, 133.49875pt x 276.03125pt>
 File: ./images/dtw10.png Graphic file (type png)
 <use ./images/dtw10.png>
-Package pdftex.def Info: ./images/dtw10.png  used on input line 117.
+Package pdftex.def Info: ./images/dtw10.png  used on input line 125.
 (pdftex.def)             Requested size: 102.83357pt x 212.63315pt.
-<./images/pa10ang00.png, id=121, 120.45pt x 274.02374pt>
+<./images/pa10ang00.png, id=119, 120.45pt x 274.02374pt>
 File: ./images/pa10ang00.png Graphic file (type png)
 <use ./images/pa10ang00.png>
-Package pdftex.def Info: ./images/pa10ang00.png  used on input line 124.
+Package pdftex.def Info: ./images/pa10ang00.png  used on input line 132.
 (pdftex.def)             Requested size: 93.48312pt x 212.6798pt.
-<./images/pa10ang50.png, id=122, 116.435pt x 274.02374pt>
+<./images/pa10ang50.png, id=120, 116.435pt x 274.02374pt>
 File: ./images/pa10ang50.png Graphic file (type png)
 <use ./images/pa10ang50.png>
-Package pdftex.def Info: ./images/pa10ang50.png  used on input line 131.
+Package pdftex.def Info: ./images/pa10ang50.png  used on input line 139.
 (pdftex.def)             Requested size: 91.15085pt x 214.52791pt.
-<./images/pa10ang100.png, id=123, 120.45pt x 277.035pt>
+<./images/pa10ang100.png, id=121, 120.45pt x 277.035pt>
 File: ./images/pa10ang100.png Graphic file (type png)
 <use ./images/pa10ang100.png>
-Package pdftex.def Info: ./images/pa10ang100.png  used on input line 138.
+Package pdftex.def Info: ./images/pa10ang100.png  used on input line 146.
 (pdftex.def)             Requested size: 93.48312pt x 215.01694pt.
-<./images/dtw50.png, id=124, 128.48pt x 279.0425pt>
+<./images/dtw50.png, id=122, 128.48pt x 279.0425pt>
 File: ./images/dtw50.png Graphic file (type png)
 <use ./images/dtw50.png>
-Package pdftex.def Info: ./images/dtw50.png  used on input line 150.
+Package pdftex.def Info: ./images/dtw50.png  used on input line 158.
 (pdftex.def)             Requested size: 100.49417pt x 218.2654pt.
-<./images/pa50ang00.png, id=125, 119.44624pt x 277.035pt>
+<./images/pa50ang00.png, id=123, 119.44624pt x 277.035pt>
 File: ./images/pa50ang00.png Graphic file (type png)
 <use ./images/pa50ang00.png>
-Package pdftex.def Info: ./images/pa50ang00.png  used on input line 157.
+Package pdftex.def Info: ./images/pa50ang00.png  used on input line 165.
 (pdftex.def)             Requested size: 93.48312pt x 216.81773pt.
-<./images/pa50ang50.png, id=126, 124.465pt x 281.05pt>
+<./images/pa50ang50.png, id=124, 124.465pt x 281.05pt>
 File: ./images/pa50ang50.png Graphic file (type png)
 <use ./images/pa50ang50.png>
-Package pdftex.def Info: ./images/pa50ang50.png  used on input line 164.
+Package pdftex.def Info: ./images/pa50ang50.png  used on input line 172.
 (pdftex.def)             Requested size: 95.82251pt x 216.37914pt.
-<./images/pa50ang90.png, id=127, 122.4575pt x 280.04625pt>
+<./images/pa50ang90.png, id=125, 122.4575pt x 280.04625pt>
 File: ./images/pa50ang90.png Graphic file (type png)
 <use ./images/pa50ang90.png>
-Package pdftex.def Info: ./images/pa50ang90.png  used on input line 171.
+Package pdftex.def Info: ./images/pa50ang90.png  used on input line 179.
 (pdftex.def)             Requested size: 93.48312pt x 213.79025pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <./images/dtw10.png> <./images/pa10ang00.png> <./images/pa10ang50.png> <./im
-ages/pa10ang100.png>] [5 <./images/dtw50.png> <./images/pa50ang00.png> <./image
-s/pa50ang50.png> <./images/pa50ang90.png>] (./progress.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+[4 <./images/mb.png> <./images/dtw10.png> <./images/pa10ang00.png> <./images/pa
+10ang50.png> <./images/pa10ang100.png>] [5 <./images/dtw50.png> <./images/pa50a
+ng00.png> <./images/pa50ang50.png> <./images/pa50ang90.png>] (./progress.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+
+[6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
  (./progress.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
+Package rerunfilecheck Info: File `progress.out' has not changed.
+(rerunfilecheck)             Checksum: F4C128FAD8856942D37181E1C2FD1B7B;807.
 
 
-Package rerunfilecheck Warning: File `progress.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: Checksums for `progress.out':
-(rerunfilecheck)             Before: B3072B83BAED6A86CD3B99B22D27F778;876
-(rerunfilecheck)             After:  F4C128FAD8856942D37181E1C2FD1B7B;807.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 7006 strings out of 480608
- 111779 string characters out of 5903630
- 381338 words of memory out of 5000000
- 22768 multiletter control sequences out of 15000+600000
+ 7013 strings out of 480608
+ 111873 string characters out of 5903630
+ 381396 words of memory out of 5000000
+ 22775 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,42p,1555b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on progress.pdf (6 pages, 460552 bytes).
+ 41i,8n,42p,1145b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on progress.pdf (6 pages, 478390 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
+ 153 compressed objects within 2 object streams
  35 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
