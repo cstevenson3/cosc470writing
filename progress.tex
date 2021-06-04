@@ -1,9 +1,9 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage[a4paper, portrait, margin=0.9in]{geometry}
 \setlength{\parskip}{1em}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
@@ -23,7 +23,7 @@ This is a progress report for a Computer Science Honours project related to mesh
 
 \section{Introduction}
 
-Medical imaging modalities such as CT scans and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
+Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
 
 Branching structures can be problematic to reconstruct and are a common issue in prior methods. My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular the lungs are used as an organ of focus. 
 
@@ -175,7 +175,7 @@ I have a 3 week mid year break in which to trial further improvements, and this 
 
 \subsubsection{Point Correspondence}
 
-Before the point angle method I translate contours so their centroids align. I want to try also rotating contours so that their major axes align. I will do this because I noticed that branch reconstructions under DTW tend to be lower quality when the branch is oriented in the z-direction. Aligning contours by rotation will help with selecting good starting points, and ensure that real twisting of structures is inferred in the reconstructions.
+Before the point angle method I translate contours so their centroids align. I want to try also rotating contours so that their major axes align. I will do this because I noticed that branch reconstructions under DTW tend to be lower quality when the branch is oriented in the z-direction. Aligning contours by rotation will help with selecting good starting points, and ensure that real twisting of structures is inferred in the reconstructions. I then want to take these transformations and apply them before DTW, as I believe it will improve the way DTW behaves.
 
 Mackay merged contours in branching cases on the two-contour side. I want to try splitting the contour on the one-contour side instead. I believe this will make for cleaner branch triangulations.
 
