@@ -23,23 +23,23 @@ This is a progress report for a Computer Science Honours project related to mesh
 
 \section{Introduction}
 
-Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
+Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
 
 Branching structures can be problematic to reconstruct and are a common issue in prior methods. My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular the lungs are used as an organ of focus. 
 
 \section{Background}
 
-Most of my time in this project so far has gone towards a literature survey, and so I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If more detail is necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
+Most of my time in this project so far has gone towards a literature survey. I have included the essential details of common methods below, with more elaboration given to the approach relevant to this project. If more detail is necessary refer to my literature survey \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
 
 \subsection{Generic Methods}
 
-The simplest form of rendering in medical imaging is direct volume rendering. The pixels in the image stacks are treated as voxels, forming a 3D grid of intensity data. Rasterisation or raycasting methods can be applied to these voxels to give a render. These renders are easy to understand and detailed, however they are computationally expensive.
+The simplest form of rendering in medical imaging is direct volume rendering \cite{fishman2006volume}. The pixels in the image stacks are treated as voxels, forming a 3D grid of intensity data. Rasterisation or raycasting methods can be applied to these voxels to give a render. These renders are easy to understand and detailed, however they are computationally expensive.
 
-Mesh rendering is preferred for real-time applications, but this requires a mesh reconstruction first. The mesh represents where boundaries of tissue lie in 3D space. To begin with segmentation of images must be done to find boundaries in 2D space. Segmentation methods are usually specific to an organ of interest and are tuned as such. A segmentation gives contours of points representing the boundaries between tissue. These points are then used for mesh reconstructions.
+Mesh rendering is preferred for real-time applications, but this requires a mesh reconstruction first. The mesh represents where boundaries of tissue lie in 3D space. To begin with, segmentation of images must be done to find boundaries in 2D space \cite{birkfellner2016applied}. Segmentation methods are usually specific to an organ of interest and are tuned as such. A segmentation gives contours of points representing the boundaries between tissue. These points are then used for mesh reconstructions.
 
-Point cloud methods for mesh reconstruction are adopted from applications like laser scanning, where a lot of points are dumped in as input and the algorithm has to infer which are connected. The contour points from segmentation can be used as input in a point cloud method to produce a reconstruction. Point cloud methods typically interpolate from points and don't use them directly in the output mesh.
+Point cloud methods for mesh reconstruction are adopted from applications like laser scanning, where a lot of points are dumped in as input and the algorithm has to infer which are connected  \cite{oztireli2009feature}. The contour points from segmentation can be used as input in a point cloud method to produce a reconstruction. Point cloud methods typically interpolate from points and don't use them directly in the output mesh.
 
-Marching cubes is another method for mesh reconstruction. Boundary voxels are found, and their neighbouring voxels are considered in a lookup table to decide what local triangulation should be made for that voxel. All the triangles are then connected for the whole mesh. Marching cubes produces jagged results and ambiguity can lead to defects.
+Marching cubes is another method for mesh reconstruction \cite{lorensen1987marching}. Boundary voxels are found, and their neighbouring voxels are considered in a lookup table to decide what local triangulation should be made for that voxel. All the triangles are then connected for the whole mesh. Marching cubes produces jagged results and ambiguity can lead to defects.
 
 \subsection{Correspondence Methods}
 

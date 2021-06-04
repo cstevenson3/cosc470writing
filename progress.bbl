@@ -31,4 +31,31 @@ R.~Mukundan, ``Reconstruction of high resolution 3d meshes of lung geometry
   Multimedia (ISM)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp.
   247--252.
 
+\bibitem{pan2017comparison}
+Z.~Pan, S.~Tian, M.~Guo, J.~Zhang, N.~Yu, and Y.~Xin, ``Comparison of medical
+  image 3d reconstruction rendering methods for robot-assisted surgery,'' in
+  \emph{2017 2nd International Conference on Advanced Robotics and Mechatronics
+  (ICARM)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 94--99.
+
+\bibitem{fishman2006volume}
+E.~K. Fishman, D.~R. Ney, D.~G. Heath, F.~M. Corl, K.~M. Horton, and P.~T.
+  Johnson, ``Volume rendering versus maximum intensity projection in ct
+  angiography: what works best, when, and why,'' \emph{Radiographics}, vol.~26,
+  no.~3, pp. 905--922, 2006.
+
+\bibitem{birkfellner2016applied}
+W.~Birkfellner, \emph{Applied medical image processing: a basic course}.\hskip
+  1em plus 0.5em minus 0.4em\relax CRC Press, 2016.
+
+\bibitem{oztireli2009feature}
+A.~C. {\"O}ztireli, G.~Guennebaud, and M.~Gross, ``Feature preserving point set
+  surfaces based on non-linear kernel regression,'' in \emph{Computer Graphics
+  Forum}, vol.~28, no.~2.\hskip 1em plus 0.5em minus 0.4em\relax Wiley Online
+  Library, 2009, pp. 493--501.
+
+\bibitem{lorensen1987marching}
+W.~E. Lorensen and H.~E. Cline, ``Marching cubes: A high resolution 3d surface
+  construction algorithm,'' \emph{ACM siggraph computer graphics}, vol.~21,
+  no.~4, pp. 163--169, 1987.
+
 \end{thebibliography}
