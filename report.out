@@ -6,9 +6,13 @@
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Contour Correspondence}{subsection.3.2}% 6
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Point Correspondence and Triangulation}{subsection.3.2}% 7
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Branching Problem}{subsection.3.2}% 8
-\BOOKMARK [1][-]{section.4}{Progress}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{Point Angle Rationale}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.2}{Point Angle Testing}{section.4}% 11
-\BOOKMARK [1][-]{section.5}{Future}{}% 12
-\BOOKMARK [2][-]{subsection.5.1}{Schedule}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{Appendix}{}% 14
+\BOOKMARK [1][-]{section.4}{Method}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Proposal}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Analysis}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Ground Truth}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Visual Results}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{Measurements}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.4}{Summary}{section.5}% 16
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 17
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 18
