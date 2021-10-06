@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  6 OCT 2021 02:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  6 OCT 2021 15:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -375,78 +375,80 @@ Package pdftex.def Info: ./images/pa.png  used on input line 96.
 <./images/dtw10.png, id=141, 133.49875pt x 276.03125pt>
 File: ./images/dtw10.png Graphic file (type png)
 <use ./images/dtw10.png>
-Package pdftex.def Info: ./images/dtw10.png  used on input line 116.
+Package pdftex.def Info: ./images/dtw10.png  used on input line 122.
 (pdftex.def)             Requested size: 102.83357pt x 212.63315pt.
 <./images/pa10ang00.png, id=142, 120.45pt x 274.02374pt>
 File: ./images/pa10ang00.png Graphic file (type png)
 <use ./images/pa10ang00.png>
-Package pdftex.def Info: ./images/pa10ang00.png  used on input line 123.
+Package pdftex.def Info: ./images/pa10ang00.png  used on input line 129.
 (pdftex.def)             Requested size: 93.48312pt x 212.6798pt.
 <./images/pa10ang50.png, id=143, 116.435pt x 274.02374pt>
 File: ./images/pa10ang50.png Graphic file (type png)
 <use ./images/pa10ang50.png>
-Package pdftex.def Info: ./images/pa10ang50.png  used on input line 130.
+Package pdftex.def Info: ./images/pa10ang50.png  used on input line 136.
 (pdftex.def)             Requested size: 91.15085pt x 214.52791pt.
 <./images/pa10ang100.png, id=144, 120.45pt x 277.035pt>
 File: ./images/pa10ang100.png Graphic file (type png)
 <use ./images/pa10ang100.png>
-Package pdftex.def Info: ./images/pa10ang100.png  used on input line 137.
+Package pdftex.def Info: ./images/pa10ang100.png  used on input line 143.
 (pdftex.def)             Requested size: 93.48312pt x 215.01694pt.
-<./images/dtw50.png, id=145, 128.48pt x 279.0425pt>
-File: ./images/dtw50.png Graphic file (type png)
-<use ./images/dtw50.png>
-Package pdftex.def Info: ./images/dtw50.png  used on input line 149.
-(pdftex.def)             Requested size: 100.49417pt x 218.2654pt.
-<./images/pa50ang00.png, id=146, 119.44624pt x 277.035pt>
-File: ./images/pa50ang00.png Graphic file (type png)
-<use ./images/pa50ang00.png>
-Package pdftex.def Info: ./images/pa50ang00.png  used on input line 156.
-(pdftex.def)             Requested size: 93.48312pt x 216.81773pt.
-<./images/pa50ang50.png, id=147, 124.465pt x 281.05pt>
-File: ./images/pa50ang50.png Graphic file (type png)
-<use ./images/pa50ang50.png>
-Package pdftex.def Info: ./images/pa50ang50.png  used on input line 163.
-(pdftex.def)             Requested size: 95.82251pt x 216.37914pt.
-<./images/pa50ang90.png, id=148, 122.4575pt x 280.04625pt>
-File: ./images/pa50ang90.png Graphic file (type png)
-<use ./images/pa50ang90.png>
-Package pdftex.def Info: ./images/pa50ang90.png  used on input line 170.
-(pdftex.def)             Requested size: 93.48312pt x 213.79025pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./images/pa.png> <./images/dtw10.png> <./images/pa10ang00.png> <./images/pa
-10ang50.png> <./images/pa10ang100.png>] [4 <./images/dtw50.png> <./images/pa50a
-ng00.png> <./images/pa50ang50.png> <./images/pa50ang90.png>] (./report.bbl)
-<./images/mb.png, id=170, 120.45pt x 280.04625pt>
+<./images/dtw50.png, id=145, 128.48pt x 279.0425pt>
+File: ./images/dtw50.png Graphic file (type png)
+<use ./images/dtw50.png>
+Package pdftex.def Info: ./images/dtw50.png  used on input line 155.
+(pdftex.def)             Requested size: 100.49417pt x 218.2654pt.
+<./images/pa50ang00.png, id=146, 119.44624pt x 277.035pt>
+File: ./images/pa50ang00.png Graphic file (type png)
+<use ./images/pa50ang00.png>
+Package pdftex.def Info: ./images/pa50ang00.png  used on input line 162.
+(pdftex.def)             Requested size: 93.48312pt x 216.81773pt.
+<./images/pa50ang50.png, id=147, 124.465pt x 281.05pt>
+File: ./images/pa50ang50.png Graphic file (type png)
+<use ./images/pa50ang50.png>
+Package pdftex.def Info: ./images/pa50ang50.png  used on input line 169.
+(pdftex.def)             Requested size: 95.82251pt x 216.37914pt.
+<./images/pa50ang90.png, id=148, 122.4575pt x 280.04625pt>
+File: ./images/pa50ang90.png Graphic file (type png)
+<use ./images/pa50ang90.png>
+Package pdftex.def Info: ./images/pa50ang90.png  used on input line 176.
+(pdftex.def)             Requested size: 93.48312pt x 213.79025pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./images/pa.png>] [4 <./images/dtw10.png> <./images/pa10ang00.png> <./image
+s/pa10ang50.png> <./images/pa10ang100.png>] (./report.bbl)
+<./images/mb.png, id=165, 120.45pt x 280.04625pt>
 File: ./images/mb.png Graphic file (type png)
 <use ./images/mb.png>
-Package pdftex.def Info: ./images/mb.png  used on input line 210.
+Package pdftex.def Info: ./images/mb.png  used on input line 216.
 (pdftex.def)             Requested size: 135.54945pt x 315.1837pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
 
-[5 <./images/mb.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
+[5 <./images/dtw50.png> <./images/pa50ang00.png> <./images/pa50ang50.png> <./im
+ages/pa50ang90.png>] [6 <./images/mb.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 5AB6EC8F92B74CECEA2D91B70FAE2EF1;1143.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
  ) 
 Here is how much of TeX's memory you used:
- 7019 strings out of 480608
- 111814 string characters out of 5903630
- 378194 words of memory out of 5000000
+ 7020 strings out of 480608
+ 111820 string characters out of 5903630
+ 380194 words of memory out of 5000000
  22777 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,42p,231b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,42p,465b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -459,10 +461,10 @@ exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (6 pages, 467888 bytes).
+Output written on report.pdf (7 pages, 469685 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
