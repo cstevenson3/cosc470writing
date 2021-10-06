@@ -1,19 +1,20 @@
 \contentsline {section}{\numberline {1}Overview}{1}{section.1}%
-\contentsline {section}{\numberline {2}Introduction}{1}{section.2}%
-\contentsline {section}{\numberline {3}Background}{1}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Generic Methods}{1}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Correspondence Methods}{1}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Contour Correspondence}{1}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {2}Introduction}{2}{section.2}%
+\contentsline {section}{\numberline {3}Background}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Generic Methods}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Correspondence Methods}{2}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Contour Correspondence}{2}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Point Correspondence and Triangulation}{2}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Branching Problem}{2}{subsubsection.3.2.3}%
-\contentsline {section}{\numberline {4}Method}{2}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Proposal}{2}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Contour Splitting}{2}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Implementation}{3}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Analysis}{3}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Ground Truth}{3}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Visual Results}{4}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Measurements}{4}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Summary}{4}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Conclusion}{4}{section.6}%
-\contentsline {section}{\numberline {7}Appendix}{5}{section.7}%
+\contentsline {section}{\numberline {4}Method}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Proposal}{3}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Contour Splitting}{3}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Point Angle}{3}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Implementation}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Analysis}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ground Truth}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Visual Results}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Measurements}{5}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Summary}{5}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Conclusion}{5}{section.6}%
+\contentsline {section}{\numberline {7}Appendix}{6}{section.7}%
