@@ -47,6 +47,44 @@ Volumetric rendering treats pixels in images as voxels, and a variety of rasteri
 
 Surface rendering requires a surface be defined, either implicitly or as a mesh. Point cloud methods generate implicit surfaces, whilst meshes can be generated through contour correspondence followed by mesh triangulation (with point correspondence as an optional middle step). 
 
+\subsection{Applications}
+
+Xuyi et al. \cite{xuyi2016application} use 3D reconstructions from hip CT scans to make patient-specific surgery plans. From the model they measure the direction and degree of the acetabular fragment, and use this to guide their surgery.
+
+Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. With real time rendering being a priority, surface reconstructions are preferred over volume rendering. Of the four methods analysed, marching cubes was found to be the most suitable due to its speed and render quality.
+
+Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models in education resulted in a statistically significant improvement in test scores of medical students.
+
+\subsection{Scanning and Image Processing}
+
+As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However techniques considering the image data from all slices have been considered.
+
+\subsubsection{Segmentation}
+
+Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation "a rather complex, specialized procedure often requiring considerable manual interaction". Particular organs are often focussed on when developing segmentation methods.
+
+Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
+
+Carr \cite{carr1996surface} refers to various morphological methods used to remove noise. An opening operation acts like a low pass filter whilst still preserving edges. Opening and closing in sequence tends to be better at maintaining the mean intensity.
+
+Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". In this case simple thresholding can be used to pick out regions. 
+
+\subsubsection{Contour Finding}
+
+Rather than use pixels/voxels, some reconstruction techniques use contours defining the boundaries of the region objects occupy in an image. 
+
+Mukundan \cite{mukundan2016reconstruction} starts with a binary image after thresholding. Eroding the image with a 3x3 element then subtracting this from the thresholded image gives one pixel wide edges. Sequential edge following is used to extract contours. Discarding small contours reduces the number of contours significantly.
+
+Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an adaptive step size to find the outer contours of the lungs. The metric for adjusting the step size for a border segment is based on how far (at most) the segment lies from the true border. This method has the advantage of including small juxtapleural pulmonary modules in the segmentation despite their imaged intensity being dissimilar to the rest of the lung. Mackay \cite{mackay2019robust} uses this method.
+
+\subsubsection{Contour Interpolation}
+
+Between two slices filled with contours, new slices can be added with contours interpolated from those in the slices above and below them. Some methods are able to do this without a contour correspondence.
+
+Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
+
+Chai et al. \cite{chai1998contour} use partial differential equations to interpolate between contours on a terrain map. Their method produces smooth interpolations, and can handle complex shapes such as two or three branches.
+
 \subsection{Typical Methods}
 
 generic methods text

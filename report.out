@@ -2,20 +2,25 @@
 \BOOKMARK [1][-]{section.2}{Introduction}{}% 2
 \BOOKMARK [1][-]{section.3}{Background}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Overview}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Typical Methods}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{Correspondence Methods}{section.3}% 6
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Contour Correspondence}{subsection.3.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Point Correspondence and Triangulation}{subsection.3.3}% 8
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Branching Problem}{subsection.3.3}% 9
-\BOOKMARK [1][-]{section.4}{Method}{}% 10
-\BOOKMARK [2][-]{subsection.4.1}{Proposal}{section.4}% 11
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Contour Splitting}{subsection.4.1}% 12
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Point Angle}{subsection.4.1}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{Analysis}{}% 15
-\BOOKMARK [2][-]{subsection.5.1}{Ground Truth}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.2}{Visual Results}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.3}{Measurements}{section.5}% 18
-\BOOKMARK [2][-]{subsection.5.4}{Summary}{section.5}% 19
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 20
-\BOOKMARK [1][-]{section.7}{Appendix}{}% 21
+\BOOKMARK [2][-]{subsection.3.2}{Applications}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Scanning and Image Processing}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Segmentation}{subsection.3.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Contour Finding}{subsection.3.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Contour Interpolation}{subsection.3.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Typical Methods}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Correspondence Methods}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Contour Correspondence}{subsection.3.5}% 12
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Point Correspondence and Triangulation}{subsection.3.5}% 13
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Branching Problem}{subsection.3.5}% 14
+\BOOKMARK [1][-]{section.4}{Method}{}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Proposal}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Contour Splitting}{subsection.4.1}% 17
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Point Angle}{subsection.4.1}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 19
+\BOOKMARK [1][-]{section.5}{Analysis}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Ground Truth}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.2}{Visual Results}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Measurements}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.4}{Summary}{section.5}% 24
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 25
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 26
