@@ -135,4 +135,36 @@ N.~J. Mitra and A.~Nguyen, ``Estimating surface normals in noisy point cloud
   data,'' in \emph{Proceedings of the nineteenth annual symposium on
   Computational geometry}, 2003, pp. 322--328.
 
+\bibitem{pluta2012new}
+K.~Pluta, M.~Janaszewski, and M.~Postolski, ``New algorithm for modeling of
+  bronchial trees,'' \emph{Image Processing \& Communications}, vol.~17, no.~4,
+  pp. 179--190, 2012.
+
+\bibitem{shum19963d}
+H.-Y. Shum, M.~Hebert, and K.~Ikeuchi, ``On 3d shape similarity,'' in
+  \emph{Proceedings CVPR IEEE Computer Society Conference on Computer Vision
+  and Pattern Recognition}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1996,
+  pp. 526--531.
+
+\bibitem{saxena2013image}
+S.~Saxena, N.~Sharma, and S.~Sharma, ``Image processing tasks using parallel
+  computing in multi core architecture and its applications in medical
+  imaging,'' \emph{International Journal of Advanced Research in Computer and
+  Communication Engineering}, vol.~2, no.~4, pp. 1896--1900, 2013.
+
+\bibitem{alsmirat2017accelerating}
+M.~A. Alsmirat, Y.~Jararweh, M.~Al-Ayyoub, M.~A. Shehab, and B.~B. Gupta,
+  ``Accelerating compute intensive medical imaging segmentation algorithms
+  using hybrid cpu-gpu implementations,'' \emph{Multimedia Tools and
+  Applications}, vol.~76, no.~3, pp. 3537--3555, 2017.
+
+\bibitem{herbert2001contour}
+M.~J. Herbert and C.~B. Jones, ``Contour correspondence for serial section
+  reconstruction: complex scenarios in palaeontology,'' \emph{Computers \&
+  geosciences}, vol.~27, no.~4, pp. 427--440, 2001.
+
+\bibitem{li2021method}
+H.~Li and R.~Wang, ``Method of real-time wellbore surface reconstruction based
+  on spiral contour,'' \emph{Energies}, vol.~14, no.~2, p. 291, 2021.
+
 \end{thebibliography}
