@@ -35,9 +35,19 @@ introduction text
 
 \section{Background}
 
-background text
+We begin with a look at typical methods in rendering scan data. Then, correspondence methods are looked at in depth as the approach this report builds upon.
 
-\subsection{Generic Methods}
+\subsection{Overview}
+
+Images from scans (also referred to as sections or slices) can be segmented based on intensity into pixel regions to define structure boundaries. These can be processed further by finding contours to represent these boundaries.
+
+Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. Most applications tend to use either volumetric rendering or surface rendering.
+
+Volumetric rendering treats pixels in images as voxels, and a variety of rasterization and raycasting techniques are available for rendering these.
+
+Surface rendering requires a surface be defined, either implicitly or as a mesh. Point cloud methods generate implicit surfaces, whilst meshes can be generated through contour correspondence followed by mesh triangulation (with point correspondence as an optional middle step). 
+
+\subsection{Typical Methods}
 
 generic methods text
 
