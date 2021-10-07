@@ -76,4 +76,25 @@ J.~Chai, T.~Miyoshi, and E.~Nakamae, ``Contour interpolation and surface
   Visualization'98 (Cat. No. 98CB36276)}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 1998, pp. 27--33.
 
+\bibitem{zwicker2002ewa}
+M.~Zwicker, H.~Pfister, J.~Van~Baar, and M.~Gross, ``Ewa splatting,''
+  \emph{IEEE Transactions on Visualization and Computer Graphics}, vol.~8,
+  no.~3, pp. 223--238, 2002.
+
+\bibitem{ohiotexture}
+``Texture-based volume rendering,'' accessed from
+  https://web.cse.ohio-state.edu/~crawfis.3/cis694L/Slides/TextureSlicing.pdf.
+
+\bibitem{fishman2006volume}
+E.~K. Fishman, D.~R. Ney, D.~G. Heath, F.~M. Corl, K.~M. Horton, and P.~T.
+  Johnson, ``Volume rendering versus maximum intensity projection in ct
+  angiography: what works best, when, and why,'' \emph{Radiographics}, vol.~26,
+  no.~3, pp. 905--922, 2006.
+
+\bibitem{lacroute1994fast}
+P.~Lacroute and M.~Levoy, ``Fast volume rendering using a shear-warp
+  factorization of the viewing transformation,'' in \emph{Proceedings of the
+  21st annual conference on Computer graphics and interactive techniques},
+  1994, pp. 451--458.
+
 \end{thebibliography}
