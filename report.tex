@@ -111,6 +111,36 @@ Fishman et al. \cite{fishman2006volume} make comparisons between maximum intensi
 
 Intersecting arbitrary rays with voxels can be computationally expensive. Shear-warp rendering solves this by using projections which make rays orthogonal to the voxel axes \cite{lacroute1994fast}. 
 
+\subsubsection{Surface Reconstructions}
+
+In each image of the image stack, we can see where the boundaries of tissue are. We can therefore describe the geometry of a structure as it intersects the image plane. By combining all images in the stack, a surface reconstruction of the entire object can be found, provided the relationships between slices are inferred accurately. Surfaces have the advantage of having commonplace rendering techniques, and support on 3D printers.
+
+\paragraph{Marching Cubes}
+
+Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels ("inside" voxels bordering "outside" voxels, on some isosurface) are found. Each voxel has its corners defined as inside or outside based on its neighbours, and is then assigned a set of triangles based on those corners, using a lookup table. The triangles are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged, and smoothing is usually applied either to the mesh or during rendering for a more visually accurate output.
+
+Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of marching cubes. One problem marching cubes has is ambiguity which induces defects. The survey recommends avoiding lookup tables with reflective symmetry, where "outside" and "inside" corners of a voxel are swapped to give the same triangle set but with opposite normals. Instead only rotational symmetry (rotating corners around the voxel) is allowed. Such a lookup table was identified by Nielson et al. \cite{nielson2003marching}.
+
+\paragraph{Point Cloud Methods}
+
+One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Approximating methods produce surfaces which lean more heavily on the assumptions made, with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface at zero is generated.
+
+\subparagraph{Models}
+
+Braude et al. \cite{braude2007contour} employ Multi-level Partition of Unity (MPU) implicit models to generate isosurfaces from. MPU closely approximates Euclidean distance near points. This method requires surface normals. 
+
+Guennebaud et al. \cite{guennebaud2007algebraic} fit algebraic spheres to point sets to construct surfaces. Their method (APSS) performs better than prior methods on sharp features and sparse data.
+
+Oztireli et al. \cite{oztireli2009feature} combine Moving Least Squares (MLS) with local kernel regression to obtain Robust Implicit Moving Least Squares (RIMLS). This method reconstructs sharp (non-smooth) corners more accurately than APSS.
+
+Taubin et al. \cite{taubin2012smooth} demonstrate colour maps extrapolated from source points onto a reconstructed surface.
+
+\subparagraph{Estimating Normals}
+
+Some of the methods above require normals for each point. Estimating normals from the points sampled requires some understanding of the structure itself.
+
+Mitra et al. \cite{mitra2003estimating} use least squares distance to fit a plane to a neighbourhood of points for each point in the cloud. There is a sweet spot for the radius of the neighbourhood used. Small radius makes noisy points have more impact on the plane found, and large radius allows for surface curvature to introduce error. 
+
 \subsection{Correspondence Methods}
 
 subsection preamble text

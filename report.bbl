@@ -97,4 +97,42 @@ P.~Lacroute and M.~Levoy, ``Fast volume rendering using a shear-warp
   21st annual conference on Computer graphics and interactive techniques},
   1994, pp. 451--458.
 
+\bibitem{lorensen1987marching}
+W.~E. Lorensen and H.~E. Cline, ``Marching cubes: A high resolution 3d surface
+  construction algorithm,'' \emph{ACM siggraph computer graphics}, vol.~21,
+  no.~4, pp. 163--169, 1987.
+
+\bibitem{newman2006survey}
+T.~S. Newman and H.~Yi, ``A survey of the marching cubes algorithm,''
+  \emph{Computers \& Graphics}, vol.~30, no.~5, pp. 854--879, 2006.
+
+\bibitem{nielson2003marching}
+G.~M. Nielson, ``On marching cubes,'' \emph{IEEE Transactions on visualization
+  and computer graphics}, vol.~9, no.~3, pp. 283--297, 2003.
+
+\bibitem{braude2007contour}
+I.~Braude, J.~Marker, K.~Museth, J.~Nissanov, and D.~Breen, ``Contour-based
+  surface reconstruction using mpu implicit models,'' \emph{Graphical models},
+  vol.~69, no.~2, pp. 139--157, 2007.
+
+\bibitem{guennebaud2007algebraic}
+G.~Guennebaud and M.~Gross, ``Algebraic point set surfaces,'' in \emph{ACM
+  SIGGRAPH 2007 papers}, 2007, pp. 23--es.
+
+\bibitem{oztireli2009feature}
+A.~C. {\"O}ztireli, G.~Guennebaud, and M.~Gross, ``Feature preserving point set
+  surfaces based on non-linear kernel regression,'' in \emph{Computer Graphics
+  Forum}, vol.~28, no.~2.\hskip 1em plus 0.5em minus 0.4em\relax Wiley Online
+  Library, 2009, pp. 493--501.
+
+\bibitem{taubin2012smooth}
+G.~Taubin, ``Smooth signed distance surface reconstruction and applications,''
+  in \emph{Iberoamerican Congress on Pattern Recognition}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2012, pp. 38--45.
+
+\bibitem{mitra2003estimating}
+N.~J. Mitra and A.~Nguyen, ``Estimating surface normals in noisy point cloud
+  data,'' in \emph{Proceedings of the nineteenth annual symposium on
+  Computational geometry}, 2003, pp. 322--328.
+
 \end{thebibliography}
