@@ -361,7 +361,17 @@ visual results text
 
 \subsection{Measurements}
 
-For reconstruction accuracy, Mackay used the Hausdorff distance filter built into Meshlab, which takes as input a sampled mesh (the mesh to sample points from), and a target mesh (to find the closest distance from each sample point). Many points are sampled and mean distance is reported. I will refer to the forward direction as when the original synthetic mesh is the sampled mesh, and the reconstructed mesh is the targest mesh, with reverse being the opposite. The filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled, and in some cases a direction may be omitted for reasons which will be explained.
+For reconstruction accuracy, Mackay used the Hausdorff distance filter built into Meshlab, which takes as input a sampled mesh (the mesh to sample points from), and a target mesh (to find the closest distance from each sample point). Many points are sampled and mean distance is reported. Lower mean distance is better. I will refer to the forward direction as when the original synthetic mesh is the sampled mesh, and the reconstructed mesh is the targest mesh, with reverse being the opposite. 
+
+The filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled, and in some cases a direction may be omitted for reasons which will be explained.
+
+For contour merging and DTW, Mackay's implementation is used. For the proposed method, the same implementation is used except where contour splitting and point angle replace the point correspondence stage. To start with, 50\% angle weight (and 50\% progression) is used in the point angle metric.
+
+\subsubsection{Simple Model Reconstruction}
+
+(figures)
+
+(figure discussion)
 
 Simple, forward mean
 \begin{center}
@@ -372,11 +382,15 @@ Simple, forward mean
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Merging + DTW & 0.0368 & 0.0274 & 0.0174 & 0.0195 & 0.0145 \\
-Splitting + Point Angle & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0140 \\
+Contour Merging + DTW (MDTW) & 0.0368 & 0.0274 & 0.0174 & 0.0195 & 0.0145 \\
+Contour Splitting + Point Angle (CSPA) & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0140 \\
 \hline
 \end{tabular}
 \end{center}
+
+(line graph showing slices trend?)
+
+As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have almost equivalent accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models. 
 
 \subsection{Summary}
 
