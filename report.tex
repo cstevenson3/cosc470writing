@@ -453,6 +453,8 @@ Contour Splitting + Point Angle (CSPA) & 0.0147 & 0.00491 & 0.0115 & 0.0768 & 0.
 
 \subsubsection{Multi Branch Reconstruction}
 
+multi branch
+
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -486,6 +488,44 @@ Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0
 \end{table}
 
 jwddjnw
+
+\subsubsection{Bend Reconstruction}
+
+bend text
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0764 & 0.0363 & 0.0321 & 0.0314 & 0.0266 \\
+Contour Splitting + Point Angle (CSPA) & 0.0647 & 0.0325 & 0.0281 & 0.0296 & 0.0256 \\
+\hline
+\end{tabular}
+\caption{Bend model, mean Hausdorff distance from original to reconstruction}
+\label{table:bend_forward}
+\end{table}
+
+In between text
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0618 & 0.0469 & 0.0158 & 0.101 & 0.0761 \\
+Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0371 & 0.0128 & 0.0650 & 0.0481 \\
+\hline
+\end{tabular}
+\caption{Bend model, mean Hausdorff distance from reconstruction to original}
+\label{table:bend_reverse}
+\end{table}
+
+a
 
 \subsection{Summary}
 
