@@ -369,12 +369,13 @@ For contour merging and DTW, Mackay's implementation is used. For the proposed m
 
 \subsubsection{Simple Model Reconstruction}
 
+A simple tube is reconstructed.
+
 (figures)
 
 (figure discussion)
 
-Simple, forward mean
-\begin{center}
+\begin{table}
 \begin{tabular}{ | c | c | c | c | c | c | }
 
 \hline
@@ -386,11 +387,23 @@ Contour Merging + DTW (MDTW) & 0.0368 & 0.0274 & 0.0174 & 0.0195 & 0.0145 \\
 Contour Splitting + Point Angle (CSPA) & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0140 \\
 \hline
 \end{tabular}
-\end{center}
+\caption{Simple model, mean Hausdorff distance from original to reconstruction}
+\label{table:simple_forward}
+\end{table}
 
 (line graph showing slices trend?)
 
-As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have almost equivalent accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models. 
+As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have almost equivalent accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
+
+\subsubsection{Simple Branch Reconstruction}
+
+A simple model containing a branch is reconstructed.
+
+(figures)
+
+(figure discussion)
+
+
 
 \subsection{Summary}
 
