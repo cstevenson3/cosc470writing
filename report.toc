@@ -1,42 +1,42 @@
-\contentsline {section}{\numberline {1}Overview}{1}{section.1}%
-\contentsline {section}{\numberline {2}Introduction}{1}{section.2}%
-\contentsline {section}{\numberline {3}Background}{1}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Overview}{1}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Applications}{2}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Scanning and Image Processing}{2}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Segmentation}{2}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Contour Finding}{2}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Contour Interpolation}{3}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Typical Methods}{3}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Volumetric Rendering}{3}{subsubsection.3.4.1}%
-\contentsline {paragraph}{Rasterization}{3}{section*.2}%
-\contentsline {paragraph}{Raycasting}{3}{section*.3}%
-\contentsline {subsubsection}{\numberline {3.4.2}Surface Reconstructions}{4}{subsubsection.3.4.2}%
-\contentsline {paragraph}{Marching Cubes}{4}{section*.4}%
-\contentsline {paragraph}{Point Cloud Methods}{4}{section*.5}%
-\contentsline {subparagraph}{Models}{4}{section*.6}%
-\contentsline {subparagraph}{Estimating Normals}{4}{section*.7}%
-\contentsline {paragraph}{Mesh Rendering}{5}{section*.8}%
-\contentsline {subsection}{\numberline {3.5}Testing}{5}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Measuring Similarity in Segmentation}{5}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Generating Models}{5}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Measuring Similarity in 3D Models}{5}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Performance}{6}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Correspondence Methods}{6}{subsection.3.7}%
-\contentsline {subsubsection}{\numberline {3.7.1}Contour Correspondence}{6}{subsubsection.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.7.2}Point Correspondence}{7}{subsubsection.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.7.3}Mesh Triangulation}{7}{subsubsection.3.7.3}%
-\contentsline {subsubsection}{\numberline {3.7.4}Branching Problem}{7}{subsubsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.8}Background Summary}{8}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Method}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Proposal}{8}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Contour Splitting}{8}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Point Angle}{9}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Implementation}{9}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Analysis}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Ground Truth}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Visual Results}{10}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Measurements}{10}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Summary}{11}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Conclusion}{11}{section.6}%
-\contentsline {section}{\numberline {7}Appendix}{13}{section.7}%
+\contentsline {section}{\numberline {1}Overview}{2}{section.1}%
+\contentsline {section}{\numberline {2}Introduction}{2}{section.2}%
+\contentsline {section}{\numberline {3}Background}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Overview}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Applications}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Scanning and Image Processing}{3}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Segmentation}{3}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Contour Finding}{3}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Contour Interpolation}{4}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Typical Methods}{4}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Volumetric Rendering}{4}{subsubsection.3.4.1}%
+\contentsline {paragraph}{Rasterization}{4}{section*.2}%
+\contentsline {paragraph}{Raycasting}{4}{section*.3}%
+\contentsline {subsubsection}{\numberline {3.4.2}Surface Reconstructions}{5}{subsubsection.3.4.2}%
+\contentsline {paragraph}{Marching Cubes}{5}{section*.4}%
+\contentsline {paragraph}{Point Cloud Methods}{5}{section*.5}%
+\contentsline {subparagraph}{Models}{5}{section*.6}%
+\contentsline {subparagraph}{Estimating Normals}{5}{section*.7}%
+\contentsline {paragraph}{Mesh Rendering}{6}{section*.8}%
+\contentsline {subsection}{\numberline {3.5}Testing}{6}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Measuring Similarity in Segmentation}{6}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Generating Models}{6}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Measuring Similarity in 3D Models}{6}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Performance}{7}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Correspondence Methods}{7}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Contour Correspondence}{7}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}Point Correspondence}{8}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}Mesh Triangulation}{8}{subsubsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.4}Branching Problem}{8}{subsubsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.8}Background Summary}{9}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Method}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Proposal}{9}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Contour Splitting}{9}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Point Angle}{10}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Implementation}{10}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Analysis}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ground Truth}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Visual Results}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Measurements}{11}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Summary}{12}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Conclusion}{12}{section.6}%
+\contentsline {section}{\numberline {7}Appendix}{14}{section.7}%
