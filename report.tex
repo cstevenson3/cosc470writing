@@ -363,7 +363,7 @@ visual results text
 
 For reconstruction accuracy, Mackay used the Hausdorff distance filter built into Meshlab, which takes as input a sampled mesh (the mesh to sample points from), and a target mesh (to find the closest distance from each sample point). Many points are sampled and mean distance is reported. Lower mean distance is better. I will refer to the forward direction as when the original synthetic mesh is the sampled mesh, and the reconstructed mesh is the targest mesh, with reverse being the opposite. 
 
-The filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled, and in some cases a direction may be omitted for reasons which will be explained.
+The filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled. When it comes to direction, extraneous faces on a target mesh may reduce Hausdorff distance, but extraneous faces on a sampled mesh increase Hausdorff distance (the preferred interpretation). For this reason, in same examined cases a direction may be omitted for reasons which will be explained.
 
 For contour merging and DTW, Mackay's implementation is used. For the proposed method, the same implementation is used except where contour splitting and point angle replace the point correspondence stage. To start with, 50\% angle weight (and 50\% progression) is used in the point angle metric.
 
@@ -375,9 +375,8 @@ A simple tube is reconstructed.
 
 (figure discussion)
 
-\begin{table}
+\begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
-
 \hline
 & \multicolumn{5}{c|}{No. of Slices Sampled} \\
 \cline{2-6}
@@ -391,9 +390,26 @@ Contour Splitting + Point Angle (CSPA) & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0
 \label{table:simple_forward}
 \end{table}
 
+In between text
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0186 & 0.00836 & 0.00479 & 0.00336 & 0.00275 \\
+Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 0.00215 \\
+\hline
+\end{tabular}
+\caption{Simple model, mean Hausdorff distance from reconstruction to original}
+\label{table:simple_reverse}
+\end{table}
+
 (line graph showing slices trend?)
 
-As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have almost equivalent accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
+As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
 
 \subsubsection{Simple Branch Reconstruction}
 
@@ -403,7 +419,73 @@ A simple model containing a branch is reconstructed.
 
 (figure discussion)
 
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0727 & 0.0746 & 0.0641 & 0.0605 & 0.0643 \\
+Contour Splitting + Point Angle (CSPA) & 0.0685 & 0.0778 & 0.0640 & 0.0607 & 0.0699 \\
+\hline
+\end{tabular}
+\caption{Simple branch model, mean Hausdorff distance from original to reconstruction}
+\label{table:simple_branch_forward}
+\end{table}
 
+In between text
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0195 & 0.0500 & 0.0107 & 0.0538 & 0.0521 \\
+Contour Splitting + Point Angle (CSPA) & 0.0147 & 0.00491 & 0.0115 & 0.0768 & 0.0184 \\
+\hline
+\end{tabular}
+\caption{Simple branch model, mean Hausdorff distance from reconstruction to original}
+\label{table:simple_branch_reverse}
+\end{table}
+
+\subsubsection{Multi Branch Reconstruction}
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.416 & 0.0629 & 0.0264 & 0.0261 & 0.0138 \\
+Contour Splitting + Point Angle (CSPA) & 0.404 & 0.0462 & 0.0414 & 0.0255 & 0.0144 \\
+\hline
+\end{tabular}
+\caption{Multi branch model, mean Hausdorff distance from original to reconstruction}
+\label{table:multi_branch_forward}
+\end{table}
+
+In between text
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0964 & 0.0469 & 0.0320 & 0.0400 & 0.0236 \\
+Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0135 \\
+\hline
+\end{tabular}
+\caption{Multi branch model, mean Hausdorff distance from reconstruction to original}
+\label{table:multi_branch_reverse}
+\end{table}
+
+jwddjnw
 
 \subsection{Summary}
 
