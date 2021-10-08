@@ -20,15 +20,16 @@
 \BOOKMARK [3][-]{subsubsection.3.7.2}{Point Correspondence}{subsection.3.7}% 20
 \BOOKMARK [3][-]{subsubsection.3.7.3}{Mesh Triangulation}{subsection.3.7}% 21
 \BOOKMARK [3][-]{subsubsection.3.7.4}{Branching Problem}{subsection.3.7}% 22
-\BOOKMARK [1][-]{section.4}{Method}{}% 23
-\BOOKMARK [2][-]{subsection.4.1}{Proposal}{section.4}% 24
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Contour Splitting}{subsection.4.1}% 25
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Point Angle}{subsection.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 27
-\BOOKMARK [1][-]{section.5}{Analysis}{}% 28
-\BOOKMARK [2][-]{subsection.5.1}{Ground Truth}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.2}{Visual Results}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.3}{Measurements}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.4}{Summary}{section.5}% 32
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 33
-\BOOKMARK [1][-]{section.7}{Appendix}{}% 34
+\BOOKMARK [2][-]{subsection.3.8}{Background Summary}{section.3}% 23
+\BOOKMARK [1][-]{section.4}{Method}{}% 24
+\BOOKMARK [2][-]{subsection.4.1}{Proposal}{section.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Contour Splitting}{subsection.4.1}% 26
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Point Angle}{subsection.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 28
+\BOOKMARK [1][-]{section.5}{Analysis}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{Ground Truth}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.2}{Visual Results}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.3}{Measurements}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.4}{Summary}{section.5}% 33
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 34
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 35

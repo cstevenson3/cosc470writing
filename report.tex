@@ -232,6 +232,10 @@ Mackay \cite{mackay2019robust} looks for lung branches as one contour approximat
 
 Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
 
+\subsection{Background Summary}
+
+summary text
+
 \section{Method}
 
 method text
@@ -343,11 +347,13 @@ Mackay's report provides a complete implementation of contour and point correspo
 
 \section{Analysis}
 
-analysis text
+To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. These observations are then confirmed with objective measurements such as Hausdorff distance.
 
 \subsection{Ground Truth}
 
-ground truth text
+For ground truth we use the same synthetic models Mackay generated for analysis. Planes are intersected with the models to give the contours of points expected from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
+
+Additionally, Meshlab was used to copy specific sections of these models into new files, to focus reconstructions on the difficult cases the proposed method is intended to improve on. These are named after the original model and which slice range (based on the 10 slice levels version) is being copied.
 
 \subsection{Visual Results}
 
