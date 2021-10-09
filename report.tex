@@ -355,9 +355,52 @@ For ground truth we use the same synthetic models Mackay generated for analysis.
 
 Additionally, Meshlab was used to copy specific sections of these models into new files, to focus reconstructions on the difficult cases the proposed method is intended to improve on. These are named after the original model and which slice range (based on the 10 slice levels version) is being copied.
 
-\subsection{Visual Results}
-
-visual results text
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{simple}
+         \label{fig:simple}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{simple-branch}
+         \label{fig:simple_branch}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{simple-branch-2-6}
+         \label{fig:simple_branch_focussed}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{multi-branch}
+         \label{fig:multi_branch}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{multi-branch-num-num}
+         \label{fig:multi_branch_focussed}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{originals/simple}
+         \caption{bend}
+         \label{fig:bend}
+     \end{subfigure}
+        \caption{Original Models}
+        \label{fig:original_models}
+\end{figure}
 
 \subsection{Measurements}
 
@@ -419,6 +462,8 @@ A simple model containing a branch is reconstructed.
 
 (figure discussion)
 
+20 and 50 plane samples had invalid contour correspondence.
+
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -426,8 +471,8 @@ A simple model containing a branch is reconstructed.
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0727 & 0.0746 & 0.0641 & 0.0605 & 0.0643 \\
-Contour Splitting + Point Angle (CSPA) & 0.0685 & 0.0778 & 0.0640 & 0.0607 & 0.0699 \\
+Contour Merging + DTW (MDTW) & 0.0727 & - & 0.0641 & 0.0605 & - \\
+Contour Splitting + Point Angle (CSPA) & 0.0685 & - & 0.0640 & 0.0607 & - \\
 \hline
 \end{tabular}
 \caption{Simple branch model, mean Hausdorff distance from original to reconstruction}
@@ -443,12 +488,31 @@ In between text
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0195 & 0.0500 & 0.0107 & 0.0538 & 0.0521 \\
-Contour Splitting + Point Angle (CSPA) & 0.0147 & 0.00491 & 0.0115 & 0.0768 & 0.0184 \\
+Contour Merging + DTW (MDTW) & 0.0195 & - & 0.0107 & 0.0538 & - \\
+Contour Splitting + Point Angle (CSPA) & 0.0147 & - & 0.0115 & 0.0768 & - \\
 \hline
 \end{tabular}
 \caption{Simple branch model, mean Hausdorff distance from reconstruction to original}
 \label{table:simple_branch_reverse}
+\end{table}
+
+simple discussion (examine 40 sample version)
+
+We follow this up with a model focussing on the branch section of the simple branch model. This entails comparing the complete simple model reconstruction to this focussed original model. Only the forward Hausdorff distance is valid here.
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 0.0315 & - & 0.00453 & 0.00440 & - \\
+Contour Splitting + Point Angle (CSPA) & 0.0207 & - & 0.00469 & 0.00482 & - \\
+\hline
+\end{tabular}
+\caption{Simple branch focussed model, mean Hausdorff distance from original to reconstruction}
+\label{table:simple_branch_focussed_forward}
 \end{table}
 
 \subsubsection{Multi Branch Reconstruction}
@@ -491,7 +555,7 @@ jwddjnw
 
 \subsubsection{Bend Reconstruction}
 
-bend text
+In this section a bended tube is reconstructed. This tube is oriented so that when scanned, it appears as two contours coming down to one, similar to a branch.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
