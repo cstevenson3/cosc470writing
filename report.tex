@@ -279,79 +279,13 @@ Prior methods of point correspondence consider the Euclidean distance between po
 
 Mackay's report provides a complete implementation of contour and point correspondence (TODO cite software). This implementation was modified to add the options of contour splitting and point angle for point correspondence. The modified source code is available here (TODO git link).
 
-\begin{figure}[h]
-     \centering
-     \begin{subfigure}[b]{0.22\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{dtw10}
-         \caption{DTW \linebreak}
-         \label{fig:dtw10}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa10ang00}
-         \caption{Point angle, 0\% angle weight}
-         \label{fig:pa10ang00}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.195\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa10ang50}
-         \caption{Point angle, 50\% angle weight}
-         \label{fig:pa10ang50}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa10ang100}
-         \caption{Point angle, 100\% angle weight}
-         \label{fig:pa10ang100}
-     \end{subfigure}
-        \caption{Reconstructions with 10 plane samples}
-        \label{fig:plane10}
-\end{figure}
-
-\begin{figure}[h]
-     \centering
-     \begin{subfigure}[b]{0.215\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{dtw50}
-         \caption{DTW \linebreak}
-         \label{fig:dtw50}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa50ang00}
-         \caption{Point angle, 0\% angle weight}
-         \label{fig:pa50ang00}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.205\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa50ang50}
-         \caption{Point angle, 50\% angle weight}
-         \label{fig:pa50ang50}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{pa50ang90}
-         \caption{Point angle, 90\% angle weight}
-         \label{fig:pa50ang90}
-     \end{subfigure}
-        \caption{Reconstructions with 50 plane samples}
-        \label{fig:plane50}
-\end{figure}
-
 \section{Analysis}
 
 To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. These observations are then confirmed with objective measurements such as Hausdorff distance.
 
 \subsection{Ground Truth}
 
-For ground truth we use the same synthetic models Mackay generated for analysis. Planes are intersected with the models to give the contours of points expected from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
+For ground truth we use the same synthetic models Mackay generated for analysis (See Figure \ref{fig:original_models}). Planes are intersected with the models to give the contours of points expected from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
 
 Additionally, Meshlab was used to copy specific sections of these models into new files, to focus reconstructions on the difficult cases the proposed method is intended to improve on. These are named after the original model and which slice range (based on the 10 slice levels version) is being copied.
 
@@ -366,21 +300,21 @@ Additionally, Meshlab was used to copy specific sections of these models into ne
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{originals/simple}
+         \includegraphics[width=\textwidth]{originals/simple-branch}
          \caption{simple-branch}
          \label{fig:simple_branch}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{originals/simple}
+         \includegraphics[width=\textwidth]{originals/simple-branch-2-6}
          \caption{simple-branch-2-6}
          \label{fig:simple_branch_focussed}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{originals/simple}
+         \includegraphics[width=\textwidth]{originals/multi-branch}
          \caption{multi-branch}
          \label{fig:multi_branch}
      \end{subfigure}
@@ -394,7 +328,7 @@ Additionally, Meshlab was used to copy specific sections of these models into ne
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{originals/simple}
+         \includegraphics[width=\textwidth]{originals/bend}
          \caption{bend}
          \label{fig:bend}
      \end{subfigure}
