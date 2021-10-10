@@ -352,47 +352,25 @@ A simple tube is reconstructed.
 &
 \end{tabular}
 \begin{figure}[h]
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{originals/simple}
-         \caption{Original}
-         \label{fig:simple_original}
-     \end{subfigure}
+     \centering
+     \begin{minipage}[t]{.45\linewidth}
+       \subcaptionbox{Original}
+       {\includegraphics[width=\linewidth]{originals/simple}}%
+     \end{minipage}%
      \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{reconstructions/dtw-simple-50}
-         \caption{DTW 50 planes}
-         \label{fig:simple_dtw_50}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{reconstructions/dtw-simple-10}
-         \caption{DTW 10 planes}
-         \label{fig:simple_dtw_10}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{originals/simple}
-         \caption{Original}
-         \label{fig:simple_original2}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{reconstructions/cspa50-simple-50}
-         \caption{CSPA 50 planes}
-         \label{fig:simple_cspa50_50}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{reconstructions/cspa50-simple-10}
-         \caption{CSPA 10 planes}
-         \label{fig:simple_cspa50_10}
-     \end{subfigure}
+     \begin{minipage}[b]{.5\linewidth}
+       \subcaptionbox{DTW 50 planes}
+       {\includegraphics[width=.45\linewidth]{reconstructions/dtw-simple-50}}%
+       \hfill
+       \subcaptionbox{DTW 10 planes}
+       {\includegraphics[width=.45\linewidth]{reconstructions/dtw-simple-10}}
+       \hfill
+       \subcaptionbox{CSPA 50 planes}
+       {\includegraphics[width=.45\linewidth]{reconstructions/cspa50-simple-50}}%
+       \hfill
+       \subcaptionbox{CSPA 10 planes}
+       {\includegraphics[width=.45\linewidth]{reconstructions/cspa50-simple-10}}
+     \end{minipage}%
         \caption{Reconstructions of simple model}
         \label{fig:simple_reconstructions}
 \end{figure}
