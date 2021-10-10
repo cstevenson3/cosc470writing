@@ -375,7 +375,7 @@ A simple tube is reconstructed.
         \label{fig:simple_reconstructions}
 \end{figure}
 
-(figure discussion)
+Both reconstruction methods handle this simple case well, with both 50 and 10 plane samples. In the 10 plane reconstruction, they both have visible jagged parts at the bottom, although CSPA seems to be better in this area. We now look at Hausdorff distance to confirm this.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -392,7 +392,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0
 \label{table:simple_forward}
 \end{table}
 
-In between text
+In Table \ref{table:simple_forward}, the anamoly at 40 samples is caused by the 40 plane samples not spanning the full original model. This affects both methods equivalently so has been left in for relative comparison.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -409,7 +409,11 @@ Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 
 \label{table:simple_reverse}
 \end{table}
 
-(line graph showing slices trend?)
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/simple-reverse}
+\caption{Simple model, mean Hausdorff distance from reconstruction to original\label{fig:simple_reverse_graph}}
+\end{figure}
 
 As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
 
