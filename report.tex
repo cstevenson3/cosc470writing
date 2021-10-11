@@ -591,6 +591,8 @@ In this section a bended tube is reconstructed. This tube is oriented so that wh
         \label{fig:bend_reconstructions}
 \end{figure}
 
+For any plane count, CSPA appears to have a cleaner reconstruction than DTW.
+
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -606,8 +608,6 @@ Contour Splitting + Point Angle (CSPA) & 0.0647 & 0.0325 & 0.0281 & 0.0296 & 0.0
 \label{table:bend_forward}
 \end{table}
 
-In between text
-
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -615,15 +615,15 @@ In between text
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0618 & 0.0469 & 0.0158 & 0.101 & 0.0761 \\
-Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0371 & 0.0128 & 0.0650 & 0.0481 \\
+Contour Merging + DTW (MDTW) & 0.0618 & 0.0313 & 0.0158 & 0.101 & 0.0752 \\
+Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0491 \\
 \hline
 \end{tabular}
 \caption{Bend model, mean Hausdorff distance from reconstruction to original}
 \label{table:bend_reverse}
 \end{table}
 
-a
+For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I believe this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
 
 \subsection{Summary}
 
