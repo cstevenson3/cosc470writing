@@ -525,9 +525,9 @@ A model with multiple branches at different orientations is reconstructed.
         \label{fig:multi_branch_reconstructions}
 \end{figure}
 
-In Figure \ref{fig:multi_branch_reconstructions}, the 50-plane reconstructions show invalid contour correspondence in the top branches. In the 10-plane versions, entire branch halves are missing from the contour correspondence. These issues affect most of the multi-branch reconstructions. For the latter reason we will consider only the reverse Hausdorff distance, from reconstruction to original. Note that this favours CSPA more as it omits some sections with invalid contour correspondence, and so that area is not sampled from. For this reason we will revisit a version of this model focussing only on the lower two branches.
+In the branches with correct contour correspondence (the lower two branches), we can compare the point correspondence. In the 50-plane reconstructions, we see similar quality in the middle branch from both methods. However in the lower branch, CSPA produces a smoother point correspondence. In the 10-plane reconstructions, DTW has bad artefacts in both branches, such as twisting, and too many points being matched to a single point. CSPA solves these problems, giving better branch reconstructions.
 
-In the branches with correct contour correspondence (the lower two branches), we can compare the point correspondence. In the 50-plane reconstructions, we see similar quality in the middle branch from both methods. However, CSPA produces a smoother point correspondence in the lower branch. In the 10-plane reconstructions, DTW has bad artefacts in both branches, such as twisting, and too many points being matched to a single point. CSPA solves these problems, giving better branch reconstructions.
+The 50-plane reconstructions show invalid contour correspondence in the top branches. In the 10-plane versions, entire branch halves are missing from the contour correspondence. These issues affect most of the multi-branch reconstructions. For the latter reason we will consider only the reverse Hausdorff distance, from reconstruction to original. Note that this favours CSPA more as it omits some sections with invalid contour correspondence, and so that section is not sampled from. For this reason we will revisit a version of this model focussing only on the lower two branches.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -544,11 +544,30 @@ Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0
 \label{table:multi_branch_reverse}
 \end{table}
 
-We can see t
+The reverse mean Hausdorff distance indicates CSPA gives more accurate reconstructions of the multi branch model than DTW at all plane sample counts. To confirm this is not down to the omissions caused by point correspondence, we use the focussed multi-branch model.
+
+\begin{table}[h]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & - & 0.0238 & 0.0134 & 0.0109 & 0.00674 \\
+Contour Splitting + Point Angle (CSPA) & - & 0.0175 & 0.00934 & 0.0108 & 0.00497 \\
+\hline
+\end{tabular}
+\caption{Multi branch focussed model, mean Hausdorff distance from original to reconstruction}
+\label{table:multi_branch_focussed_forward}
+\end{table}
+
+These Hausdorff distances show that CSPA improves in accuracy compared to DTW in the lower branching sections.
 
 \subsubsection{Bend Reconstruction}
 
 In this section a bended tube is reconstructed. This tube is oriented so that when scanned, it appears as two contours coming down to one, similar to a branch.
+
+
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
