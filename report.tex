@@ -416,7 +416,7 @@ As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_r
 
 \subsubsection{Simple Branch Reconstruction}
 
-A simple model containing a branch is reconstructed.
+A simple model containing a branch is reconstructed. Here there are cases where contour correspondence is invalid (for 20, 40 and 50 plane samples), and so only 10 and 30 are analysed.
 
 \begin{figure}[h]
      \centering
@@ -426,13 +426,13 @@ A simple model containing a branch is reconstructed.
      \end{minipage}%
      \hfill
      \begin{minipage}[b]{.6\linewidth}
-       \subcaptionbox{DTW 50 planes}
+       \subcaptionbox{DTW 30 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-30}}%
        \hfill
        \subcaptionbox{DTW 10 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-10}}
        \hfill
-       \subcaptionbox{CSPA 50 planes}
+       \subcaptionbox{CSPA 30 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-simple-branch-30}}%
        \hfill
        \subcaptionbox{CSPA 10 planes}
@@ -442,9 +442,9 @@ A simple model containing a branch is reconstructed.
         \label{fig:simple_branch_reconstructions}
 \end{figure}
 
-(figure discussion)
+At 30 plane samples we see decent reconstructions, with CSPA having a slightly less clean split. At 10 plane samples, DTW reconstructs one side of the branch well, but the other side is twisted, and the split is missing triangles. CSPA on the other hand has a clean reconstruction in terms of being closed and smooth on the branches, but there is an obvious protrusion where the split line has been slightly misplaced. 
 
-20 and 50 plane samples had invalid contour correspondence.
+These 10-plane figures highlight the behaviours of the two approaches. With merging + DTW, the constraints on DTW force the point correspondence to move along on both sides. When the correspondence arrives at one of the merging points on the two-contour, it can only connect to a few points on the single contour before being forced to jump across the merge. This results in the split on the single contour being placed not exactly halfway between the branches. In Figure \ref{fig:simple_branch_reconstructions}, this is visible as the front split being more left than it should. With CSPA, the split line is placed based on an estimation of the ratio of areas of the two contours, and the ratio of areas in the split contour. This gets the split line close to where it should be, but not exactly. In Figure \ref{fig:simple_branch_reconstructions}, we see it has estimated the split line to be further right than it should be. Perhaps a metric accounting for contour shape to find where the single contour starts to pinch would be more accurate, but also more sensitive to irregular contour shapes.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -480,7 +480,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0147 & - & 0.0115 & 0.0768 & - \\
 
 simple discussion (examine 40 sample version)
 
-We follow this up with a model focussing on the branch section of the simple branch model. This entails comparing the complete simple model reconstruction to this focussed original model. Only the forward Hausdorff distance is valid here.
+We follow this up with a model containing only the branch section of the simple branch model. We compared the complete simple model reconstruction to this focussed original model, to specifically see Hausdorff distance at the branch section. Only the forward Hausdorff distance is valid here.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -499,24 +499,35 @@ Contour Splitting + Point Angle (CSPA) & 0.0207 & - & 0.00469 & 0.00482 & - \\
 
 \subsubsection{Multi Branch Reconstruction}
 
-multi branch
+A model with multiple branches at different orientations is reconstructed.
 
-\begin{table}[h]
-\begin{tabular}{ | c | c | c | c | c | c | }
-\hline
-& \multicolumn{5}{c|}{No. of Slices Sampled} \\
-\cline{2-6}
-Method & 10 & 20 & 30 & 40 & 50 \\
-\hline
-Contour Merging + DTW (MDTW) & 0.416 & 0.0629 & 0.0264 & 0.0261 & 0.0138 \\
-Contour Splitting + Point Angle (CSPA) & 0.404 & 0.0462 & 0.0414 & 0.0255 & 0.0144 \\
-\hline
-\end{tabular}
-\caption{Multi branch model, mean Hausdorff distance from original to reconstruction}
-\label{table:multi_branch_forward}
-\end{table}
+\begin{figure}[h]
+     \centering
+     \begin{minipage}[b]{.38\linewidth}
+       \subcaptionbox{Original}
+       {\includegraphics[width=\linewidth]{originals/multi-branch}}%
+     \end{minipage}%
+     \hfill
+     \begin{minipage}[b]{.6\linewidth}
+       \subcaptionbox{DTW 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-multi-branch-50}}%
+       \hfill
+       \subcaptionbox{DTW 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-multi-branch-10}}
+       \hfill
+       \subcaptionbox{CSPA 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-multi-branch-50}}%
+       \hfill
+       \subcaptionbox{CSPA 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-multi-branch-10}}
+     \end{minipage}%
+        \caption{Reconstructions of multi branch model}
+        \label{fig:multi_branch_reconstructions}
+\end{figure}
 
-In between text
+In Figure \ref{fig:multi_branch_reconstructions}, the 50-plane reconstructions show invalid contour correspondence in the top branches. In the 10-plane versions, entire branch halves are missing from the contour correspondence. These issues affect most of the multi-branch reconstructions. For the latter reason we will consider only the reverse Hausdorff distance, from reconstruction to original. Note that this favours CSPA more as it omits some sections with invalid contour correspondence, and so that area is not sampled from. For this reason we will revisit a version of this model focussing only on the lower two branches.
+
+In the branches with correct contour correspondence (the lower two branches), we can compare the point correspondence. In the 50-plane reconstructions, we see similar quality in the middle branch from both methods. However, CSPA produces a smoother point correspondence in the lower branch. In the 10-plane reconstructions, DTW has bad artefacts in both branches, such as twisting, and too many points being matched to a single point. CSPA solves these problems, giving better branch reconstructions.
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -533,7 +544,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0
 \label{table:multi_branch_reverse}
 \end{table}
 
-jwddjnw
+We can see t
 
 \subsubsection{Bend Reconstruction}
 
