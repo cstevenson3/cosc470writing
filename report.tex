@@ -567,7 +567,29 @@ These Hausdorff distances show that CSPA improves in accuracy compared to DTW in
 
 In this section a bended tube is reconstructed. This tube is oriented so that when scanned, it appears as two contours coming down to one, similar to a branch.
 
-
+\begin{figure}[h]
+     \centering
+     \begin{minipage}[b]{.38\linewidth}
+       \subcaptionbox{Original}
+       {\includegraphics[width=\linewidth]{originals/bend}}%
+     \end{minipage}%
+     \hfill
+     \begin{minipage}[b]{.6\linewidth}
+       \subcaptionbox{DTW 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-bend-50}}%
+       \hfill
+       \subcaptionbox{DTW 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-bend-10}}
+       \hfill
+       \subcaptionbox{CSPA 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-bend-50}}%
+       \hfill
+       \subcaptionbox{CSPA 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-bend-10}}
+     \end{minipage}%
+        \caption{Reconstructions of bend model}
+        \label{fig:bend_reconstructions}
+\end{figure}
 
 \begin{table}[h]
 \begin{tabular}{ | c | c | c | c | c | c | }
