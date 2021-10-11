@@ -348,9 +348,6 @@ For contour merging and DTW, Mackay's implementation is used. For the proposed m
 
 A simple tube is reconstructed.
 
-\begin{tabular}{ c c }
-&
-\end{tabular}
 \begin{figure}[h]
      \centering
      \begin{minipage}[b]{.38\linewidth}
@@ -415,13 +412,35 @@ Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 
 \caption{Simple model, mean Hausdorff distance from reconstruction to original\label{fig:simple_reverse_graph}}
 \end{figure}
 
-As we can see, this agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
+As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_reverse_graph}, our data agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
 
 \subsubsection{Simple Branch Reconstruction}
 
 A simple model containing a branch is reconstructed.
 
-(figures)
+\begin{figure}[h]
+     \centering
+     \begin{minipage}[b]{.38\linewidth}
+       \subcaptionbox{Original}
+       {\includegraphics[width=\linewidth]{originals/simple-branch}}%
+     \end{minipage}%
+     \hfill
+     \begin{minipage}[b]{.6\linewidth}
+       \subcaptionbox{DTW 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-30}}%
+       \hfill
+       \subcaptionbox{DTW 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-10}}
+       \hfill
+       \subcaptionbox{CSPA 50 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-simple-branch-30}}%
+       \hfill
+       \subcaptionbox{CSPA 10 planes}
+       {\includegraphics[width=.48\linewidth]{reconstructions/cspa50-simple-branch-10}}
+     \end{minipage}%
+        \caption{Reconstructions of simple branch model}
+        \label{fig:simple_branch_reconstructions}
+\end{figure}
 
 (figure discussion)
 
