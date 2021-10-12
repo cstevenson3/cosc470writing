@@ -325,7 +325,7 @@ Additionally, Meshlab was used to copy specific sections of these models into ne
      \hfill
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{originals/simple}
+         \includegraphics[width=\textwidth]{originals/multi-branch-2-7}
          \caption{multi-branch-num-num}
          \label{fig:multi_branch_focussed}
      \end{subfigure}
@@ -629,13 +629,15 @@ Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0
 
 For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
 
-\subsection{Summary}
+\subsection{Analysis Summary}
 
-summary text
+CSPA gave more accurate reconstructions than DTW in branches and similar structures. As plane count lowered for a given object, CSPA's accuracy worsened at a rate slower than DTW's.
 
 \section{Conclusion}
 
-conclusion text
+c
+
+\subsection{Future Research}
 
 \pagebreak
 \bibliographystyle{IEEEtran}
