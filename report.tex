@@ -63,6 +63,8 @@ As with most areas involving measurement of the real world, unwanted artefacts s
 
 The effect of slice thickness on detection has been considered by Fischback et al. \cite{fischbach2003detection}. They found that reduced slice thickness improves on small nodule detection. They compared 5mm and 1.25mm reconstruction intervals. From this we infer that higher plane count scanning through an object is better. However for small objects, say 10mm in size, we may only get up to 10 planes passing through, and so reconstruction methods need to cope with smaller plane counts.
 
+Similarly, slice thickness has been considered for volume estimiation by Laakso et al. \cite{laakso1997mri}. They found no significant difference in estimated volume when using different slice thicknesses, although they recommend using smaller slices where possible. It is stated that smaller slice thickness results in longer scan times, so it may still be worth considering larger slice thicknesses and lower plane counts.
+
 \subsubsection{Segmentation}
 
 Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation "a rather complex, specialized procedure often requiring considerable manual interaction". Particular organs are often focussed on when developing segmentation methods.
@@ -238,7 +240,7 @@ Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspond
 
 \subsection{Background Summary}
 
-Scans have multiple planes separated by some distance. For the same spatial resolution, smaller objects will have fewer planes scanning through them. Reconstructions methods which can handle lower plane counts should be better in these cases.
+Scans have multiple planes separated by some distance. For the same spatial resolution, smaller objects will have fewer planes scanning through them. Lower plane counts are also better for lowering scan time. Reconstruction methods which can handle lower plane counts per object should be better for smaller objects and lowering scan time.
 
 General methods related to volumetric rendering and mesh reconstructions have been applied to scans. These all have some drawback. For volumetric rendering it is the render time, for marching cubes it is the jagged meshes, and for point cloud methods it is the approximation of structure.
 
@@ -257,8 +259,6 @@ The proposed system consists of:
 \item Contour Splitting, a new approach to enabling point correspondence on branches and other structures
 \item Point Angle, an alternative algorithm for point correspondence.
 \end{itemize}
-
-Example figure ref (See Figure \ref{fig:pa}).
 
 \subsubsection{Contour Splitting}
 

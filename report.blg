@@ -15,45 +15,45 @@ Warning--empty journal in mackay2019robust
 Warning--empty journal in carr1996surface
 
 Done.
-You've used 29 entries,
+You've used 30 entries,
             4087 wiz_defined-function locations,
-            1000 strings with 13182 characters,
-and the built_in function-call counts, 24460 in all, are:
-= -- 1993
-> -- 559
-< -- 245
-+ -- 313
-- -- 87
-* -- 1175
-:= -- 3545
-add.period$ -- 65
-call.type$ -- 29
-change.case$ -- 29
-chr.to.int$ -- 564
-cite$ -- 31
-duplicate$ -- 1707
-empty$ -- 1918
-format.name$ -- 109
-if$ -- 5744
+            1007 strings with 13415 characters,
+and the built_in function-call counts, 25466 in all, are:
+= -- 2077
+> -- 588
+< -- 256
++ -- 329
+- -- 92
+* -- 1226
+:= -- 3689
+add.period$ -- 67
+call.type$ -- 30
+change.case$ -- 30
+chr.to.int$ -- 588
+cite$ -- 32
+duplicate$ -- 1775
+empty$ -- 1986
+format.name$ -- 115
+if$ -- 5979
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 282
-newline$ -- 110
-num.names$ -- 28
-pop$ -- 625
+int.to.str$ -- 30
+missing$ -- 294
+newline$ -- 113
+num.names$ -- 29
+pop$ -- 649
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1899
+skip$ -- 1976
 stack$ -- 0
-substring$ -- 1352
-swap$ -- 1464
-text.length$ -- 57
+substring$ -- 1409
+swap$ -- 1528
+text.length$ -- 60
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 29
+type$ -- 30
 warning$ -- 2
-while$ -- 125
-width$ -- 31
-write$ -- 306
+while$ -- 130
+width$ -- 32
+write$ -- 317
 (There were 2 warnings)
