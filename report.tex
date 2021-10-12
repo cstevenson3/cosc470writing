@@ -12,6 +12,9 @@
 \captionsetup[subfigure]{justification=centering}
 \usepackage{wrapfig}
 
+\newcommand{\reconstructionleft}{0.3}
+\newcommand{\reconstructionright}{0.67}
+
 \title{COSC470 Research Project Report\\
 \bigskip
 Contour Splitting for Branching Structures in CT Image Reconstructions}
@@ -326,7 +329,7 @@ Additionally, Meshlab was used to copy specific sections of these models into ne
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
          \includegraphics[width=\textwidth]{originals/multi-branch-2-7}
-         \caption{multi-branch-num-num}
+         \caption{multi-branch-2-7}
          \label{fig:multi_branch_focussed}
      \end{subfigure}
      \hfill
@@ -354,12 +357,12 @@ A simple tube is reconstructed.
 
 \begin{figure}[h]
      \centering
-     \begin{minipage}[b]{.38\linewidth}
+     \begin{minipage}[b]{\reconstructionleft\linewidth}
        \subcaptionbox{Original}
        {\includegraphics[width=\linewidth]{originals/simple}}%
      \end{minipage}%
      \hfill
-     \begin{minipage}[b]{.6\linewidth}
+     \begin{minipage}[b]{\reconstructionright\linewidth}
        \subcaptionbox{DTW 50 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-50}}%
        \hfill
@@ -424,14 +427,14 @@ A simple model containing a branch is reconstructed. Here there are cases where 
 
 \begin{figure}[h]
      \centering
-     \begin{minipage}[b]{.38\linewidth}
+     \begin{minipage}[b]{\reconstructionleft\linewidth}
        \subcaptionbox{Original}
        {\includegraphics[width=\linewidth]{originals/simple-branch}}%
      \end{minipage}%
      \hfill
-     \begin{minipage}[b]{.6\linewidth}
+     \begin{minipage}[b]{\reconstructionright\linewidth}
        \subcaptionbox{DTW 30 planes}
-       {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-30}}%
+       {\includegraphics[width=0.48\linewidth]{reconstructions/dtw-simple-branch-30}}%
        \hfill
        \subcaptionbox{DTW 10 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-simple-branch-10}}
@@ -507,12 +510,12 @@ A model with multiple branches at different orientations is reconstructed.
 
 \begin{figure}[h]
      \centering
-     \begin{minipage}[b]{.38\linewidth}
+     \begin{minipage}[b]{\reconstructionleft\linewidth}
        \subcaptionbox{Original}
        {\includegraphics[width=\linewidth]{originals/multi-branch}}%
      \end{minipage}%
      \hfill
-     \begin{minipage}[b]{.6\linewidth}
+     \begin{minipage}[b]{\reconstructionright\linewidth}
        \subcaptionbox{DTW 50 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-multi-branch-50}}%
        \hfill
@@ -573,12 +576,12 @@ In this section a bended tube is reconstructed. This tube is oriented so that wh
 
 \begin{figure}[h]
      \centering
-     \begin{minipage}[b]{.38\linewidth}
+     \begin{minipage}[b]{\reconstructionleft\linewidth}
        \subcaptionbox{Original}
        {\includegraphics[width=\linewidth]{originals/bend}}%
      \end{minipage}%
      \hfill
-     \begin{minipage}[b]{.6\linewidth}
+     \begin{minipage}[b]{\reconstructionright\linewidth}
        \subcaptionbox{DTW 50 planes}
        {\includegraphics[width=.48\linewidth]{reconstructions/dtw-bend-50}}%
        \hfill
