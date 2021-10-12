@@ -234,19 +234,19 @@ Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspond
 
 \subsection{Background Summary}
 
-summary text
+Scans have multiple planes separated by some distance. For the same spatial resolution, smaller objects will have fewer planes scanning through them. Reconstructions methods which can handle lower plane count should be better in these cases.
+
+General methods related to volumetric rendering and mesh reconstructions have been applied to scans. These all have some drawback. For volumetric rendering it is the render time, for marching cubes it is the jagged meshes, and for point cloud methods it is the approximation of structure.
+
+Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
+
+Our paper can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane count better.
 
 \section{Method}
 
 method text
 
 \subsection{Proposal}
-
-\begin{wrapfigure}{r}{0.25\textwidth}
-\centering
-\includegraphics[width=0.2\textwidth]{pa}
-\caption{Points matched by angle from shared centroid\label{fig:pa}}
-\end{wrapfigure}
 
 The proposed system consists of:
 \begin{itemize}
@@ -623,7 +623,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0
 \label{table:bend_reverse}
 \end{table}
 
-For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I believe this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
+For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
 
 \subsection{Summary}
 
@@ -638,11 +638,5 @@ conclusion text
 \bibliography{references}
 
 \section{Appendix}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.29\textwidth]{mb}
-\caption{Original multi branch model\label{fig:model}}
-\end{figure}
 
 \end{document}
