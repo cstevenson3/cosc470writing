@@ -630,6 +630,12 @@ Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0
 \label{table:bend_reverse}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/bend-reverse}
+\caption{Bend model, mean Hausdorff distance from reconstruction to original\label{fig:bend_reverse_graph}}
+\end{figure}
+
 For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
 
 \subsection{Analysis Summary}
