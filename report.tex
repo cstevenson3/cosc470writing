@@ -57,7 +57,11 @@ Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models in e
 
 \subsection{Scanning and Image Processing}
 
-As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However techniques considering the image data from all slices have been considered.
+As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However techniques considering the image data from all slices have been investigated.
+
+\subsubsection{Scanning}
+
+The effect of slice thickness on detection has been considered by Fischback et al. \cite{fischbach2003detection}. They found that reduced slice thickness improves on small nodule detection. They compared 5mm and 1.25mm reconstruction intervals. From this we infer that higher plane count scanning through an object is better. However for small objects, say 10mm in size, we may only get up to 10 planes passing through, and so reconstruction methods need to cope with smaller plane counts.
 
 \subsubsection{Segmentation}
 
@@ -234,17 +238,17 @@ Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspond
 
 \subsection{Background Summary}
 
-Scans have multiple planes separated by some distance. For the same spatial resolution, smaller objects will have fewer planes scanning through them. Reconstructions methods which can handle lower plane count should be better in these cases.
+Scans have multiple planes separated by some distance. For the same spatial resolution, smaller objects will have fewer planes scanning through them. Reconstructions methods which can handle lower plane counts should be better in these cases.
 
 General methods related to volumetric rendering and mesh reconstructions have been applied to scans. These all have some drawback. For volumetric rendering it is the render time, for marching cubes it is the jagged meshes, and for point cloud methods it is the approximation of structure.
 
 Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
 
-Our paper can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane count better.
+A new point correspondence method can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane counts better.
 
 \section{Method}
 
-method text
+In this section we detail how a new point correspondence method has been constructed, with the intention of handling branching structures and lower plane counts better.
 
 \subsection{Proposal}
 
