@@ -288,6 +288,8 @@ Prior methods of point correspondence consider the Euclidean distance between po
 
 Mackay's report provides a complete implementation of contour and point correspondence (TODO cite software). This implementation was modified to add the options of contour splitting and point angle for point correspondence. The modified source code is available here (TODO git link).
 
+This paper contributes a new tool for testing. A python script has been developed to automate reconstruction and analysis of multiple models and plane counts. The script calls the reconstruction binary and feeds it every combination of model and plane count to obtain reconstructions. PyMeshLab (TODO cite) is then used to call the Hausdorff distance filter with reconstructions and their original counterparts, giving measurements which are then stored in a JSON file. The script includes methods to filter this file, to quickly look up measurements across different reconstruction methods for a given model and plane count.
+
 \section{Analysis}
 
 To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. These observations are then confirmed with objective measurements such as Hausdorff distance.
