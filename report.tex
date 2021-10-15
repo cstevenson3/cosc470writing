@@ -15,6 +15,8 @@
 \newcommand{\reconstructionleft}{0.3}
 \newcommand{\reconstructionright}{0.67}
 
+\setcounter{section}{-1}
+
 \title{COSC470 Research Project Report\\
 \bigskip
 Contour Splitting for Branching Structures in CT Image Reconstructions}
@@ -29,6 +31,8 @@ HRCT and MRI image stacks are used to reconstruct 3D models of internal body str
 \tableofcontents
 
 \section{Overview}
+
+The field of HRCT and MRI reconstructions will be introduced, followed by a broad background survey of stages in the reconstruction pipeline, with prior work relevant to this paper. The background summary will give a clear overview of what needs improvement. A method, contour splitting and point angle, will be introduced which aims to satisfy these improvements. Analysis will show that this method does improve upon prior work in the intended way.
 
 overview text
 Example citation \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}.
@@ -249,7 +253,7 @@ Scans have multiple planes separated by some distance. For the same spatial reso
 
 General methods related to volumetric rendering and mesh reconstructions have been applied to scans. These all have some drawback. For volumetric rendering it is the render time, for marching cubes it is the jagged meshes, and for point cloud methods it is the approximation of structure.
 
-Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
+Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay was able to achieve similar or better accuracy to prior methods with substantially lower triangle count. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
 
 A new point correspondence method can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane counts better.
 
