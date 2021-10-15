@@ -17,7 +17,7 @@
 \contentsline {paragraph}{Marching Cubes}{6}{section*.4}%
 \contentsline {paragraph}{Point Cloud Methods}{6}{section*.5}%
 \contentsline {subparagraph}{Models}{6}{section*.6}%
-\contentsline {subparagraph}{Estimating Normals}{7}{section*.7}%
+\contentsline {subparagraph}{Estimating Normals}{6}{section*.7}%
 \contentsline {paragraph}{Mesh Rendering}{7}{section*.8}%
 \contentsline {subsection}{\numberline {2.5}Testing}{7}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Measuring Similarity in Segmentation}{7}{subsubsection.2.5.1}%

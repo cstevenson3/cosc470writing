@@ -34,10 +34,6 @@ HRCT and MRI image stacks are used to reconstruct 3D models of internal body str
 
 The field of HRCT and MRI reconstructions will be introduced, followed by a broad background survey of stages in the reconstruction pipeline, with prior work relevant to this paper. The background summary will give a clear overview of what needs improvement. A method, "contour splitting and point angle", will be introduced which aims to satisfy these improvements. Analysis will show that this method does improve upon prior work in the intended way.
 
-overview text
-Example citation \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}.
-Example URL \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/main/survey.pdf}}.
-
 \pagebreak
 
 \section{Introduction}
@@ -54,17 +50,15 @@ My project aims to improve the accuracy of reconstructions involving branches an
 
 \section{Background}
 
-We begin with a look at typical methods in rendering scan data. Then, correspondence methods are looked at in depth as the approach this report builds upon.
+We begin with a look at typical methods in rendering or reconstructing scan data. Then, correspondence methods are looked at in depth as the approach this report builds upon.
 
 \subsection{Overview}
 
 Images from scans (also referred to as sections or slices) can be segmented based on intensity into pixel regions to define structure boundaries. These can be processed further by finding contours to represent these boundaries.
 
-Any medical imaging reconstruction/render is typically concerned with a particular area of the body, dependent on the application. Most applications tend to use either volumetric rendering or surface rendering.
-
 Volumetric rendering treats pixels in images as voxels, and a variety of rasterization and raycasting techniques are available for rendering these.
 
-Surface rendering requires a surface be defined, either implicitly or as a mesh. Point cloud methods generate implicit surfaces, whilst meshes can be generated through contour correspondence followed by mesh triangulation (with point correspondence as an optional middle step). 
+Surface rendering requires a surface be defined, either implicitly or as a mesh. Point cloud methods generate implicit surfaces, whilst meshes can be constructed via marching cubes or contour-based methods.
 
 \subsection{Applications}
 
@@ -208,7 +202,7 @@ Alsmirat et al. \cite{alsmirat2017accelerating} investigate pure GPU and hybrid 
 
 \subsection{Correspondence Methods}
 
-correspondence methods text
+Contour-based mesh reconstruction first gathers contours from image data, then corresponds contours between slices. Matched contours then go through point correspondence and triangulation to produce a final mesh.
 
 \subsubsection{Contour Correspondence}
 
@@ -296,7 +290,11 @@ Adjustments can be made to the position of the split line to improve accuracy.
 
 \subsubsection{Point Angle}
 
-Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure TODO). This leapfrogging assumes the monotonically increasing property. For contours which "double back" (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. This can lead to sections of points with the same point angle metric, and leapfrogging which produces unideal many-to-one mappings. To counter this, a second metric is added, which is simply progression along the number of points in the contour, starting from the same point as the angle metric. These two metrics are weighted and summed before the leapfrogging correspondence.
+Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure TODO). This leapfrogging assumes the monotonically increasing property. For contours which "double back" (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. 
+
+This can lead to sections of points with the same point angle metric, and leapfrogging which produces unideal many-to-one mappings. To counter this, a second metric is added, which is simply progression along the number of points in the contour (normalized), starting from the same point as the angle metric. This progression metric is actually well suited to contour data which has a point per pixel. In this case the distance between points is regular, and so progression is a good approximation to distance/angle metrics. 
+
+The angle and progression metrics are weighted and summed before the leapfrogging correspondence.
 
 \subsection{Implementation}
 
