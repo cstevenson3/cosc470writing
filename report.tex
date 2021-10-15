@@ -42,7 +42,15 @@ Example URL \footnote{\url{https://github.com/cstevenson3/cosc470writing/blob/ma
 
 \section{Introduction}
 
-introduction text
+Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
+
+Prior methods include volumetric rendering (directly rendering the image data) or surface reconstruction (creating a mesh and rendering that). Surface reconstruction methods include marching cubes, and point cloud methods such as screened Poisson. Recent papers \cite{mackay2019robust, mukundan2016reconstruction} have examined contour-based reconstructions, first segmenting images to find contours, then corresponding contours and points across slices. This paper will focus on extending this type of method.
+
+\subsection{Motivation}
+
+A paper by Mackay \cite{mackay2019robust} investigates the use of dynamic time warping as an algorithm for point correspondence. The analysis shows two problems impacting reconstruction accuracy. Firstly, low slice count impacts the accuracy of all reconstructions. Secondly, branching and other such structures can be problematic to reconstruct, affecting both contour and point correspondence.
+
+My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular, point correspondence will be investigated. The lungs are used as an organ of focus, as a good example structure to work on. The bronchi have many branches and the tubular shapes are easy to understand.
 
 \section{Background}
 
