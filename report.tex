@@ -664,6 +664,8 @@ c
 
 \subsection{Future Research}
 
+Contour splitting is currently implemented to handle 1-to-2 cases. However the idea is simple enough to be generalised to 1-to-many. In addition, the ratio of areas can be explicitly calculated instead of approximated by number of points. This will cope with real data better. For point correspondence, metrics other than point angle and progression can be considered.
+
 Absent from the analysis was a reconstruction of a real branching structure. When contour correspondence becomes sufficiently accurate, a comparison between DTW and CSPA (and other non-contour reconstruction methods) on real lung scans would be useful. An alternative would be to implement the synthetic lung model generation by Pluta et al. \cite{pluta2012new}. Sample planes could then be taken from this model and reconstructed, to allow for analysis on a more realistic structure.
 
 \pagebreak
