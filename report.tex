@@ -436,6 +436,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 
 \end{figure}
 
 As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_reverse_graph}, our data agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
+\pagebreak
 
 \subsubsection{Simple Branch Reconstruction}
 
@@ -519,6 +520,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0207 & - & 0.00469 & 0.00482 & - \\
 \caption{Simple branch focussed model, mean Hausdorff distance from original to reconstruction}
 \label{table:simple_branch_focussed_forward}
 \end{table}
+\pagebreak
 
 \subsubsection{Multi Branch Reconstruction}
 
@@ -585,6 +587,7 @@ Contour Splitting + Point Angle (CSPA) & - & 0.0175 & 0.00934 & 0.0108 & 0.00497
 \end{table}
 
 These Hausdorff distances show that CSPA improves in accuracy compared to DTW in the lower branching sections.
+\pagebreak
 
 \subsubsection{Bend Reconstruction}
 
@@ -653,6 +656,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0
 \end{figure}
 
 For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
+\pagebreak
 
 \subsection{Analysis Summary}
 
