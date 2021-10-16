@@ -33,11 +33,11 @@
 \contentsline {section}{\numberline {3}Method}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Proposal}{10}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Contour Splitting}{10}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Point Angle}{11}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Implementation}{11}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Analysis}{11}{section.4}%
+\contentsline {subsubsection}{\numberline {3.1.2}Point Angle}{12}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Implementation}{12}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Analysis}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Ground Truth}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Measurements}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Measurements}{13}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Simple Model Reconstruction}{14}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Simple Branch Reconstruction}{16}{subsubsection.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.3}Multi Branch Reconstruction}{18}{subsubsection.4.2.3}%
