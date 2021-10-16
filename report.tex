@@ -314,7 +314,13 @@ Adjustments can be made to the position of the split line to improve accuracy.
 
 \subsubsection{Point Angle}
 
-Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure TODO). This leapfrogging assumes the monotonically increasing property. For contours which "double back" (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. 
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\includegraphics[width=0.28\textwidth]{diagrams/point_angle}
+\caption{Correspondence by point angle \label{fig:point_angle}}
+\end{wrapfigure}
+
+Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle}). This leapfrogging assumes the monotonically increasing property. For contours which "double back" (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. 
 
 This can lead to sections of points with the same point angle metric, and leapfrogging which produces unideal many-to-one mappings. To counter this, a second metric is added, which is simply progression along the number of points in the contour (normalized), starting from the same point as the angle metric. This progression metric is actually well suited to contour data which has a point per pixel. In this case the distance between points is regular, and so progression is a good approximation to distance/angle metrics. 
 
