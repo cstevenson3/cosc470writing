@@ -106,7 +106,7 @@ Chai et al. \cite{chai1998contour} use partial differential equations to interpo
 
 \subsection{Typical Methods}
 
-generic methods text
+Many reconstruction methods exist. Volumetric rendering and marching cubes use the original image stack data, whilst other mesh reconstruction methods may use contours processed from scan data.
 
 \subsubsection{Volumetric Rendering}
 
@@ -277,33 +277,33 @@ The proposed system consists of:
 
 For brevity, contour correspondences of 1-to-2 will be considered. Point correspondence algorithms act on 1-to-1 contour matchings, so 1-to-2 cases must be reduced to these. 
 
-\begin{wrapfigure}{l}{0.3\textwidth}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.28\textwidth]{diagrams/contour_merging}
 \caption{Contour merging for DTW \label{fig:contour_merging}}
-\end{wrapfigure}
+\end{figure}
 
 Mackay's approach was contour merging, where the 2 contour side of the correspondence is merged. The closest pair of points across the contours is found, to join them into a single contour (See Figure \ref{fig:contour_merging}). This gives a single 1-to-1 case for point correspondence to act on. A disadvantage of this method is that the merged contour has an unusual shape, which can cause point correspondence algorithms to behave poorly.
 
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.28\textwidth]{diagrams/contour_splitting}
 \caption{Contour splitting \label{fig:contour_splitting}}
-\end{wrapfigure}
+\end{figure}
 
 The proposed technique instead splits the 1 contour side of the correspondence. The best fit line to divide the 2 contour side is found, giving the angle of the line to split the 1 contour (See Figure \ref{fig:contour_splitting}). Each half of the split 1 contour is paired with its corresponding contour on the 2 contour side. This gives two 1-to-1 cases for point correspondence to act on. The contours produced are well shaped and suitable for point correspondence algorithms designed for simpler cases.
 
-\begin{wrapfigure}{l}{0.3\textwidth}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.28\textwidth]{diagrams/ratio_of_area}
 \caption{Ratio of areas under splitting \label{fig:ratio_of_area}}
-\end{wrapfigure}
+\end{figure}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.28\textwidth]{diagrams/split_line_points}
 \caption{Additional points added to split line \label{fig:split_line_points}}
-\end{wrapfigure}
+\end{figure}
 
 Adjustments can be made to the position of the split line to improve accuracy. 
 \begin{itemize}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  19 OCT 2021 00:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  19 OCT 2021 02:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -375,8 +375,7 @@ ine 282.
 (pdftex.def)             Requested size: 130.87779pt x 196.3189pt.
 
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-288.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <./images/diagrams/contour_splitting.png, id=360, 256.96pt x 385.44pt>
 File: ./images/diagrams/contour_splitting.png Graphic file (type png)
@@ -385,12 +384,7 @@ Package pdftex.def Info: ./images/diagrams/contour_splitting.png  used on input
  line 290.
 (pdftex.def)             Requested size: 130.87779pt x 196.3189pt.
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 29
-4.
-
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-296.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <./images/diagrams/ratio_of_area.png, id=362, 256.96pt x 385.44pt>
 File: ./images/diagrams/ratio_of_area.png Graphic file (type png)
@@ -398,109 +392,106 @@ File: ./images/diagrams/ratio_of_area.png Graphic file (type png)
 Package pdftex.def Info: ./images/diagrams/ratio_of_area.png  used on input lin
 e 298.
 (pdftex.def)             Requested size: 130.87779pt x 196.3189pt.
-[10 <./images/diagrams/contour_merging.png>]
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-302.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/diagrams/split_line_points.png, id=370, 256.96pt x 385.44pt>
+<./images/diagrams/split_line_points.png, id=363, 256.96pt x 385.44pt>
 File: ./images/diagrams/split_line_points.png Graphic file (type png)
 <use ./images/diagrams/split_line_points.png>
 Package pdftex.def Info: ./images/diagrams/split_line_points.png  used on input
  line 304.
 (pdftex.def)             Requested size: 130.87779pt x 196.3189pt.
 
-Underfull \hbox (badness 2698) in paragraph at lines 305--305
-[]\OT1/cmr/m/n/10 Figure 4: |Ad-di-tional points
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[10]
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-317.
+LaTeX Warning: Text page 11 contains only floats.
 
-<./images/diagrams/point_angle.png, id=373, 256.96pt x 256.96pt>
+[11 <./images/diagrams/contour_merging.png> <./images/diagrams/contour_splittin
+g.png> <./images/diagrams/ratio_of_area.png>]
+<./images/diagrams/point_angle.png, id=381, 256.96pt x 256.96pt>
 File: ./images/diagrams/point_angle.png Graphic file (type png)
 <use ./images/diagrams/point_angle.png>
 Package pdftex.def Info: ./images/diagrams/point_angle.png  used on input line 
 319.
 (pdftex.def)             Requested size: 130.87779pt x 130.87926pt.
-
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 32
-3.
-
-[11 <./images/diagrams/contour_splitting.png> <./images/diagrams/ratio_of_area.
-png> <./images/diagrams/split_line_points.png>] [12 <./images/diagrams/point_an
-gle.png>]
-<./images/originals/simple.png, id=403, 364.36125pt x 434.62375pt>
+ [12 <./images/diagrams/split_line_points.png> <./images/diagrams/point_angle.p
+ng>]
+<./images/originals/simple.png, id=397, 364.36125pt x 434.62375pt>
 File: ./images/originals/simple.png Graphic file (type png)
 <use ./images/originals/simple.png>
 Package pdftex.def Info: ./images/originals/simple.png  used on input line 349.
 
 (pdftex.def)             Requested size: 140.22824pt x 167.26765pt.
-<./images/originals/simple-branch.png, id=404, 384.43625pt x 416.55624pt>
+<./images/originals/simple-branch.png, id=398, 384.43625pt x 416.55624pt>
 File: ./images/originals/simple-branch.png Graphic file (type png)
 <use ./images/originals/simple-branch.png>
 Package pdftex.def Info: ./images/originals/simple-branch.png  used on input li
 ne 356.
 (pdftex.def)             Requested size: 140.22824pt x 151.9496pt.
-<./images/originals/simple-branch-2-6.png, id=405, 410.53375pt x 420.57124pt>
+<./images/originals/simple-branch-2-6.png, id=399, 410.53375pt x 420.57124pt>
 File: ./images/originals/simple-branch-2-6.png Graphic file (type png)
 <use ./images/originals/simple-branch-2-6.png>
 Package pdftex.def Info: ./images/originals/simple-branch-2-6.png  used on inpu
 t line 363.
 (pdftex.def)             Requested size: 140.22824pt x 143.65332pt.
-<./images/originals/multi-branch.png, id=406, 382.42876pt x 422.57875pt>
+<./images/originals/multi-branch.png, id=400, 382.42876pt x 422.57875pt>
 File: ./images/originals/multi-branch.png Graphic file (type png)
 <use ./images/originals/multi-branch.png>
 Package pdftex.def Info: ./images/originals/multi-branch.png  used on input lin
 e 370.
 (pdftex.def)             Requested size: 140.22824pt x 154.95247pt.
-<./images/originals/multi-branch-2-7.png, id=407, 380.42125pt x 405.515pt>
+<./images/originals/multi-branch-2-7.png, id=401, 380.42125pt x 405.515pt>
 File: ./images/originals/multi-branch-2-7.png Graphic file (type png)
 <use ./images/originals/multi-branch-2-7.png>
 Package pdftex.def Info: ./images/originals/multi-branch-2-7.png  used on input
  line 377.
 (pdftex.def)             Requested size: 140.22824pt x 149.48131pt.
-<./images/originals/bend.png, id=408, 410.53375pt x 407.5225pt>
+<./images/originals/bend.png, id=402, 410.53375pt x 407.5225pt>
 File: ./images/originals/bend.png Graphic file (type png)
 <use ./images/originals/bend.png>
 Package pdftex.def Info: ./images/originals/bend.png  used on input line 384.
 (pdftex.def)             Requested size: 140.22824pt x 139.19629pt.
- [13 <./images/originals/simple.png> <./images/originals/simple-branch.png> <./
-images/originals/simple-branch-2-6.png> <./images/originals/multi-branch.png> <
-./images/originals/multi-branch-2-7.png> <./images/originals/bend.png>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14 <./images/originals/simple.png> <./images/originals/simple-branch.png>
+ <./images/originals/simple-branch-2-6.png> <./images/originals/multi-branch.pn
+g> <./images/originals/multi-branch-2-7.png> <./images/originals/bend.png>]
 File: ./images/originals/simple.png Graphic file (type png)
 <use ./images/originals/simple.png>
 Package pdftex.def Info: ./images/originals/simple.png  used on input line 409.
 
 (pdftex.def)             Requested size: 140.22824pt x 167.26765pt.
-<./images/reconstructions/dtw-simple-50.png, id=419, 381.425pt x 419.5675pt>
+<./images/reconstructions/dtw-simple-50.png, id=423, 381.425pt x 419.5675pt>
 File: ./images/reconstructions/dtw-simple-50.png Graphic file (type png)
 <use ./images/reconstructions/dtw-simple-50.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-simple-50.png  used on in
 put line 414.
 (pdftex.def)             Requested size: 150.3214pt x 165.35281pt.
-<./images/reconstructions/dtw-simple-10.png, id=420, 381.425pt x 414.54875pt>
+<./images/reconstructions/dtw-simple-10.png, id=424, 381.425pt x 414.54875pt>
 File: ./images/reconstructions/dtw-simple-10.png Graphic file (type png)
 <use ./images/reconstructions/dtw-simple-10.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-simple-10.png  used on in
 put line 417.
 (pdftex.def)             Requested size: 150.3214pt x 163.37491pt.
-<./images/reconstructions/cspa50-simple-50.png, id=421, 394.47375pt x 419.5675p
+<./images/reconstructions/cspa50-simple-50.png, id=425, 394.47375pt x 419.5675p
 t>
 File: ./images/reconstructions/cspa50-simple-50.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-simple-50.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-simple-50.png  used on
  input line 420.
 (pdftex.def)             Requested size: 150.3214pt x 159.88544pt.
-<./images/reconstructions/cspa50-simple-10.png, id=422, 390.45876pt x 412.54124
+<./images/reconstructions/cspa50-simple-10.png, id=426, 390.45876pt x 412.54124
 pt>
 File: ./images/reconstructions/cspa50-simple-10.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-simple-10.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-simple-10.png  used on
  input line 423.
 (pdftex.def)             Requested size: 150.3214pt x 158.81943pt.
-<./images/graphs/simple-reverse.png, id=424, 600.2425pt x 366.36874pt>
+<./images/graphs/simple-reverse.png, id=428, 600.2425pt x 366.36874pt>
 File: ./images/graphs/simple-reverse.png Graphic file (type png)
 <use ./images/graphs/simple-reverse.png>
 Package pdftex.def Info: ./images/graphs/simple-reverse.png  used on input line
@@ -510,15 +501,15 @@ Package pdftex.def Info: ./images/graphs/simple-reverse.png  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./images/reconstructions/dtw-simple-50.png> <./images/reconstructions/dtw-
+[15 <./images/reconstructions/dtw-simple-50.png> <./images/reconstructions/dtw-
 simple-10.png> <./images/reconstructions/cspa50-simple-50.png> <./images/recons
-tructions/cspa50-simple-10.png>] [15 <./images/graphs/simple-reverse.png>]
+tructions/cspa50-simple-10.png>] [16 <./images/graphs/simple-reverse.png>]
 File: ./images/originals/simple-branch.png Graphic file (type png)
 <use ./images/originals/simple-branch.png>
 Package pdftex.def Info: ./images/originals/simple-branch.png  used on input li
 ne 480.
 (pdftex.def)             Requested size: 140.22824pt x 151.9496pt.
-<./images/reconstructions/dtw-simple-branch-30.png, id=444, 379.4175pt x 420.57
+<./images/reconstructions/dtw-simple-branch-30.png, id=448, 379.4175pt x 420.57
 124pt>
 File: ./images/reconstructions/dtw-simple-branch-30.png Graphic file (type png)
 
@@ -526,7 +517,7 @@ File: ./images/reconstructions/dtw-simple-branch-30.png Graphic file (type png)
 Package pdftex.def Info: ./images/reconstructions/dtw-simple-branch-30.png  use
 d on input line 485.
 (pdftex.def)             Requested size: 150.3214pt x 166.62758pt.
-<./images/reconstructions/dtw-simple-branch-10.png, id=445, 380.42125pt x 420.5
+<./images/reconstructions/dtw-simple-branch-10.png, id=449, 380.42125pt x 420.5
 7124pt>
 File: ./images/reconstructions/dtw-simple-branch-10.png Graphic file (type png)
 
@@ -534,7 +525,7 @@ File: ./images/reconstructions/dtw-simple-branch-10.png Graphic file (type png)
 Package pdftex.def Info: ./images/reconstructions/dtw-simple-branch-10.png  use
 d on input line 488.
 (pdftex.def)             Requested size: 150.3214pt x 166.19121pt.
-<./images/reconstructions/cspa50-simple-branch-30.png, id=446, 378.41376pt x 40
+<./images/reconstructions/cspa50-simple-branch-30.png, id=450, 378.41376pt x 40
 8.52625pt>
 File: ./images/reconstructions/cspa50-simple-branch-30.png Graphic file (type p
 ng)
@@ -542,7 +533,7 @@ ng)
 Package pdftex.def Info: ./images/reconstructions/cspa50-simple-branch-30.png  
 used on input line 491.
 (pdftex.def)             Requested size: 150.3214pt x 162.28555pt.
-<./images/reconstructions/cspa50-simple-branch-10.png, id=447, 385.44pt x 416.5
+<./images/reconstructions/cspa50-simple-branch-10.png, id=451, 385.44pt x 416.5
 5624pt>
 File: ./images/reconstructions/cspa50-simple-branch-10.png Graphic file (type p
 ng)
@@ -557,29 +548,29 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16 <./images/reconstructions/dtw-simple-branch-30.png> <./images/reconstructio
+[17 <./images/reconstructions/dtw-simple-branch-30.png> <./images/reconstructio
 ns/dtw-simple-branch-10.png> <./images/reconstructions/cspa50-simple-branch-30.
-png> <./images/reconstructions/cspa50-simple-branch-10.png>] [17]
+png> <./images/reconstructions/cspa50-simple-branch-10.png>] [18]
 File: ./images/originals/multi-branch.png Graphic file (type png)
 <use ./images/originals/multi-branch.png>
 Package pdftex.def Info: ./images/originals/multi-branch.png  used on input lin
 e 564.
 (pdftex.def)             Requested size: 140.22824pt x 154.95247pt.
-<./images/reconstructions/dtw-multi-branch-50.png, id=468, 384.43625pt x 428.60
+<./images/reconstructions/dtw-multi-branch-50.png, id=472, 384.43625pt x 428.60
 126pt>
 File: ./images/reconstructions/dtw-multi-branch-50.png Graphic file (type png)
 <use ./images/reconstructions/dtw-multi-branch-50.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-multi-branch-50.png  used
  on input line 569.
 (pdftex.def)             Requested size: 150.3214pt x 167.59198pt.
-<./images/reconstructions/dtw-multi-branch-10.png, id=469, 393.47pt x 449.68pt>
+<./images/reconstructions/dtw-multi-branch-10.png, id=473, 393.47pt x 449.68pt>
 
 File: ./images/reconstructions/dtw-multi-branch-10.png Graphic file (type png)
 <use ./images/reconstructions/dtw-multi-branch-10.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-multi-branch-10.png  used
  on input line 572.
 (pdftex.def)             Requested size: 150.3214pt x 171.79276pt.
-<./images/reconstructions/cspa50-multi-branch-50.png, id=470, 372.39125pt x 430
+<./images/reconstructions/cspa50-multi-branch-50.png, id=474, 372.39125pt x 430
 .60875pt>
 File: ./images/reconstructions/cspa50-multi-branch-50.png Graphic file (type pn
 g)
@@ -587,7 +578,7 @@ g)
 Package pdftex.def Info: ./images/reconstructions/cspa50-multi-branch-50.png  u
 sed on input line 575.
 (pdftex.def)             Requested size: 150.3214pt x 173.82394pt.
-<./images/reconstructions/cspa50-multi-branch-10.png, id=471, 383.4325pt x 453.
+<./images/reconstructions/cspa50-multi-branch-10.png, id=475, 383.4325pt x 453.
 695pt>
 File: ./images/reconstructions/cspa50-multi-branch-10.png Graphic file (type pn
 g)
@@ -595,40 +586,40 @@ g)
 Package pdftex.def Info: ./images/reconstructions/cspa50-multi-branch-10.png  u
 sed on input line 578.
 (pdftex.def)             Requested size: 150.3214pt x 177.868pt.
- [18 <./images/reconstructions/dtw-multi-branch-50.png> <./images/reconstructio
+ [19 <./images/reconstructions/dtw-multi-branch-50.png> <./images/reconstructio
 ns/dtw-multi-branch-10.png> <./images/reconstructions/cspa50-multi-branch-50.pn
-g> <./images/reconstructions/cspa50-multi-branch-10.png>] [19]
+g> <./images/reconstructions/cspa50-multi-branch-10.png>] [20]
 File: ./images/originals/bend.png Graphic file (type png)
 <use ./images/originals/bend.png>
 Package pdftex.def Info: ./images/originals/bend.png  used on input line 631.
 (pdftex.def)             Requested size: 140.22824pt x 139.19629pt.
-<./images/reconstructions/dtw-bend-50.png, id=487, 403.5075pt x 397.485pt>
+<./images/reconstructions/dtw-bend-50.png, id=491, 403.5075pt x 397.485pt>
 File: ./images/reconstructions/dtw-bend-50.png Graphic file (type png)
 <use ./images/reconstructions/dtw-bend-50.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-bend-50.png  used on inpu
 t line 636.
 (pdftex.def)             Requested size: 150.3214pt x 148.08002pt.
-<./images/reconstructions/dtw-bend-10.png, id=488, 413.545pt x 408.52625pt>
+<./images/reconstructions/dtw-bend-10.png, id=492, 413.545pt x 408.52625pt>
 File: ./images/reconstructions/dtw-bend-10.png Graphic file (type png)
 <use ./images/reconstructions/dtw-bend-10.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-bend-10.png  used on inpu
 t line 639.
 (pdftex.def)             Requested size: 150.3214pt x 148.49683pt.
-<./images/reconstructions/cspa50-bend-50.png, id=489, 414.54875pt x 406.51875pt
+<./images/reconstructions/cspa50-bend-50.png, id=493, 414.54875pt x 406.51875pt
 >
 File: ./images/reconstructions/cspa50-bend-50.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-bend-50.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-bend-50.png  used on i
 nput line 642.
 (pdftex.def)             Requested size: 150.3214pt x 147.40733pt.
-<./images/reconstructions/cspa50-bend-10.png, id=490, 407.5225pt x 404.51125pt>
+<./images/reconstructions/cspa50-bend-10.png, id=494, 407.5225pt x 404.51125pt>
 
 File: ./images/reconstructions/cspa50-bend-10.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-bend-10.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-bend-10.png  used on i
 nput line 645.
 (pdftex.def)             Requested size: 150.3214pt x 149.21005pt.
-<./images/graphs/bend-reverse.png, id=491, 600.2425pt x 365.365pt>
+<./images/graphs/bend-reverse.png, id=495, 600.2425pt x 365.365pt>
 File: ./images/graphs/bend-reverse.png Graphic file (type png)
 <use ./images/graphs/bend-reverse.png>
 Package pdftex.def Info: ./images/graphs/bend-reverse.png  used on input line 6
@@ -638,29 +629,33 @@ Package pdftex.def Info: ./images/graphs/bend-reverse.png  used on input line 6
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./images/reconstructions/dtw-bend-50.png> <./images/reconstructions/dtw-be
+[21 <./images/reconstructions/dtw-bend-50.png> <./images/reconstructions/dtw-be
 nd-10.png> <./images/reconstructions/cspa50-bend-50.png> <./images/reconstructi
-ons/cspa50-bend-10.png>] [21 <./images/graphs/bend-reverse.png>] [22]
+ons/cspa50-bend-10.png>] [22 <./images/graphs/bend-reverse.png>] [23]
 (./report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 97--99
 []\OT1/cmr/m/n/10 ``Texture-based vol-ume ren-der-ing,'' ac-cessed from https:/
 /web.cse.ohio-state.edu/ craw-
  []
 
-[23])
+[24])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 713.
- [24]
+ [25]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 713.
  (./report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 713.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 713.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: B048A165473F8AA4A4A0E3E90F992895;2795.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 713.
  ) 
 Here is how much of TeX's memory you used:
- 7328 strings out of 480608
- 121846 string characters out of 5903630
+ 7329 strings out of 480608
+ 121853 string characters out of 5903630
  386168 words of memory out of 5000000
  22958 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
@@ -681,10 +676,10 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/202
 0/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (26 pages, 1486573 bytes).
+Output written on report.pdf (27 pages, 1486768 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
+ 605 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 130 named destinations out of 1000 (max. 500000)
  474 words of extra memory for PDF output out of 10000 (max. 10000000)
 
