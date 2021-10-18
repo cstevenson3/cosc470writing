@@ -179,4 +179,7 @@ M.~J. Herbert and C.~B. Jones, ``Contour correspondence for serial section
 H.~Li and R.~Wang, ``Method of real-time wellbore surface reconstruction based
   on spiral contour,'' \emph{Energies}, vol.~14, no.~2, p. 291, 2021.
 
+\bibitem{pymeshlab}
+A.~Muntoni and P.~Cignoni, ``{PyMeshLab},'' Jan. 2021.
+
 \end{thebibliography}
