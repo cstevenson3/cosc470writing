@@ -47,6 +47,7 @@ Prior methods include volumetric rendering (directly rendering the image data) o
 A paper by Mackay \cite{mackay2019robust} investigates the use of dynamic time warping as an algorithm for point correspondence. The analysis shows two problems impacting reconstruction accuracy. Firstly, low slice count impacts the accuracy of all reconstructions. Secondly, branching and other such structures can be problematic to reconstruct, affecting both contour and point correspondence.
 
 My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular, point correspondence will be investigated. The lungs are used as an organ of focus, as a good example structure to work on. The bronchi have many branches and the tubular shapes are easy to understand.
+\pagebreak
 
 \section{Background}
 
@@ -260,6 +261,7 @@ General methods related to volumetric rendering and mesh reconstructions have be
 Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay was able to achieve similar or better accuracy to prior methods with substantially lower triangle count. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
 
 A new point correspondence method can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane counts better.
+\pagebreak
 
 \section{Method}
 
@@ -331,6 +333,7 @@ The angle and progression metrics are weighted and summed before the leapfroggin
 Mackay's report provides a complete implementation of contour and point correspondence\footnote{\url{https://drive.google.com/open?id=1EHIx3dOOwcP1KTxWxhv8NWyROHAyVZ-P}}. This implementation was modified to add the options of contour splitting and point angle for point correspondence. The modified source code is available here \footnote{\url{https://github.com/cstevenson3/cosc470code}}.
 
 This paper contributes a new tool for testing. A python script has been developed to automate reconstruction and analysis of multiple models and plane counts. The script calls the reconstruction binary and feeds it every combination of model and plane count to obtain reconstructions. PyMeshLab \cite{pymeshlab} is then used to call the Hausdorff distance filter with reconstructions and their original counterparts, giving measurements which are then stored in a JSON file. The script includes methods to filter this file, to quickly look up measurements across different reconstruction methods for a given model and plane count.
+\pagebreak
 
 \section{Analysis}
 
@@ -516,8 +519,6 @@ Contour Splitting + Point Angle (CSPA) & 0.0685 & - & 0.0640 & 0.0607 & - \\
 \label{table:simple_branch_forward}
 \end{table}
 
-In between text
-
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -533,7 +534,8 @@ Contour Splitting + Point Angle (CSPA) & 0.0147 & - & 0.0115 & 0.0768 & - \\
 \label{table:simple_branch_reverse}
 \end{table}
 
-simple discussion (examine 40 sample version)
+For higher plane counts the two methods have almost equal accuracy, with CSPA actually being worse at 40 plane samples. At a plane count of 10, CSPA is more accurate.
+(TODO examine 40 sample version)
 
 We follow this up with a model containing only the branch section of the simple branch model. We compared the complete simple model reconstruction to this focussed original model, to specifically see Hausdorff distance at the branch section. Only the forward Hausdorff distance is valid here.
 
@@ -648,7 +650,7 @@ In this section a bended tube is reconstructed. This tube is oriented so that wh
         \label{fig:bend_reconstructions}
 \end{figure}
 
-For any plane count, CSPA appears to have a cleaner reconstruction than DTW.
+For any plane count on the bend model, CSPA appears to have a cleaner reconstruction than DTW.
 
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
