@@ -336,7 +336,7 @@ This paper contributes a new tool for testing. A python script has been develope
 
 \section{Analysis}
 
-To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. The observations are then confirmed with objective measurements such as Hausdorff distance.
+To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. The observations are then confirmed with objective measurements such as Hausdorff distance. Finally a reconstruction from real lung scans will be explored.
 
 \subsection{Ground Truth}
 
@@ -692,8 +692,54 @@ For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance
 \includegraphics[width=0.9\textwidth]{graphs/bend-reverse}
 \caption{Bend model, mean Hausdorff distance from reconstruction to original\label{fig:bend_reverse_graph}}
 \end{figure}
-
 \pagebreak
+
+\subsubsection{Real Lung Reconstruction}
+
+Due to technical difficulties with the implementations, only part of the lung was reconstructed, which unfortunately did not include any branching structures. However we can verify that CSPA gets the simpler parts correct.
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/dtw-real}
+         \caption{DTW}
+         \label{fig:dtw_real}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/cspa50-real}
+         \caption{CSPA (Proposed)}
+         \label{fig:cspa50_real}
+     \end{subfigure}
+        \caption{Real lung reconstructions, front side}
+        \label{fig:real_reconstructions}
+\end{figure}
+
+In the scan data, the image resolution is similar to the plane thickness, and so we can see the individual triangles. Both methods have sufficient accuracy on the front side of this tube.
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/dtw-real-back}
+         \caption{DTW}
+         \label{fig:dtw_real_back}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/cspa50-real-back}
+         \caption{CSPA (Proposed)}
+         \label{fig:cspa50_real_back}
+     \end{subfigure}
+        \caption{Real lung reconstructions, rear side}
+        \label{fig:real_reconstructions_back}
+\end{figure}
+\pagebreak
+
+On the rear side we see DTW fail at a section with less circular contours (there is an indent which CSPA accurately reconstructs). This is a good indication that point angle may be superior to DTW in some instances. Further testing on more real data would be needed to establish whether this is consistent.
 
 \subsection{Analysis Summary}
 
