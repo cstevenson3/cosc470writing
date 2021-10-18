@@ -32,7 +32,7 @@ HRCT and MRI image stacks are used to reconstruct 3D models of internal body str
 
 \section{Overview}
 
-The field of HRCT and MRI reconstructions will be introduced, followed by a broad background survey of stages in the reconstruction pipeline, with prior work relevant to this paper. The background summary will give a clear overview of what needs improvement. A method, "contour splitting and point angle", will be introduced which aims to satisfy these improvements. Analysis will show that this method does improve upon prior work in the intended way.
+The field of HRCT and MRI reconstructions will be introduced, followed by a broad background survey of stages in the reconstruction pipeline, with prior work relevant to this paper. The background summary will give a clear overview of what needs improvement. A method, ``contour splitting and point angle'', will be introduced which aims to satisfy these improvements. Analysis will show that this method does improve upon prior work in the intended way.
 
 \pagebreak
 
@@ -81,13 +81,13 @@ Similarly, slice thickness has been considered for volume estimiation by Laakso 
 
 \subsubsection{Segmentation}
 
-Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation "a rather complex, specialized procedure often requiring considerable manual interaction". Particular organs are often focussed on when developing segmentation methods.
+Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation ``a rather complex, specialized procedure often requiring considerable manual interaction''. Particular organs are often focussed on when developing segmentation methods.
 
 Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
 
 Carr \cite{carr1996surface} refers to various morphological methods used to remove noise. An opening operation acts like a low pass filter whilst still preserving edges. Opening and closing in sequence tends to be better at maintaining the mean intensity.
 
-Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are "characterized by different and easily separable intensity levels". In this case simple thresholding can be used to pick out regions. 
+Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tissue regions are ``characterized by different and easily separable intensity levels''. In this case simple thresholding can be used to pick out regions. 
 
 \subsubsection{Contour Finding}
 
@@ -117,7 +117,7 @@ Each image in the image stack is treated as a slice with thickness. Thus the pix
 
 In rasterization, the forward direction of an object's effect on an image is considered. Each voxel may directly affect the final render, or first be projected onto a intermediate object which is then itself drawn.
 
-Splatting takes each voxel's value and "splats" it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splat.
+Splatting takes each voxel's value and ``splats'' it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splat.
 
 Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with texture mappings from their coordinates to the 3D space of the volume, to pull texture values from the voxels. The planes must not be parallel to the viewing direction.
 
@@ -137,9 +137,9 @@ In each image of the image stack, we can see where the boundaries of tissue are.
 
 \paragraph{Marching Cubes}
 
-Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels ("inside" voxels bordering "outside" voxels, on some isosurface) are found. Each voxel has its corners defined as inside or outside based on its neighbours, and is then assigned a set of triangles based on those corners, using a lookup table. The triangles are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged, and smoothing is usually applied either to the mesh or during rendering for a more visually accurate output.
+Marching cubes \cite{lorensen1987marching} converts voxels into surfaces. Each voxel either belongs to a structure or does not, based on imaged intensity. Surface voxels (``inside'' voxels bordering ``outside'' voxels, on some isosurface) are found. Each voxel has its corners defined as inside or outside based on its neighbours, and is then assigned a set of triangles based on those corners, using a lookup table. The triangles are joined in neighbouring surface voxels to form the overall mesh. The results tend to look jagged, and smoothing is usually applied either to the mesh or during rendering for a more visually accurate output.
 
-Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of marching cubes. One problem marching cubes has is ambiguity which induces defects. The survey recommends avoiding lookup tables with reflective symmetry, where "outside" and "inside" corners of a voxel are swapped to give the same triangle set but with opposite normals. Instead only rotational symmetry (rotating corners around the voxel) is allowed. Such a lookup table was identified by Nielson et al. \cite{nielson2003marching}.
+Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of marching cubes. One problem marching cubes has is ambiguity which induces defects. The survey recommends avoiding lookup tables with reflective symmetry, where ``outside'' and ``inside'' corners of a voxel are swapped to give the same triangle set but with opposite normals. Instead only rotational symmetry (rotating corners around the voxel) is allowed. Such a lookup table was identified by Nielson et al. \cite{nielson2003marching}.
 
 \paragraph{Point Cloud Methods}
 
@@ -322,7 +322,7 @@ Adjustments can be made to the position of the split line to improve accuracy.
 \caption{Correspondence by point angle \label{fig:point_angle}}
 \end{wrapfigure}
 
-Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle}). This leapfrogging assumes the monotonically increasing property. For contours which "double back" (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. 
+Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid. For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing. In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle}). This leapfrogging assumes the monotonically increasing property. For contours which ``double back'' (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller. 
 
 This can lead to sections of points with the same point angle metric, and leapfrogging which produces unideal many-to-one mappings. To counter this, a second metric is added, which is simply progression along the number of points in the contour (normalized), starting from the same point as the angle metric. This progression metric is actually well suited to contour data which has a point per pixel. In this case the distance between points is regular, and so progression is a good approximation to distance/angle metrics. 
 
