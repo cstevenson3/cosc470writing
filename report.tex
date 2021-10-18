@@ -680,13 +680,14 @@ Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0
 \label{table:bend_reverse}
 \end{table}
 
+For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{graphs/bend-reverse}
 \caption{Bend model, mean Hausdorff distance from reconstruction to original\label{fig:bend_reverse_graph}}
 \end{figure}
 
-For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance than DTW, both in forward and reverse directions. Interestingly, the reverse Hausdorff distance is best for both at 30 plane samples, with worse accuracy as plane samples increase. I suspect this is because as the plane count increases, sampled contours get closer and closer to the part of the bend which is tangent to the planes. These contours are shaped more strangely, and both methods have worse accuracy reconstructing these. In the case of bends, lower plane count may be an advantage, provided the bend is not missed by any planes.
 \pagebreak
 
 \subsection{Analysis Summary}
@@ -695,7 +696,7 @@ CSPA gave more accurate reconstructions than DTW in branches and similar structu
 
 \section{Conclusion}
 
-c
+This paper proposes a new method for handling branching cases in point correspondence, and a new point correspondence algorithm. Contours are split in branching cases, and angle/progression metrics are used for point correspondence. The intent was to more deliberately choose key points in the point correspondence process (where splits occur, where correspondence starts from etc.). Synthetic models had contours sampled from them to be reconstructed by the proposed method and the most comparable prior method by Mackay. The reconstructions were compared to the originals, with Hausdorff distance providing an accuracy metric. It was found that the proposed method on average handles branching cases better, especially at lower plane sample counts. (TODO average improvement number). The proposed method may provide an improvement for real applications with many branching cases, such as lung scans.
 
 \subsection{Future Research}
 
