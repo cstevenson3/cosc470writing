@@ -756,9 +756,37 @@ CSPA Angle Weight & 10 & 20 & 30 & 40 & 50 \\
 \label{table:ang_weight_simple_reverse}
 \end{table}
 
-Here we can see that for every plane count, higher angle weight produces more accurate reconstructions. There seems to be diminishing returns on increasing angle weight, so using an angle weight of about 75\% could be a good way to keep some progression weighting, in order to handle more oddly shaped contours. At low plane counts such as 10, the effect of changing angle weight is lessened. These trends are just for a simple model synthetically produced, and so may not apply to real data. 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/ang_weight_simple_reverse}
+\caption{Comparison of accuracy for various angle weights\label{fig:ang_weight_simple_reverse}}
+\end{figure}
+\FloatBarrier
 
-\subsubsection{Real Lung Reconstruction}
+For the simple model (See Table \ref{table:ang_weight_simple_reverse}) we can see that for every plane count, higher angle weight produces more accurate reconstructions. There seems to be diminishing returns on increasing angle weight, so using an angle weight of about 75\% could be a good way to keep some progression weighting, in order to handle more oddly shaped contours. At low plane counts such as 10, the effect of changing angle weight is lessened. These trends are just for a simple model synthetically produced, and so may not apply to real data. Robust behaviour across varying structures is probably more important than optimising accuracy for simpler cases, and the difference seen here is minimal. We now investigate the multi-branch focussed model.
+
+\begin{table}[h!]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+CSPA Angle Weight & 10 & 20 & 30 & 40 & 50 \\
+\hline
+0\% & 0.146 & 0.0203 & 0.0124 & 0.0144 & 0.00689 \\
+25\% & 0.145 & 0.0186 & 0.0107 & 0.0127 & 0.00574 \\
+50\% & 0.143 & 0.0175 & 0.00934 & 0.0109 & 0.00497 \\
+75\% & 0.143 & 0.0169 & 0.00849 & 0.0100 & 0.00448 \\
+100\% & 0.142 & 0.0166 & 0.00803 & 0.00973 & 0.00437 \\
+\hline
+\end{tabular}
+\caption{Angle weight comparison on multi branch focussed model, mean Hausdorff distance from original to reconstruction}
+\label{table:ang_weight_multi_branch_focussed_forward}
+\end{table}
+
+For the multi-branch model, we see similar trends to the simple model. It appears the angle metric can handle the synthetic branching cases well enough to be better than the progression metric.
+\pagebreak
+
+\subsection{Real Lung Reconstruction}
 
 Due to technical difficulties with the implementations, only part of the lung was reconstructed, which unfortunately did not include any branching structures. However we can verify that CSPA gets the simpler parts correct.
 
