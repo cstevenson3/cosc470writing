@@ -58,7 +58,7 @@ We begin with a look at typical methods in rendering or reconstructing scan data
 
 \subsection{Overview}
 
-Images from scans (also referred to as sections or slices) can be segmented based on intensity into pixel regions to define structure boundaries. These can be processed further by finding contours to represent these boundaries.
+Images from scans (also referred to as sections, slices, or planes) can be segmented based on intensity into pixel regions to define structure boundaries. These can be processed further by finding contours to represent these boundaries.
 
 Volumetric rendering treats pixels in images as voxels, and a variety of rasterization and raycasting techniques are available for rendering these.
 
@@ -475,7 +475,7 @@ As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_r
 
 \subsubsection{Simple Branch Reconstruction}
 
-A simple model containing a branch is reconstructed. Here there are cases where contour correspondence is invalid (for 20, 40 and 50 plane samples), and so only 10 and 30 are analysed.
+A simple model containing a branch is reconstructed. Here there are cases where contour correspondence is invalid (for 20 and 50 plane samples), and 40 plane samples has an issue which will be explained later, so only 10 and 30 plane samples are shown first.
 
 \begin{figure}[h!]
      \centering
@@ -537,8 +537,26 @@ Contour Splitting + Point Angle (CSPA) & 0.0147 & - & 0.0115 & 0.0768 & - \\
 \end{table}
 \FloatBarrier
 
-For higher plane counts the two methods have almost equal accuracy, with CSPA actually being worse at 40 plane samples. At a plane count of 10, CSPA is more accurate.
-(TODO examine 40 sample version)
+For higher plane counts the two methods have almost equal accuracy, with CSPA actually being worse at 40 plane samples. At a plane count of 10, CSPA is more accurate. The 40 plane sample version has poor accuracy for both reconstructions. Inspecting the models (See Figure \ref{fig:simple_branch_40}), the issue appears to be with triangulation of the point correspondences, rather than a bad contour correspondence. This may be worth investigating, to see if this is an input case needing improvement or an implementation error.
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/dtw-simple-branch-40}
+         \caption{DTW}
+         \label{fig:dtw_simple_branch_40}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/cspa50-simple-branch-40}
+         \caption{CSPA}
+         \label{fig:cspa50_simple_branch_40}
+     \end{subfigure}
+        \caption{Simple branch reconstruction error}
+        \label{fig:simple_branch_40}
+\end{figure}
 
 I follow this up with a model containing only the branch section of the simple branch model. I compared the complete simple model reconstruction to this focussed original model, to specifically see Hausdorff distance at the branch section. Only the forward Hausdorff distance is valid here.
 
