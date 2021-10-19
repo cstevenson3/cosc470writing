@@ -540,6 +540,12 @@ For higher plane counts the two methods have almost equal accuracy, with CSPA ac
 
 I follow this up with a model containing only the branch section of the simple branch model. I compared the complete simple model reconstruction to this focussed original model, to specifically see Hausdorff distance at the branch section. Only the forward Hausdorff distance is valid here.
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.3\textwidth]{originals/simple-branch-2-6}
+\caption{Simple branch model focussed on the branch\label{fig:simple_branch_focussed}}
+\end{figure}
+
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -555,7 +561,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0207 & - & 0.00469 & 0.00482 & - \\
 \label{table:simple_branch_focussed_forward}
 \end{table}
 
-This effectively shows the same results as the complete version of the model.
+This effectively shows the same results as the complete version of the model. 
 \pagebreak
 
 \subsubsection{Multi Branch Reconstruction}
@@ -606,6 +612,12 @@ Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0
 \end{table}
 
 The reverse mean Hausdorff distance indicates CSPA gives more accurate reconstructions of the multi branch model than DTW at all plane sample counts. To confirm this is not down to the omissions caused by the CSPA implementation, we use the focussed multi-branch model. As with the simple branch focussed, only forward Hausdorff distance is valid here.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.3\textwidth]{originals/multi-branch-2-7}
+\caption{Multi branch model focussed on lower two branches\label{fig:multi_branch_focussed}}
+\end{figure}
 
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
