@@ -630,6 +630,13 @@ Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0
 \caption{Multi branch model, mean Hausdorff distance from reconstruction to original}
 \label{table:multi_branch_reverse}
 \end{table}
+\FloatBarrier
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/multi-branch-reverse}
+\caption{Multi branch reconstruction, mean Hausdorff distance from reconstruction to original\label{fig:multi_branch_reverse_graph}}
+\end{figure}
 
 The reverse mean Hausdorff distance indicates CSPA gives more accurate reconstructions of the multi branch model than DTW at all plane sample counts. To confirm this is not down to the omissions caused by the CSPA implementation, we use the focussed multi-branch model. As with the simple branch focussed, only forward Hausdorff distance is valid here.
 
@@ -653,6 +660,7 @@ Contour Splitting + Point Angle (CSPA) & 0.143 & 0.0175 & 0.00934 & 0.0108 & 0.0
 \caption{Multi branch focussed model, mean Hausdorff distance from original to reconstruction}
 \label{table:multi_branch_focussed_forward}
 \end{table}
+\FloatBarrier
 
 These Hausdorff distances show that CSPA either equates with or improves in accuracy compared to DTW in the lower branching sections.
 \pagebreak
@@ -725,6 +733,30 @@ For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance
 \caption{Bend model, mean Hausdorff distance from reconstruction to original\label{fig:bend_reverse_graph}}
 \end{figure}
 \pagebreak
+
+\subsection{Angle Weight Comparison}
+
+The point angle metric is a weighted sum of angle and progression for each point. The weighting given to both may influence how accurate CSPA reconstructions are. We will test this with the simple model and the multi-branch focussed model.
+
+\begin{table}[h!]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+CSPA Angle Weight & 10 & 20 & 30 & 40 & 50 \\
+\hline
+0\% & 0.0107 & 0.00457 & 0.00329 & 0.00296 & 0.00277 \\
+25\% & 0.0102 & 0.00431 & 0.00304 & 0.00253 & 0.00234 \\
+50\% & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 0.00215 \\
+75\% & 0.0103 & 0.00387 & 0.00268 & 0.00216 & 0.00206 \\
+100\% & 0.00998 & 0.00380 & 0.00264 & 0.00216 & 0.00204 \\
+\hline
+\end{tabular}
+\caption{Angle weight comparison on simple model, mean Hausdorff distance from reconstruction to original}
+\label{table:ang_weight_simple_reverse}
+\end{table}
+
+Here we can see that for every plane count, higher angle weight produces more accurate reconstructions. There seems to be diminishing returns on increasing angle weight, so using an angle weight of about 75\% could be a good way to keep some progression weighting, in order to handle more oddly shaped contours. At low plane counts such as 10, the effect of changing angle weight is lessened. These trends are just for a simple model synthetically produced, and so may not apply to real data. 
 
 \subsubsection{Real Lung Reconstruction}
 
