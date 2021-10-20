@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  21 OCT 2021 08:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  21 OCT 2021 08:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,7 +718,7 @@ Package pdftex.def Info: ./images/graphs/performance-simple.png  used on input
 line 855.
 (pdftex.def)             Requested size: 420.67763pt x 256.50081pt.
  [26 <./images/graphs/performance-simple.png>] [27] (./report.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
 []\OT1/cmr/m/n/10 ``Texture-based vol-ume ren-der-ing,'' ac-cessed from https:/
 /web.cse.ohio-state.edu/ craw-
  []
@@ -741,7 +741,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 879.
 Here is how much of TeX's memory you used:
  7462 strings out of 480608
  125878 string characters out of 5903630
- 385731 words of memory out of 5000000
+ 385733 words of memory out of 5000000
  23057 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -761,7 +761,7 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/202
 0/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (31 pages, 1870310 bytes).
+Output written on report.pdf (31 pages, 1870813 bytes).
 PDF statistics:
  688 PDF objects out of 1000 (max. 8388607)
  559 compressed objects within 6 object streams

@@ -23,7 +23,7 @@
 
 \bibitem{mackay2019robust}
 D.~Mackay, ``Robust contour based surface reconstruction algorithms for
-  applications in medical imaging,'' 2019.
+  applications in medical imaging,'' \emph{University of Canterbury}, 2019.
 
 \bibitem{mukundan2016reconstruction}
 R.~Mukundan, ``Reconstruction of high resolution 3d meshes of lung geometry
@@ -68,7 +68,8 @@ W.~Birkfellner, \emph{Applied medical image processing: a basic course}.\hskip
   1em plus 0.5em minus 0.4em\relax CRC Press, 2016.
 
 \bibitem{carr1996surface}
-J.~Carr, ``Surface reconstruction in 3d medical imaging,'' 1996.
+J.~Carr, ``Surface reconstruction in 3d medical imaging,'' \emph{University of
+  Canterbury}, 1996.
 
 \bibitem{pu2008adaptive}
 J.~Pu, J.~Roos, A.~Y. Chin, S.~Napel, G.~D. Rubin, and D.~S. Paik, ``Adaptive
@@ -180,6 +181,6 @@ H.~Li and R.~Wang, ``Method of real-time wellbore surface reconstruction based
   on spiral contour,'' \emph{Energies}, vol.~14, no.~2, p. 291, 2021.
 
 \bibitem{pymeshlab}
-A.~Muntoni and P.~Cignoni, ``{PyMeshLab},'' Jan. 2021.
+A.~Muntoni and P.~Cignoni, ``{PyMeshLab},'' \emph{Zenodo}, Jan. 2021.
 
 \end{thebibliography}
