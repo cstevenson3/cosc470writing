@@ -837,6 +837,8 @@ On the rear side (Figure \ref{fig:real_reconstructions_back}) we see DTW fail at
 
 \subsection{Performance}
 
+We take a brief look at performance, to validate that even a naive implementation of contour splitting and point angle correspondence is not unreasonably inefficient.
+
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -858,6 +860,8 @@ Contour Splitting + Point Angle (CSPA) & 36 & 45 & 70 & 79 & 98 \\
 \caption{Performance of reconstruction methods on simple model\label{fig:performance_simple}}
 \end{figure}
 \FloatBarrier
+
+CSPA performs at least as well as DTW, and even performs better as plane count goes up.
 
 Next we turn to reconstruction performance on the multi branch model. 10 plane samples gives the highest proportion of contour correspondences which are branch cases. 
 
@@ -882,6 +886,8 @@ Contour Splitting + Point Angle (CSPA) & 29 & 44 & 58 & 90 & 104 \\
 \caption{Performance of reconstruction methods on multi branch model\label{fig:performance_multi_branch}}
 \end{figure}
 \FloatBarrier
+
+In the branching cases, CSPA splits contours into separate point correspondences, and each correspondence has linear complexity. Mackay's implementation with merging creates larger contours for DTW to act on. Filling in the cost matrix gives DTW quadratic complexity, and so the slowdown for DTW relative to CSPA can probably be attributed to this. 
 
 On the real dataset, DTW took an average of 88 seconds for a reconstruction, whilst CSPA took 83 seconds. Both implementations have some naive elements, but this is a good indicator that CSPA does not have any major flaws with regards to performance. It handles larger contours (on the order of hundreds of points) about as well as DTW.
 
