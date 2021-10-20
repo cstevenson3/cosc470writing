@@ -41,7 +41,7 @@ The latest version of this paper may be found here\footnote{\url{https://github.
 
 \section{Introduction}
 
-Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
+Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, robot assisted surgery, and virtual reality \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison, lobachev2021inspection}. The process of producing renders or reconstructions can be improved by reducing manual user input, improving reconstruction accuracy, or improving computational efficiency.
 
 Prior methods include volumetric rendering (directly rendering the image data) or surface reconstruction (creating a mesh to render). Surface reconstruction methods include marching cubes, and point cloud methods such as screened Poisson. Recent papers \cite{mackay2019robust, mukundan2016reconstruction} have examined contour-based reconstructions, first segmenting images to find contours, then corresponding contours and points across slices. This paper will focus on extending this type of method.
 
@@ -49,7 +49,7 @@ Prior methods include volumetric rendering (directly rendering the image data) o
 
 A paper by Mackay \cite{mackay2019robust} investigates the use of dynamic time warping as an algorithm for point correspondence. The analysis shows two problems impacting reconstruction accuracy. Firstly, low slice count impacts the accuracy of all reconstruction methods analysed. Secondly, branches and other such structures can be problematic to reconstruct, affecting both contour and point correspondence.
 
-My project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular, point correspondence will be investigated. The lungs are used as an organ of focus, as a good example structure to work on. The bronchi have many branches and the tubular shapes are easy to understand.
+This project aims to improve the accuracy of reconstructions involving branches and other problematic structures. In particular, point correspondence will be investigated. The lungs are used as an organ of focus, as a good example structure to work on. The bronchi have many branches and the tubular shapes are easy to understand.
 \pagebreak
 
 \section{Background}
@@ -70,7 +70,9 @@ Xuyi et al. \cite{xuyi2016application} use 3D reconstructions from hip CT scans 
 
 Pan et al. \cite{pan2017comparison} refers to the importance of 3D reconstructions and rendering in robot-assisted surgery. With real time rendering being a priority, surface reconstructions are preferred over volume rendering. Of the four methods analysed, marching cubes was found to be the most suitable due to its speed and render quality.
 
-Lim et al \cite{lim2016use} found that the use of 3D printed cardiac models in education resulted in a statistically significant improvement in test scores of medical students.
+Lim et al. \cite{lim2016use} found that the use of 3D printed cardiac models in education resulted in a statistically significant improvement in test scores of medical students.
+
+Lobachev et al. \cite{lobachev2021inspection} developed a system for virtual reality rendering of reconstructions from immunohistological sections. They state that domain experts are better at analysing details in the original images, but only 3D reconstructions can offer a view of structures spanning across slices, such as blood vessels. They assert that virtual reality is the best way to allow these domain experts to view 3D reconstructions, giving them natural control over their view. High frames per second is important in VR to avoid nausea etc., and volumetric rendering may be unsuitable, with FPS as low as 25 \cite{williams2019method}. For this reason a mesh is reconstructed with marching cubes to render.
 
 \subsection{Scanning and Image Processing}
 
@@ -855,6 +857,33 @@ Contour Splitting + Point Angle (CSPA) & 36 & 45 & 70 & 79 & 98 \\
 \includegraphics[width=0.9\textwidth]{graphs/performance-simple}
 \caption{Performance of reconstruction methods on simple model\label{fig:performance_simple}}
 \end{figure}
+\FloatBarrier
+
+Next we turn to reconstruction performance on the multi branch model. 10 plane samples gives the highest proportion of contour correspondences which are branch cases. 
+
+\begin{table}[h!]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 44 & 65 & 94 & 115 & 140 \\
+Contour Splitting + Point Angle (CSPA) & 29 & 44 & 58 & 90 & 104 \\
+\hline
+\end{tabular}
+\caption{Time for one reconstruction of the multi branch model (ms)}
+\label{table:performance_multi_branch}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/performance-multi-branch}
+\caption{Performance of reconstruction methods on multi branch model\label{fig:performance_multi_branch}}
+\end{figure}
+\FloatBarrier
+
+On the real dataset, DTW took an average of 88 seconds for a reconstruction, whilst CSPA took 83 seconds. Both implementations have some naive elements, but this is a good indicator that CSPA does not have any major flaws with regards to performance. It handles larger contours (on the order of hundreds of points) about as well as DTW.
 
 \subsection{Analysis Summary}
 
