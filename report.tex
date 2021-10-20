@@ -833,6 +833,29 @@ In the scan data, the image resolution is similar to the plane thickness, and so
 On the rear side (Figure \ref{fig:real_reconstructions_back}) we see DTW fail at a section with less circular contours (there is an indent which CSPA accurately reconstructs). This is a good indication that point angle may be superior to DTW in some instances. Further testing on more real data would be needed to establish whether this is consistent.
 \pagebreak
 
+\subsection{Performance}
+
+\begin{table}[h!]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+\cline{2-6}
+Method & 10 & 20 & 30 & 40 & 50 \\
+\hline
+Contour Merging + DTW (MDTW) & 35 & 54 & 92 & 106 & 147 \\
+Contour Splitting + Point Angle (CSPA) & 36 & 45 & 70 & 79 & 98 \\
+\hline
+\end{tabular}
+\caption{Time for one reconstruction of the simple model (ms)}
+\label{table:performance_simple}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{graphs/performance-simple}
+\caption{Performance of reconstruction methods on simple model\label{fig:performance_simple}}
+\end{figure}
+
 \subsection{Analysis Summary}
 
 CSPA gave more accurate reconstructions than DTW in branches and similar structures. As plane count lowered for a given object, CSPA's accuracy worsened at a rate slower than DTW's. This can be useful for reconstructing small objects. Also, there may be image stack data which has incomplete contour data (missing contours). In cases where contour correspondences traversing multiple slices are allowed, CSPA may handle the larger gap better.
