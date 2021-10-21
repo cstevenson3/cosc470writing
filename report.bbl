@@ -37,6 +37,11 @@ Z.~Pan, S.~Tian, M.~Guo, J.~Zhang, N.~Yu, and Y.~Xin, ``Comparison of medical
   \emph{2017 2nd International Conference on Advanced Robotics and Mechatronics
   (ICARM)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 94--99.
 
+\bibitem{lobachev2021inspection}
+O.~Lobachev, M.~Berthold, H.~Pfeffer, M.~Guthe, and B.~S. Steiniger,
+  ``Inspection of histological 3d reconstructions in virtual reality,''
+  \emph{Frontiers in Virtual Reality}, vol.~2, p.~36, 2021.
+
 \bibitem{xuyi2016application}
 W.~Xuyi, P.~Jianping, Z.~Junfeng, S.~Chao, C.~Yimin, and C.~Xiaodong,
   ``Application of three-dimensional computerised tomography reconstruction and
@@ -50,6 +55,10 @@ K.~H.~A. Lim, Z.~Y. Loo, S.~J. Goldie, J.~W. Adams, and P.~G. McMenamin, ``Use
   comparing 3d prints versus cadaveric materials for learning external cardiac
   anatomy,'' \emph{Anatomical sciences education}, vol.~9, no.~3, pp. 213--221,
   2016.
+
+\bibitem{williams2019method}
+J.~Williams, ``A method for viewing and interacting with medical volumes in
+  virtual reality,'' Ph.D. dissertation, Iowa State University, 2019.
 
 \bibitem{fischbach2003detection}
 F.~Fischbach, F.~Knollmann, V.~Griesshaber, T.~Freund, E.~Akkol, and R.~Felix,
