@@ -27,7 +27,7 @@ Contour Splitting for Branching Structures in \\CT Image Reconstructions}
 
 \maketitle
 \begin{abstract}
-Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, and robot assisted surgery \cite{mackay2019robust, mukundan2016reconstruction, pan2017comparison}. Correspondence methods acting on contours segmented from scan images are one such way of 3D reconstruction. These methods have difficulty in reconstructing structures such as branches and bends. There is ambiguity in contour correspondence, and extra steps must be added to point correspondence. This paper builds upon prior correspondence methods, with a new approach to point correspondence, and specifically aiming to improve on reconstructing these problematic cases. Analysis has been performed on synthetic models and real scan data. The proposed method handles low plane count and branching structures better than prior correspondence methods, giving more accurate reconstructions. On average the proposed method improved in reconstruction accuracy compared to the most related prior method by 15.2\%. The main contribution is the new techniques and algorithms developed for point correspondence, which may be useful in future applications.
+Medical imaging modalities such as HRCT and MRI produce stacks of images depicting regions of different tissue. These image stacks can be used to reconstruct the 3D structure of internal organs. The renders or models produced are useful in diagnosis, treatment, education, surgical simulation, robot assisted surgery, and virtual reality. Correspondence methods acting on contours segmented from scan images are one such way of 3D reconstruction. These methods have difficulty in reconstructing structures such as branches and bends. There is ambiguity in contour correspondence, and extra steps must be added to point correspondence. This paper builds upon prior correspondence methods, with a new approach to point correspondence, and specifically aiming to improve on reconstructing these problematic cases. Analysis has been performed on synthetic models and real scan data. The proposed method, ``contour splitting and point angle'', handles low plane count and branching structures better than prior correspondence methods, giving more accurate reconstructions. On average the proposed method improved in reconstruction accuracy compared to the most related prior method by 15.2\%. The main contribution is the new techniques and algorithms developed for point correspondence, which may be useful in future applications.
 \end{abstract}
 \tableofcontents
 
@@ -393,6 +393,8 @@ This paper contributes a new tool for testing. A python script has been develope
 
 To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. The observations are then confirmed with objective measurements such as Hausdorff distance. Finally a reconstruction from real lung scans will be explored.
 
+Mackay compared his method to typical non contour-based methods, the results of which are available in his paper \cite{mackay2019robust}. For simplicity we will only compare the proposed method to his method.
+
 \subsection{Ground Truth}
 
 For ground truth I used the same synthetic models Mackay generated for analysis (See Figure \ref{fig:original_models}). These can be downloaded standalone\footnote{\url{https://drive.google.com/open?id=1QYsQa-qsz9mwDRz_nk4ohtD4pITV9AD3}}, but are also included alongside my implementation\footnote{\url{https://github.com/cstevenson3/cosc470code}}. Planes are intersected with the models to give the contours of points expected from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
@@ -492,7 +494,7 @@ Both reconstruction methods handle this simple case well, with both 50 and 10 pl
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0368 & 0.0274 & 0.0174 & 0.0195 & 0.0145 \\
+Contour Merging + DTW & 0.0368 & 0.0274 & 0.0174 & 0.0195 & 0.0145 \\
 Contour Splitting + Point Angle (CSPA) & 0.0297 & 0.0240 & 0.0165 & 0.0190 & 0.0140 \\
 \hline
 \end{tabular}
@@ -509,7 +511,7 @@ In Table \ref{table:simple_forward}, the anamoly at 40 samples (being higher tha
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0186 & 0.00836 & 0.00479 & 0.00336 & 0.00275 \\
+Contour Merging + DTW & 0.0186 & 0.00836 & 0.00479 & 0.00336 & 0.00275 \\
 Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 0.00215 \\
 \hline
 \end{tabular}
@@ -523,7 +525,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 
 \caption{Simple model, mean Hausdorff distance from reconstruction to original\label{fig:simple_reverse_graph}}
 \end{figure}
 
-As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_reverse_graph}, our data agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than MDTW. This is a trend which will continue for the remaining models.
+As we can see from Table \ref{table:simple_reverse} and Figure \ref{fig:simple_reverse_graph}, our data agrees with the trend in Mackay's measurements, in that more slices sampled results in more accurate reconstructions. At high sample rates, the two methods have similar accuracies. However, as the sample rate lowers, CSPA has better measured accuracy than DTW. This is a trend which will continue for the remaining models.
 \pagebreak
 
 \subsubsection{Simple Branch Reconstruction}
@@ -565,7 +567,7 @@ These 10-plane figures highlight the behaviours of the two approaches. With merg
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0727 & - & 0.0641 & 0.0605 & - \\
+Contour Merging + DTW & 0.0727 & - & 0.0641 & 0.0605 & - \\
 Contour Splitting + Point Angle (CSPA) & 0.0685 & - & 0.0640 & 0.0607 & - \\
 \hline
 \end{tabular}
@@ -581,7 +583,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0685 & - & 0.0640 & 0.0607 & - \\
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0195 & - & 0.0107 & 0.0538 & - \\
+Contour Merging + DTW & 0.0195 & - & 0.0107 & 0.0538 & - \\
 Contour Splitting + Point Angle (CSPA) & 0.0147 & - & 0.0115 & 0.0768 & - \\
 \hline
 \end{tabular}
@@ -626,7 +628,7 @@ I follow this up with a model containing only the branch section of the simple b
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0315 & - & 0.00453 & 0.00440 & - \\
+Contour Merging + DTW & 0.0315 & - & 0.00453 & 0.00440 & - \\
 Contour Splitting + Point Angle (CSPA) & 0.0207 & - & 0.00469 & 0.00482 & - \\
 \hline
 \end{tabular}
@@ -676,7 +678,7 @@ The 50-plane reconstructions show invalid contour correspondence in the top bran
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0964 & 0.0469 & 0.0320 & 0.0400 & 0.0236 \\
+Contour Merging + DTW & 0.0964 & 0.0469 & 0.0320 & 0.0400 & 0.0236 \\
 Contour Splitting + Point Angle (CSPA) & 0.0773 & 0.0371 & 0.0157 & 0.0350 & 0.0135 \\
 \hline
 \end{tabular}
@@ -706,7 +708,7 @@ The reverse mean Hausdorff distance indicates CSPA gives more accurate reconstru
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.149 & 0.0238 & 0.0134 & 0.0109 & 0.00674 \\
+Contour Merging + DTW & 0.149 & 0.0238 & 0.0134 & 0.0109 & 0.00674 \\
 Contour Splitting + Point Angle (CSPA) & 0.143 & 0.0175 & 0.00934 & 0.0108 & 0.00497 \\
 \hline
 \end{tabular}
@@ -755,7 +757,7 @@ For any plane count on the bend model, CSPA appears to have a cleaner reconstruc
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0764 & 0.0363 & 0.0321 & 0.0314 & 0.0266 \\
+Contour Merging + DTW & 0.0764 & 0.0363 & 0.0321 & 0.0314 & 0.0266 \\
 Contour Splitting + Point Angle (CSPA) & 0.0647 & 0.0325 & 0.0281 & 0.0296 & 0.0256 \\
 \hline
 \end{tabular}
@@ -770,7 +772,7 @@ Contour Splitting + Point Angle (CSPA) & 0.0647 & 0.0325 & 0.0281 & 0.0296 & 0.0
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 0.0618 & 0.0313 & 0.0158 & 0.101 & 0.0752 \\
+Contour Merging + DTW & 0.0618 & 0.0313 & 0.0158 & 0.101 & 0.0752 \\
 Contour Splitting + Point Angle (CSPA) & 0.0535 & 0.0173 & 0.0127 & 0.0650 & 0.0491 \\
 \hline
 \end{tabular}
@@ -785,7 +787,6 @@ For every plane count, CSPA reconstructions have a lower mean Hausdorrf distance
 \includegraphics[width=0.9\textwidth]{graphs/bend-reverse}
 \caption{Bend model, mean Hausdorff distance from reconstruction to original\label{fig:bend_reverse_graph}}
 \end{figure}
-\pagebreak
 
 \subsection{Angle Weight Comparison}
 
@@ -836,7 +837,7 @@ No. of Slices Sampled & 0\% & 25\% & 50\% & 75\% & 100\% \\
 \label{table:ang_weight_multi_branch_focussed_forward_transpose}
 \end{table}
 
-For the multi-branch model, we see similar trends to the simple model. It appears the angle metric can handle the synthetic branching cases well enough to be better than the progression metric.
+For the multi-branch model, we see similar trends to the simple model. It appears the angle metric can handle the synthetic branching cases well enough to be better than the progression metric. Again, for more complicated real contours this may not be the case.
 \pagebreak
 
 \subsection{Real Lung Scan Reconstruction}
@@ -908,7 +909,7 @@ PC specs:
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 35 & 54 & 92 & 106 & 147 \\
+Contour Merging + DTW & 35 & 54 & 92 & 106 & 147 \\
 Contour Splitting + Point Angle (CSPA) & 36 & 45 & 70 & 79 & 98 \\
 \hline
 \end{tabular}
@@ -934,7 +935,7 @@ Next we turn to reconstruction performance on the multi branch model. 10 plane s
 \cline{2-6}
 Method & 10 & 20 & 30 & 40 & 50 \\
 \hline
-Contour Merging + DTW (MDTW) & 44 & 65 & 94 & 115 & 140 \\
+Contour Merging + DTW & 44 & 65 & 94 & 115 & 140 \\
 Contour Splitting + Point Angle (CSPA) & 29 & 44 & 58 & 90 & 104 \\
 \hline
 \end{tabular}
