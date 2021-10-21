@@ -276,17 +276,30 @@ Li et al. \cite{li2021method} observe that when m and n differ greatly, one-to-m
 
 \subsubsection{Branching Problem}
 
-A simple structure is easy to infer from its images. On each slice the structure is present in, we see one contour, and these contours are similarly positioned and shaped in adjacent slices. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
+A simple structure is easy to infer from its images. On every slice the structure is present in, we see one contour, and all these contours are similarly positioned and shaped in adjacent slices. More complex structures such as a branch show up differently, and it becomes harder to infer the original structure. Contour correspondence must be adjusted to deduce these unusual structures when they appear. Even when the general layout of the original structure is inferred through contour correspondence, point correspondence and mesh triangulation can be difficult when the shapes of contours change suddenly.
 
 Mackay \cite{mackay2019robust} looks for lung branches as one contour approximately splitting in half into two contours, for contour correspondence.
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-\centering
-\includegraphics[width=0.28\textwidth]{diagrams/contour_merging}
-\caption{Contour merging for branching cases \label{fig:contour_merging}}
-\end{wrapfigure}
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{diagrams/contour_merging}
+         \caption{Contour merging for branching cases}
+         \label{fig:contour_merging}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{reconstructions/dtw-multi-branch-10}
+         \caption{DTW pathing issues on branching cases}
+         \label{fig:dtw_issues}
+     \end{subfigure}
+        \caption{Mackay contour merging and DTW}
+        \label{fig:dtw}
+\end{figure}
 
-Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour (See Figure \ref{fig:contour_merging}). Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
+Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour (See Figure \ref{fig:contour_merging}). Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together (See Figure \ref{fig:dtw_issues}). This problem is left for further research.
 
 \subsection{Background Summary}
 
