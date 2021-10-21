@@ -247,7 +247,7 @@ Mukundan \cite{mukundan2016reconstruction} uses distance in the XZ plane as a me
 \caption{DTW path finding through a cost matrix to give a point correspondence \label{fig:dtw_slide}}
 \end{wrapfigure}
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. A cost matrix is populated based on point distance, then a path is found aiming to minimise global distance (See Figure \cite{fig:dtw_slide}). DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement. It tends to be that as planes are more separated, the contours undergoing point correspondence are more dissimilar, and DTW performs worse in reconstructing these.
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. A cost matrix is populated based on point distance, then a path is found aiming to minimise global distance (See Figure \ref{fig:dtw_slide}). DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement. It tends to be that as planes are more separated, the contours undergoing point correspondence are more dissimilar, and DTW performs worse in reconstructing these.
 
 \subsubsection{Mesh Triangulation}
 
@@ -267,7 +267,13 @@ A simple structure is easy to infer from its images. On each slice the structure
 
 Mackay \cite{mackay2019robust} looks for lung branches as one contour approximately splitting in half into two contours, for contour correspondence.
 
-Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour. Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\includegraphics[width=0.28\textwidth]{diagrams/contour_merging}
+\caption{Contour merging for branching cases \label{fig:contour_merging}}
+\end{wrapfigure}
+
+Mackay \cite{mackay2019robust} uses contour merging to help DTW point correspondence in the branching case. In a contour correspondence where there is a slice with a single contour and a slice with two contours, the two contours on the same slice are merged at their nearest point to give one larger contour (See Figure \ref{fig:contour_merging}). Point correspondence between the single contour and the merged contour can then proceed as normal. In some branching cases however, the triangulated mesh is twisted, as though DTW has not matched the correct points together. This problem is left for further research.
 
 \subsection{Background Summary}
 
@@ -295,12 +301,6 @@ The proposed system consists of:
 \subsubsection{Contour Splitting}
 
 For brevity, contour correspondences of 1-to-2 will be considered. Point correspondence algorithms act on 1-to-1 contour matchings, so 1-to-2 cases must be reduced to these. 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.28\textwidth]{diagrams/contour_merging}
-\caption{Contour merging for DTW \label{fig:contour_merging}}
-\end{figure}
 
 Mackay's approach was contour merging, where the 2 contour side of the correspondence is merged. The closest pair of points across the contours is found, to join them into a single contour (See Figure \ref{fig:contour_merging}). This gives a single 1-to-1 case for point correspondence to act on. A disadvantage of this method is that the merged contour has an unusual shape, which can cause point correspondence algorithms to behave poorly.
 
