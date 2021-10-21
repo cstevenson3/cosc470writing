@@ -241,13 +241,26 @@ Point correspondence is an optional step in surface reconstructions, where point
 
 Mukundan \cite{mukundan2016reconstruction} uses distance in the XZ plane as a metric for matching points. Other optional constraints include matching the next point close to the previous point.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-\centering
-\includegraphics[width=0.48\textwidth]{diagrams/dtw_slide}
-\caption{DTW path finding through a cost matrix to give a point correspondence \label{fig:dtw_slide}}
-\end{wrapfigure}
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.2\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{diagrams/dtw1}
+         \caption{DTW path through cost matrix}
+         \label{fig:dtw1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.6\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{diagrams/dtw2}
+         \caption{Point correspondence}
+         \label{fig:dtw2}
+     \end{subfigure}
+        \caption{DTW path finding through a cost matrix to give a point correspondence \cite{mackay2019robust}}
+        \label{fig:dtw}
+\end{figure}
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. A cost matrix is populated based on point distance, then a path is found aiming to minimise global distance (See Figure \ref{fig:dtw_slide}). DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement. It tends to be that as planes are more separated, the contours undergoing point correspondence are more dissimilar, and DTW performs worse in reconstructing these.
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. A cost matrix is populated based on point distance, then a path is found aiming to minimise global distance (See Figure \ref{fig:dtw}). DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement. It tends to be that as planes are more separated, the contours undergoing point correspondence are more dissimilar, and DTW performs worse in reconstructing these.
 
 \subsubsection{Mesh Triangulation}
 
