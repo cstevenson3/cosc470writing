@@ -148,7 +148,7 @@ Newman et al. \cite{newman2006survey} have conducted a comprehensive survey of m
 
 \paragraph{Point Cloud Methods}
 
-One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Approximating methods produce surfaces which lean more heavily on the assumptions made, with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface at zero is generated.
+One of the more general ways of defining a surface with incomplete data is by sampling many points from it, and making assumptions about the way these points would be connected. This is common in 3D depth scanning of exteriors of objects, where many points are sampled but the entire surface is not known and must be inferred. If we treat the boundaries of tissue regions in images as sets of points, we can apply point cloud methods to all the points gathered. The techniques can be tuned for specific applications. Approximating methods produce surfaces which lean more heavily on the assumptions made, with the points guiding the end results. This is useful when the sampling of the points is noisy. Methods which interpolate assume the points are perfect and so the surfaces produced must pass through them. It is common to define a function from 3D space to a value so that the surface should be found where the function output is zero, then an isosurface at zero is generated. A drawback of point cloud methods is that the explicit relations between points on the same contour are lost. In addition, when planes are more separated, artefacts tend to appear.
 
 \subparagraph{Models}
 
@@ -208,7 +208,7 @@ Alsmirat et al. \cite{alsmirat2017accelerating} investigate pure GPU and hybrid 
 
 \subsection{Correspondence Methods}
 
-Contour-based mesh reconstruction first gathers contours from image data, then corresponds contours between slices. Matched contours then go through point correspondence and triangulation to produce a final mesh.
+Contour-based mesh reconstruction first gathers contours from image data, then corresponds contours between slices. Matched contours then go through point correspondence and triangulation to produce a final mesh. This approach to mesh reconstructions is the focus of this paper.
 
 \subsubsection{Contour Correspondence}
 
@@ -235,7 +235,7 @@ Point correspondence is an optional step in surface reconstructions, where point
 
 Mukundan \cite{mukundan2016reconstruction} uses distance in the XZ plane as a metric for matching points. Other optional constraints include matching the next point close to the previous point.
 
-Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement.
+Mackay \cite{mackay2019robust} proposes Dynamic Time Warping (DTW) as a method of point correspondence. DTW is intended to match features on the same structure across different times. In point correspondence, it matches points on contours which are from the same structure but in different slices, so slightly warped. At any time during DTW a pair of points from both contours is matched, then the next points in both contours are considered as matches for the current points. DTW has some basic constraints when finding a warp path, but Mackay suggests adding further constraints as a potential improvement. It tends to be that as planes are more separated, the contours undergoing point correspondence are more dissimilar, and DTW performs worse in reconstructing these.
 
 \subsubsection{Mesh Triangulation}
 
@@ -263,7 +263,7 @@ Scans have multiple planes separated by some distance. For the same spatial reso
 
 General methods related to volumetric rendering and mesh reconstructions have been applied to scans. These all have some drawback. For volumetric rendering it is the render time, for marching cubes it is the jagged meshes, and for point cloud methods it is the approximation of structure.
 
-Correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay was able to achieve similar or better accuracy to prior methods with substantially lower triangle count. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
+Counter-based correspondence methods aim to solve these issues. Contour correspondence and point correspondence are achieved through variations of Euclidean distance and other metrics. Mackay was able to achieve similar or better accuracy to prior methods with substantially lower triangle count. Mackay found that branches and other structures cause problems in both contour and point correspondence. His method using DTW, like others, becomes less accurate as plane count decreases.
 
 A new point correspondence method can improve upon prior approaches by reconstructing branches and other structures more accurately, and handling lower plane counts better.
 \pagebreak
