@@ -86,7 +86,7 @@ Similarly, slice thickness has been considered for volume estimiation by Laakso 
 
 \subsubsection{Segmentation}
 
-Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation ``a rather complex, specialized procedure often requiring considerable manual interaction''. Particular organs are often focussed on when developing segmentation methods.
+Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation ``a rather complex, specialized procedure often requiring considerable manual interaction''. We often focus on particular organs when developing segmentation methods.
 
 Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
 
@@ -96,7 +96,7 @@ Mukundan \cite{mukundan2016reconstruction} observes that in HRCT lung scans, tis
 
 \subsubsection{Contour Finding}
 
-Rather than use pixels/voxels, some reconstruction techniques use contours defining the boundaries of the region objects occupy in an image. 
+Rather than use pixels/voxels, some reconstruction techniques build up from contours. These contours are extracted as the boundaries of objects in each image.
 
 Mukundan \cite{mukundan2016reconstruction} starts with a binary image after thresholding. Eroding the image with a 3x3 element then subtracting this from the thresholded image gives one pixel wide edges. Sequential edge following is used to extract contours. Discarding small contours reduces the number of contours significantly.
 
@@ -122,7 +122,7 @@ Each image in the image stack is treated as a slice with thickness. Thus the pix
 
 In rasterization, the forward direction of an object's effect on an image is considered. Each voxel may directly affect the final render, or first be projected onto a intermediate object which is then itself drawn.
 
-Splatting takes each voxel's value and ``splats'' it against the drawn image, contributing to a few pixels, with its contribution fading away as you move outwards. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splat.
+Splatting takes each voxel's value and ``splats'' it against the drawn image, contributing to a few pixels, with its contribution fading away from the centre pixel. Zwicker et al. \cite{zwicker2002ewa} use elliptic Gaussian kernels as the basis of the shape of each splat.
 
 Texture-based volume rendering intersects many planes with the volume \cite{ohiotexture}. On these planes polygons are rendered, with texture mappings from their coordinates to the 3D space of the volume, to pull texture values from the voxels. The planes must not be parallel to the viewing direction.
 
@@ -230,7 +230,7 @@ Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into
 
 Contour centroid position comparison is common in local algorithms.
 
-Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep is the contour nested in larger contours).
+Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep the contour is nested in larger contours).
 
 Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
 
