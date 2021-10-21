@@ -386,20 +386,20 @@ This can lead to sections of points with the same point angle metric, and leapfr
 
 \subsection{Implementation}
 
-Mackay's report provides a complete implementation of contour and point correspondence\footnote{\url{https://drive.google.com/open?id=1EHIx3dOOwcP1KTxWxhv8NWyROHAyVZ-P}}. Contour correspondence is implemented by checking the distance between centroids relative to the radius of the contours, which indicates if there is any overlap. The complete implementation was modified to add the options of contour splitting and point angle for point correspondence. The modified source code and tools are available here \footnote{\url{https://github.com/cstevenson3/cosc470code}}.
+Mackay's report provides a complete implementation of contour and point correspondence\footnote{\url{https://drive.google.com/open?id=1EHIx3dOOwcP1KTxWxhv8NWyROHAyVZ-P}}. Contour correspondence is implemented by checking the distance between centroids relative to the radius of the contours, which indicates if there is any overlap. The complete implementation was modified in this project to add the options of contour splitting and point angle for point correspondence. The modified source code and tools are available here \footnote{\url{https://github.com/cstevenson3/cosc470code}}.
 
-This paper contributes a new tool for testing. A python script has been developed to automate reconstruction and analysis of multiple models and plane counts. The script calls the reconstruction binary and feeds it every combination of model and plane count to obtain reconstructions. PyMeshLab \cite{pymeshlab} is then used to call the Hausdorff distance filter with reconstructions and their original counterparts, giving measurements which are then stored in a JSON file. The script includes methods to filter this file, to quickly look up measurements across different reconstruction methods for a given model and plane count.
+This paper also contributes a new tool for testing. A python script has been developed to automate reconstruction and analysis of multiple models and plane counts. The script calls the reconstruction binary and feeds it every combination of model and plane count to obtain reconstructions. PyMeshLab \cite{pymeshlab} is then used to call the Hausdorff distance filter with reconstructions and their original counterparts, giving measurements which are then stored in a JSON file. The script includes methods to filter this file, to quickly look up measurements across different reconstruction methods for a given model and plane count.
 \pagebreak
 
 \section{Analysis}
 
-To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. These reconstructions from different methods are compared to the original and against each other. The observations are then confirmed with objective measurements such as Hausdorff distance. Finally a reconstruction from real lung scans will be explored.
+To analyse the effectiveness of the proposed method in improving reconstruction accuracy, synthetic models are intersected with planes to give contours of points, which are then given as input to reconstruction. The reconstructions from different methods are compared to the original and against each other. The observations are then confirmed with objective measurements such as Hausdorff distance. Finally, a reconstruction from real lung scans will be explored.
 
 Mackay compared his method to typical non contour-based methods, the results of which are available in his paper \cite{mackay2019robust}. For simplicity we will only compare the proposed method to his method.
 
 \subsection{Ground Truth}
 
-For ground truth I used the same synthetic models Mackay generated for analysis (See Figure \ref{fig:original_models}). These can be downloaded standalone\footnote{\url{https://drive.google.com/open?id=1QYsQa-qsz9mwDRz_nk4ohtD4pITV9AD3}}, but are also included alongside my implementation\footnote{\url{https://github.com/cstevenson3/cosc470code}}. Planes are intersected with the models to give the contours of points expected from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
+For ground truth I used the same synthetic models Mackay generated for analysis (See Figure \ref{fig:original_models}). These can be downloaded standalone\footnote{\url{https://drive.google.com/open?id=1QYsQa-qsz9mwDRz_nk4ohtD4pITV9AD3}}, but are also included alongside my implementation\footnote{\url{https://github.com/cstevenson3/cosc470code}}. Planes are intersected with the models to give contours of points, emulating those which would be extracted from scanning and segmenting a real object of the same shape. Plane counts of 10, 20, 30, 40 and 50 are used to emulate different scan slice thicknesses.
 
 Additionally, Meshlab was used to copy specific sections of these models into new files, to focus reconstructions on the difficult cases the proposed method is intended to improve on. These are named after the original model and which slice range (based on the 10 slice levels version) is being copied.
 
@@ -454,7 +454,7 @@ Additionally, Meshlab was used to copy specific sections of these models into ne
 
 For reconstruction accuracy, Mackay used the Hausdorff distance filter built into Meshlab, which takes as input a sampled mesh (the mesh to sample points from), and a target mesh (to find the closest distance from each sample point). Many points are sampled and mean distance is reported. Lower mean distance is better. I may refer to the forward direction as when the original synthetic mesh is the sampled mesh, and the reconstructed mesh is the targest mesh, with reverse being the opposite. 
 
-The filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled. When it comes to direction, extraneous faces on a target mesh may reduce Hausdorff distance, but extraneous faces on a sampled mesh increase Hausdorff distance (usually the preferred interpretation). For this reason, in same examined cases a direction may be omitted, for reasons which will be explained.
+The Hausdorff distance filter also has parameters related to sampling, such as whether vertices, edges, or faces are sampled. The choices of sample/target meshes and these parameters are important, as the nature of how the models and reconstructions are generated affect different methods differently. For example, all vertices in Mackay's reconstructions are the original points given by plane sampling, and so lie on a face in the original mesh. Hence the reverse Hausdorff distance filter with only vertices sampled gives a measurement of zero. Whereas, the proposed method adds additional points, and so is unlikely to achieve this zero measurement. For this reason only faces will be sampled. When it comes to direction, extraneous faces on a target mesh may reduce Hausdorff distance, but extraneous faces on a sampled mesh increase Hausdorff distance (usually the preferred interpretation). For this reason, in same examined cases a direction may be omitted, for reasons which will be explained.
 
 For contour merging and DTW, Mackay's implementation is used. For the proposed method, the same implementation is used except where contour splitting and point angle replace the point correspondence stage. To start with, 50\% angle weight (and 50\% progression) is used in the point angle metric.
 \pagebreak
@@ -615,7 +615,7 @@ For higher plane counts the two methods have almost equal accuracy, with CSPA ac
         \label{fig:simple_branch_40}
 \end{figure}
 
-I follow this up with a model containing only the branch section of the simple branch model. I compared the complete simple model reconstruction to this focussed original model, to specifically see Hausdorff distance at the branch section. Only the forward Hausdorff distance is valid here.
+I follow this up with a model containing only the branch section of the simple branch model. The complete simple branch model reconstruction and this focussed original model are fed to the Hausdorff distance filter. Only the forward Hausdorff distance (sampling the from the focussed mesh) is valid here.
 
 \begin{figure}[h!]
 \centering
@@ -719,7 +719,7 @@ Contour Splitting + Point Angle (CSPA) & 0.143 & 0.0175 & 0.00934 & 0.0108 & 0.0
 \end{table}
 \FloatBarrier
 
-These Hausdorff distances show that CSPA either equates with or improves in accuracy compared to DTW in the lower branching sections.
+These Hausdorff distances show that CSPA either equates with or improves in accuracy compared to DTW in the lower branching sections, as intended.
 \pagebreak
 
 \subsubsection{Bend Reconstruction}
@@ -750,7 +750,7 @@ In this section a bended tube is reconstructed. This tube is oriented so that wh
         \label{fig:bend_reconstructions}
 \end{figure}
 
-For any plane count on the bend model, CSPA appears to have a cleaner reconstruction than DTW.
+For any plane count on the bend model, CSPA appears to have a cleaner reconstruction than DTW. This will make it easier to understand the structure when a reconstruction is viewed.
 
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
@@ -888,7 +888,7 @@ In the scan data, the image resolution is similar to the plane thickness, and so
         \label{fig:real_reconstructions_back}
 \end{figure}
 
-On the rear side (Figure \ref{fig:real_reconstructions_back}) we see DTW fail at a section with less circular contours (there is an indent which CSPA accurately reconstructs). This is a good indication that point angle may be superior to DTW in some instances. Further testing on more real data would be needed to establish whether this is consistent.
+On the rear side (Figure \ref{fig:real_reconstructions_back}) we see DTW fail at a section with more irregular contours (there is an indent which CSPA accurately reconstructs). This is a good indication that point angle may be more robust than DTW in some instances. Further testing on more real data would be needed to establish whether this is consistent.
 \pagebreak
 
 \subsection{Performance}
@@ -958,18 +958,18 @@ On the real dataset, DTW took an average of 88 seconds for a reconstruction, whi
 
 \subsection{Analysis Summary}
 
-CSPA gave more accurate reconstructions than DTW in branches and similar structures. As plane count lowered for a given object, CSPA's accuracy worsened at a rate slower than DTW's. This can be useful for reconstructing small objects. Also, there may be image stack data which has incomplete contour data (missing contours). In cases where contour correspondences traversing multiple slices are allowed, CSPA may handle the larger gap better.
+CSPA gave more accurate reconstructions than DTW, particularly in branches and similar structures, with few exceptions. As plane count lowered for a given object, CSPA's accuracy worsened at a rate slower than DTW's. This can be useful for reconstructing small objects. Also, there may be image stack data which has incomplete contour data (missing contours). In cases where contour correspondences traversing multiple slices are allowed, CSPA may handle the larger gap better. Averaged across all models and plane sample counts, CSPA improved on DTW by an average of 15.2\%. Averaged across all models with 10 sample planes, there was an improvement of 17.5\%.
 \pagebreak
 
 \section{Conclusion}
 
-This paper proposes a new method for handling branching cases in point correspondence, and a new point correspondence algorithm. Contours are split in branching cases, and angle/progression metrics are used for point correspondence. The intent was to more deliberately choose key points in the point correspondence process (where splits occur, where correspondence starts from etc.). Synthetic models had contours sampled from them, to be reconstructed by the proposed method and the most comparable prior method by Mackay. The reconstructions were compared to the originals, with Hausdorff distance providing an accuracy metric. It was found that the proposed method on average handles branching cases better, especially at lower plane sample counts. Averaged across all models and plane sample counts, CSPA improved on DTW by an average of 15.2\%. Averaged across all models with 10 sample planes, there was an improvement of 17.5\%. The proposed method may provide an improvement for real applications with many branching cases and small objects, such as lung scans. The improvement in visual quality should help with understanding scanned structures, and the improvement in mesh quality and accuracy may help with further processing steps.
+This paper proposes a new method for handling branching cases in point correspondence, and a new point correspondence algorithm. Contours are split in branching cases, and angle/progression metrics are used for point correspondence. The intent was to more deliberately choose key points in the point correspondence process (where splits occur, where correspondence starts from etc.). Synthetic models had contours sampled from them, to be reconstructed by the proposed method and the most comparable prior method by Mackay involving Dynamic Time Warping. The reconstructions were compared to the originals, with Hausdorff distance providing an accuracy metric. It was found that the proposed method on average handles branching cases better, especially at lower plane sample counts. Averaged across all models and plane sample counts, CSPA improved on DTW by an average of 15.2\%. Averaged across all models with 10 sample planes, there was an improvement of 17.5\%. The proposed method may provide an improvement for real applications with many branching cases and small objects, such as lung scans. The improvement in visual quality should help with understanding scanned structures, and the improvement in mesh quality and accuracy may help with further processing steps.
 
 \subsection{Future Research}
 
 Contour splitting is currently implemented to handle 1-to-2 cases. However the idea is simple enough to be generalised to 1-to-many. In addition, the ratio of areas can be explicitly calculated instead of approximated by number of points. This may cope with real contour shapes better. The split line curve can be modelled differently depending on factors such as how close the two contours are. For point correspondence, metrics other than point angle and progression can be considered.
 
-Absent from the analysis was a reconstruction of a real branching structure. With a fixed contour correspondence, a comparison between DTW and CSPA (and other non-contour reconstruction methods) on real lung scans would be useful. An alternative would be to implement the synthetic lung model generation by Pluta et al. \cite{pluta2012new}. Sample planes could then be taken from this model and reconstructed, to allow for analysis on a more realistic structure than the models used in this paper.
+Absent from the analysis was a reconstruction of a real branching structure. With a fixed contour correspondence, a comparison between DTW and CSPA (and other non contour-based reconstruction methods) on real lung scans would be useful. An alternative would be to implement the synthetic lung model generation by Pluta et al. \cite{pluta2012new}. Sample planes could then be taken from this model and reconstructed, to allow for analysis on a more realistic structure than the models used in this paper.
 
 Other ideas include:
 \begin{itemize}
