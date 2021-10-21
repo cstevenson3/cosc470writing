@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  22 OCT 2021 09:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  22 OCT 2021 09:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,28 +736,32 @@ Package pdftex.def Info: ./images/graphs/ang_weight_simple_reverse.png  used on
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./images/graphs/bend-reverse.png>] [25 <./images/graphs/ang_weight_simple_
-reverse.png>]
-<./images/reconstructions/dtw-real.png, id=587, 378.41376pt x 387.4475pt>
+[24 <./images/graphs/bend-reverse.png>]
+
+LaTeX Warning: Reference `table:ang_weight_simple_reverse' on page 25 undefined
+ on input line 799.
+
+[25 <./images/graphs/ang_weight_simple_reverse.png>]
+<./images/reconstructions/dtw-real.png, id=586, 378.41376pt x 387.4475pt>
 File: ./images/reconstructions/dtw-real.png Graphic file (type png)
 <use ./images/reconstructions/dtw-real.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-real.png  used on input l
 ine 832.
 (pdftex.def)             Requested size: 210.3388pt x 215.36105pt.
-<./images/reconstructions/cspa50-real.png, id=588, 378.41376pt x 387.4475pt>
+<./images/reconstructions/cspa50-real.png, id=587, 378.41376pt x 387.4475pt>
 File: ./images/reconstructions/cspa50-real.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-real.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-real.png  used on inpu
 t line 839.
 (pdftex.def)             Requested size: 210.3388pt x 215.36105pt.
-<./images/reconstructions/dtw-real-back.png, id=590, 394.47375pt x 372.39125pt>
+<./images/reconstructions/dtw-real-back.png, id=589, 394.47375pt x 372.39125pt>
 
 File: ./images/reconstructions/dtw-real-back.png Graphic file (type png)
 <use ./images/reconstructions/dtw-real-back.png>
 Package pdftex.def Info: ./images/reconstructions/dtw-real-back.png  used on in
 put line 853.
 (pdftex.def)             Requested size: 210.3388pt x 198.56537pt.
-<./images/reconstructions/cspa50-real-back.png, id=591, 395.4775pt x 385.44pt>
+<./images/reconstructions/cspa50-real-back.png, id=590, 395.4775pt x 385.44pt>
 File: ./images/reconstructions/cspa50-real-back.png Graphic file (type png)
 <use ./images/reconstructions/cspa50-real-back.png>
 Package pdftex.def Info: ./images/reconstructions/cspa50-real-back.png  used on
@@ -801,37 +805,43 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: F1E44B2AF1E26B8564F3E6CD823B6B0E;2964.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 955.
  ) 
 Here is how much of TeX's memory you used:
- 7522 strings out of 480608
- 127552 string characters out of 5903630
- 386562 words of memory out of 5000000
- 23103 multiletter control sequences out of 15000+600000
+ 7525 strings out of 480608
+ 127670 string characters out of 5903630
+ 386706 words of memory out of 5000000
+ 23105 multiletter control sequences out of 15000+600000
  537741 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,46p,1382b,512s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (33 pages, 2108411 bytes).
+pdfTeX warning (dest): name{figure.caption.42} has been referenced but does n
+ot exist, replaced by a fixed one
+
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on report.pdf (33 pages, 2108603 bytes).
 PDF statistics:
  721 PDF objects out of 1000 (max. 8388607)
  579 compressed objects within 6 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 161 named destinations out of 1000 (max. 500000)
  560 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -774,19 +774,19 @@ The point angle metric is a weighted sum of angle and progression for each point
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
-& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+& \multicolumn{5}{c|}{Angle Weight} \\
 \cline{2-6}
-CSPA Angle Weight & 10 & 20 & 30 & 40 & 50 \\
+No. of Slices Sampled & 0\% & 25\% & 50\% & 75\% & 100\% \\
 \hline
-0\% & 0.0107 & 0.00457 & 0.00329 & 0.00296 & 0.00277 \\
-25\% & 0.0102 & 0.00431 & 0.00304 & 0.00253 & 0.00234 \\
-50\% & 0.0102 & 0.00401 & 0.00281 & 0.00236 & 0.00215 \\
-75\% & 0.0103 & 0.00387 & 0.00268 & 0.00216 & 0.00206 \\
-100\% & 0.00998 & 0.00380 & 0.00264 & 0.00216 & 0.00204 \\
+10 & 0.0107 & 0.0102 & 0.0102 & 0.0103 & 0.00998 \\
+20 & 0.00457 & 0.00431 & 0.00401 & 0.00387 & 0.00380 \\
+30 & 0.00329 & 0.00304 & 0.00281 & 0.00268 & 0.00264 \\
+40 & 0.00296 & 0.00253 & 0.00236 & 0.00216 & 0.00216 \\
+50 & 0.00277 & 0.00234 & 0.00215 & 0.00206 & 0.00204 \\
 \hline
 \end{tabular}
 \caption{Angle weight comparison on simple model, mean Hausdorff distance from reconstruction to original}
-\label{table:ang_weight_simple_reverse}
+\label{table:ang_weight_simple_reverse_transpose}
 \end{table}
 
 \begin{figure}[h!]
@@ -801,19 +801,19 @@ For the simple model (See Table \ref{table:ang_weight_simple_reverse}) we can se
 \begin{table}[h!]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
-& \multicolumn{5}{c|}{No. of Slices Sampled} \\
+& \multicolumn{5}{c|}{Angle Weight} \\
 \cline{2-6}
-CSPA Angle Weight & 10 & 20 & 30 & 40 & 50 \\
+No. of Slices Sampled & 0\% & 25\% & 50\% & 75\% & 100\% \\
 \hline
-0\% & 0.146 & 0.0203 & 0.0124 & 0.0144 & 0.00689 \\
-25\% & 0.145 & 0.0186 & 0.0107 & 0.0127 & 0.00574 \\
-50\% & 0.143 & 0.0175 & 0.00934 & 0.0109 & 0.00497 \\
-75\% & 0.143 & 0.0169 & 0.00849 & 0.0100 & 0.00448 \\
-100\% & 0.142 & 0.0166 & 0.00803 & 0.00973 & 0.00437 \\
+10 & 0.146 & 0.145 & 0.143 & 0.143 & 0.142 \\
+20 & 0.0203 & 0.0186 & 0.0175 & 0.0169 & 0.0166 \\
+30 & 0.0124 & 0.0107 & 0.00934 & 0.00849 & 0.00803 \\
+40 & 0.0144 & 0.0127 & 0.0109 & 0.0100 & 0.00973 \\
+50 & 0.00689 & 0.00574 & 0.00497 & 0.00448 & 0.00437 \\
 \hline
 \end{tabular}
 \caption{Angle weight comparison on multi branch focussed model, mean Hausdorff distance from original to reconstruction}
-\label{table:ang_weight_multi_branch_focussed_forward}
+\label{table:ang_weight_multi_branch_focussed_forward_transpose}
 \end{table}
 
 For the multi-branch model, we see similar trends to the simple model. It appears the angle metric can handle the synthetic branching cases well enough to be better than the progression metric.
