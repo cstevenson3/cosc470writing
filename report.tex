@@ -327,7 +327,13 @@ Adjustments can be made to the position of the split line to improve accuracy.
 \caption{Correspondence by point angle \label{fig:point_angle}}
 \end{wrapfigure}
 
-Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid (See Figure \ref{fig:point_angle}). For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing as we progress along the contour's specified order (if we start from the smallest angle point). In point correspondence, the contours' point angle metrics are leapfrogged between to join points. This leapfrogging assumes the monotonically increasing property. For contours which ``double back'' (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller.
+Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid (See Figure \ref{fig:point_angle}). For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing as we progress along the contour's specified order (if we start from the smallest angle point). In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle_leapfrogging}). This leapfrogging assumes the monotonically increasing property. For contours which ``double back'' (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller.
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\includegraphics[width=0.28\textwidth]{diagrams/point_angle_leapfrogging}
+\caption{Leapfrogging of point angle metric \label{fig:point_angle_leapfrogging}}
+\end{wrapfigure}
 
 This can lead to sections of points with the same point angle metric, and leapfrogging which produces unideal many-to-one mappings. To counter this, a second metric is added, which is simply progression along the number of points in the contour (normalized), starting from the same point as the angle metric. The angle and progression metrics are weighted and summed before the leapfrogging correspondence. This progression metric is actually well suited to contour data with similarly distanced points, which is what we get from uncompressed image contours. In these cases it may be suitable to only use progression.
 
@@ -903,6 +909,7 @@ On the real dataset, DTW took an average of 88 seconds for a reconstruction, whi
 \subsection{Analysis Summary}
 
 CSPA gave more accurate reconstructions than DTW in branches and similar structures. As plane count lowered for a given object, CSPA's accuracy worsened at a rate slower than DTW's. This can be useful for reconstructing small objects. Also, there may be image stack data which has incomplete contour data (missing contours). In cases where contour correspondences traversing multiple slices are allowed, CSPA may handle the larger gap better.
+\pagebreak
 
 \section{Conclusion}
 
@@ -910,7 +917,7 @@ This paper proposes a new method for handling branching cases in point correspon
 
 \subsection{Future Research}
 
-Contour splitting is currently implemented to handle 1-to-2 cases. However the idea is simple enough to be generalised to 1-to-many. In addition, the ratio of areas can be explicitly calculated instead of approximated by number of points. This will cope with real contour shapes better. For point correspondence, metrics other than point angle and progression can be considered.
+Contour splitting is currently implemented to handle 1-to-2 cases. However the idea is simple enough to be generalised to 1-to-many. In addition, the ratio of areas can be explicitly calculated instead of approximated by number of points. This will cope with real contour shapes better. The split line curve can be modelled differently depending on factors such as how close the two contours are. For point correspondence, metrics other than point angle and progression can be considered.
 
 Absent from the analysis was a reconstruction of a real branching structure. With a fixed contour correspondence, a comparison between DTW and CSPA (and other non-contour reconstruction methods) on real lung scans would be useful. An alternative would be to implement the synthetic lung model generation by Pluta et al. \cite{pluta2012new}. Sample planes could then be taken from this model and reconstructed, to allow for analysis on a more realistic structure than the models used in this paper.
 
