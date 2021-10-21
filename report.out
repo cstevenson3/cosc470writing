@@ -9,7 +9,7 @@
 \BOOKMARK [3][-]{subsubsection.2.3.2}{Segmentation}{subsection.2.3}% 9
 \BOOKMARK [3][-]{subsubsection.2.3.3}{Contour Finding}{subsection.2.3}% 10
 \BOOKMARK [3][-]{subsubsection.2.3.4}{Contour Interpolation}{subsection.2.3}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Typical Methods}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.4}{Typical Reconstruction Methods}{section.2}% 12
 \BOOKMARK [3][-]{subsubsection.2.4.1}{Volumetric Rendering}{subsection.2.4}% 13
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Surface Reconstructions}{subsection.2.4}% 14
 \BOOKMARK [2][-]{subsection.2.5}{Testing}{section.2}% 15
@@ -17,7 +17,7 @@
 \BOOKMARK [3][-]{subsubsection.2.5.2}{Generating Models}{subsection.2.5}% 17
 \BOOKMARK [3][-]{subsubsection.2.5.3}{Measuring Similarity in 3D Models}{subsection.2.5}% 18
 \BOOKMARK [2][-]{subsection.2.6}{Performance}{section.2}% 19
-\BOOKMARK [2][-]{subsection.2.7}{Correspondence Methods}{section.2}% 20
+\BOOKMARK [2][-]{subsection.2.7}{Correspondence Reconstruction Methods}{section.2}% 20
 \BOOKMARK [3][-]{subsubsection.2.7.1}{Contour Correspondence}{subsection.2.7}% 21
 \BOOKMARK [3][-]{subsubsection.2.7.2}{Point Correspondence}{subsection.2.7}% 22
 \BOOKMARK [3][-]{subsubsection.2.7.3}{Mesh Triangulation}{subsection.2.7}% 23

@@ -54,7 +54,7 @@ This project aims to improve the accuracy of reconstructions involving branches 
 
 \section{Background}
 
-We begin with a look at typical methods in rendering or reconstructing scan data. Then, correspondence methods are looked at in depth as the approach this report builds upon.
+We begin with a look at the field of medical imaging in general, then typical methods in rendering or reconstructing scan data. Finally, contour-based correspondence methods are looked at in depth as the approach this report builds upon.
 
 \subsection{Overview}
 
@@ -76,7 +76,7 @@ Lobachev et al. \cite{lobachev2021inspection} developed a system for virtual rea
 
 \subsection{Scanning and Image Processing}
 
-As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However techniques considering the image data from all slices have been investigated.
+The nature of scanning gives some considerations for how robust reconstructions have to be. As with most areas involving measurement of the real world, unwanted artefacts such as noise are introduced in the imaging process. There can also be variation from subject to subject and between imaging machines. Therefore standard image processing techniques are used to pick out the parts of images which are relevant to the application. Running signal processing on the 2D data (as opposed to considering the whole image stack in the reconstruction stage) reduces complexity. However, techniques considering the image data from all slices have also been investigated.
 
 \subsubsection{Scanning}
 
@@ -86,7 +86,7 @@ Similarly, slice thickness has been considered for volume estimiation by Laakso 
 
 \subsubsection{Segmentation}
 
-Segmentation is the process of picking out the pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation ``a rather complex, specialized procedure often requiring considerable manual interaction''. We often focus on particular organs when developing segmentation methods.
+Segmentation is the process of picking out the regions of pixels belonging to individual objects in an image. From this the projected geometry of the object onto the image can be inferred, which is then used in reconstruction or rendering. Birkfellner \cite{birkfellner2016applied} observes that organs are usually composed of multiple tissue types, which show up as different intensities under imaging. This makes segmentation ``a rather complex, specialized procedure often requiring considerable manual interaction''. We often focus on particular organs when developing segmentation methods.
 
 Birkfellner \cite{birkfellner2016applied} covers some advanced segmentation methods. The watershed transform for example uses the physical idea of water running to the bottom of valleys in a landscape. After taking a gradient transform on an image, edges are peaks in the landscape, and the virtual water will fill up basins representing segments in the image. Various interpretations of the physical behaviour can be used.
 
@@ -104,13 +104,13 @@ Pu et al. \cite{pu2008adaptive} introduce a border marching algorithm with an ad
 
 \subsubsection{Contour Interpolation}
 
-Between two slices filled with contours, new slices can be added with contours interpolated from those in the slices above and below them. Some methods are able to do this without a contour correspondence.
+Between two slices filled with contours, new slices can be added, with contours interpolated from those in the slices above and below them. Some methods are able to do this without a contour correspondence.
 
 Barrett et al. \cite{barrett1994image} present a contour interpolation algorithm in image space based on morphological operations. An image with both contours present (as different grayscale values) is dilated until the space between contours is filled. The front where the two dilations meet is where the interpolated contour is found. It is noted that this method handles branching cases with no modification necessary.
 
 Chai et al. \cite{chai1998contour} use partial differential equations to interpolate between contours on a terrain map. Their method produces smooth interpolations, and can handle complex shapes such as two or three branches.
 
-\subsection{Typical Methods}
+\subsection{Typical Reconstruction Methods}
 
 Many reconstruction methods exist. Volumetric rendering and marching cubes use the original image stack data, whilst other mesh reconstruction methods may use contours processed from scan data.
 
@@ -206,7 +206,7 @@ Saxena et al. \cite{saxena2013image} describe parallel techniques for various im
 
 Alsmirat et al. \cite{alsmirat2017accelerating} investigate pure GPU and hybrid CPU-GPU implementations of segmentation of medical images. They found that both outperform a CPU only implementation, and the hybrid method performs the best.
 
-\subsection{Correspondence Methods}
+\subsection{Correspondence Reconstruction Methods}
 
 Contour-based mesh reconstruction first gathers contours from image data, then corresponds contours between slices. Matched contours then go through point correspondence and triangulation to produce a final mesh. This approach to mesh reconstructions is the focus of this paper.
 
@@ -230,7 +230,7 @@ Herbert et al. \cite{herbert2001contour} classify correspondence algorithms into
 
 Contour centroid position comparison is common in local algorithms.
 
-Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing spacial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep the contour is nested in larger contours).
+Herbert et al. \cite{herbert2001contour} suggest growing objects one contour at a time instead of considering pairings of contours globally. In preprocessing, spatial information is gathered such as contour characteristics (position, shape, size), intra-sectional relationships between contours (to validate complex structures later), and inter-sectional relationships. Contour relationship metrics include distance between centroids, distance between major/minor axes, minimum bounding rectangle overlap, shape comparison via compactness ratios, and surroundness (how deep the contour is nested in larger contours).
 
 Herbert et al. \cite{herbert2001contour} include semantic information given by the user on the expected components in a reconstruction, and their spatial relation to each other. A starting contour is found for each component before the growing process starts.
 
@@ -324,6 +324,8 @@ The proposed system consists of:
 \item Point Angle, an alternative algorithm for point correspondence.
 \end{itemize}
 
+In conjunction they are referred to as Contour Splitting and Point Angle (CSPA).
+
 \subsubsection{Contour Splitting}
 
 For brevity, contour correspondences of 1-to-2 will be considered. Point correspondence algorithms act on 1-to-1 contour matchings, so 1-to-2 cases must be reduced to these. 
@@ -372,7 +374,7 @@ Adjustments can be made to the position of the split line to improve accuracy.
 \caption{Correspondence by point angle \label{fig:point_angle}}
 \end{wrapfigure}
 
-Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid (See Figure \ref{fig:point_angle}). For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing as we progress along the contour's specified order (if we start from the smallest angle point). In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle_leapfrogging}). This leapfrogging assumes the monotonically increasing property. For contours which ``double back'' (are not star-shaped), the monotonically increasing property can be enforced when filling in the point angle metric, by recording the previous angle if the current angle is smaller.
+Prior methods of point correspondence consider the Euclidean distance between points on corresponded contours. The proposed algorithm instead considers similar angular distance relative to the contour's centroid (See Figure \ref{fig:point_angle}). For contours where every border point can be seen from the centroid (similar to star-shaped polygons), the angular distance metric is monotonically increasing as we progress along the contour's specified order (starting from the smallest angle point). In point correspondence, the contours' point angle metrics are leapfrogged between to join points (See Figure \ref{fig:point_angle_leapfrogging}). This leapfrogging assumes the monotonically increasing property. For contours which ``double back'' (are not star-shaped), the monotonically increasing property can be enforced when calculating the point angle metric, by recording the previous angle if the current angle is smaller.
 
 \begin{wrapfigure}{r}{0.3\textwidth}
 \centering
