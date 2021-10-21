@@ -29,7 +29,7 @@
 \contentsline {subsubsection}{\numberline {2.7.2}Point Correspondence}{9}{subsubsection.2.7.2}%
 \contentsline {subsubsection}{\numberline {2.7.3}Mesh Triangulation}{10}{subsubsection.2.7.3}%
 \contentsline {subsubsection}{\numberline {2.7.4}Branching Problem}{10}{subsubsection.2.7.4}%
-\contentsline {subsection}{\numberline {2.8}Background Summary}{10}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.8}Background Summary}{11}{subsection.2.8}%
 \contentsline {section}{\numberline {3}Method}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Proposal}{12}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Contour Splitting}{12}{subsubsection.3.1.1}%
