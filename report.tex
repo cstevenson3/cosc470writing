@@ -952,7 +952,7 @@ Contour Splitting + Point Angle (CSPA) & 29 & 44 & 58 & 90 & 104 \\
 \end{figure}
 \FloatBarrier
 
-In the branching cases, CSPA splits contours into separate point correspondences, and each correspondence has linear complexity. Mackay's implementation with merging creates larger contours for DTW to act on. Filling in the cost matrix gives DTW quadratic complexity. The slowdown for DTW relative to CSPA, especially at low plane count where the proportion of branching cases is higher, can probably be attributed to this.
+In the branching cases, CSPA splits contours into separate point correspondences, and each correspondence has linear complexity relative to contour size in points. Mackay's implementation with merging creates larger contours for DTW to act on. Filling in the cost matrix gives DTW quadratic complexity relative to contour size in points, assuming they are proportionally sized. The slowdown for DTW relative to CSPA, especially at low plane count where the proportion of branching cases is higher, can probably be attributed to this.
 
 On the real dataset, DTW took an average of 88 seconds for a reconstruction, whilst CSPA took 83 seconds. Both implementations have some naive elements, but this is a good indicator that CSPA does not have any major flaws with regards to performance. It handles larger contours (on the order of hundreds of points) about as well as DTW.
 
