@@ -844,7 +844,7 @@ For the multi-branch model, we see similar trends to the simple model. It appear
 
 \subsection{Real Lung Scan Reconstruction}
 
-HRCT stacks are supplied by Dr. Anthony Butler, and cleared for research by the Health and Disability Ethics Committee, Ministry of Health (No. URB/10/EXP/002) \cite{health2010annual}.
+Anonymised HRCT stacks are supplied by Dr. Anthony Butler, and approved for research by the Health and Disability Ethics Committee, Ministry of Health (No. URB/10/EXP/002) \cite{health2010annual}.
 
 Due to technical difficulties with the implementations, only some parts of the lung were reconstructed, which unfortunately did not include any branching structures. However we can verify that CSPA gets the simpler parts correct, by taking a look at the trachea.
 
@@ -952,7 +952,7 @@ Contour Splitting + Point Angle (CSPA) & 29 & 44 & 58 & 90 & 104 \\
 \end{figure}
 \FloatBarrier
 
-In the branching cases, CSPA splits contours into separate point correspondences, and each correspondence has linear complexity. Mackay's implementation with merging creates larger contours for DTW to act on. Filling in the cost matrix gives DTW quadratic complexity, and so the slowdown for DTW relative to CSPA can probably be attributed to this. 
+In the branching cases, CSPA splits contours into separate point correspondences, and each correspondence has linear complexity. Mackay's implementation with merging creates larger contours for DTW to act on. Filling in the cost matrix gives DTW quadratic complexity. The slowdown for DTW relative to CSPA, especially at low plane count where the proportion of branching cases is higher, can probably be attributed to this.
 
 On the real dataset, DTW took an average of 88 seconds for a reconstruction, whilst CSPA took 83 seconds. Both implementations have some naive elements, but this is a good indicator that CSPA does not have any major flaws with regards to performance. It handles larger contours (on the order of hundreds of points) about as well as DTW.
 
